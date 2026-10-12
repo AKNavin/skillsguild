@@ -1,5 +1,5 @@
 {
-  "title": "30–60–90 day onboarding",
+  "title": "30\u201360\u201390 day onboarding",
   "description": "Give new teammates a practical plan with milestones, owners and feedback checkpoints.",
   "version": "1.0.0",
   "tags": [
@@ -10,6 +10,6 @@
   "author": "SkillsGuild",
   "status": "starter",
   "license": "MIT",
-  "image": "preview.svg",
-  "image_alt": "A 30–60–90 day plan showing learning, delivery and ownership milestones"
+  "image": "preview.webp",
+  "image_alt": "Three steps with a briefcase and open book leading to a welcoming workstation"
 }

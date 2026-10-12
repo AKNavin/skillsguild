@@ -10,7 +10,7 @@ Contribute focused, reusable AI workflows, not a generic collection of prompts. 
 
 ## Card preview image
 
-Include `preview.svg`, `preview.png`, `preview.jpg` or `preview.webp` in the skill folder, then set `image` to that filename and `image_alt` to a plain description in `metadata.json`. Use a 4:3 image that shows the skill's workflow or an illustrative output. Label sample charts and examples clearly; do not imply live results. Images are optional; the website uses an instruction-file preview when none is supplied. The image is included in the download and served with a content hash so updates reach visitors.
+Include `preview.svg`, `preview.png`, `preview.jpg` or `preview.webp` in the skill folder, then set `image` to that filename and `image_alt` to a plain description in `metadata.json`. Use a landscape image around 3:2 with a simple object illustration that closely represents what the skill does. Prefer pencil-and-watercolour artwork on a soft pastel background. Keep all lettering, numbers, captions and branding out of the image; the card title and description explain the skill. Illustrations must not imply live trading results. Images are optional; the website uses a text-free folder illustration when none is supplied. The image is included in the download and served with a content hash so updates reach visitors.
 
 Cards allocate 8% of their height to the title, 67% to the image, and 25% to the description and actions. Keep descriptions concise; readers can open the full skill for detail.
 
