@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contribute — SkillsGuild</title><link rel="stylesheet" href="styles.css"><link rel="icon" href="favicon.svg"></head><body><header class="header wrap"><a class="brand" href="index.html"><span class="mark">sg<span>↗</span></span>SkillsGuild<span class="domain">.in</span></a><a href="index.html#catalogue">← Back to the library</a></header><main class="guide wrap"><p class="eyebrow">SHARE WHAT WORKS</p><h1>Make the library<br>a little better.</h1><p>A good skill is a focused, reusable workflow with clear inputs and a useful output. Contributions are reviewed before publication.</p><h2>The contribution flow</h2><ol><li>Fork the SkillsGuild GitHub repository once it is linked from the homepage.</li><li>Add a folder under <code>skills/algotrading/</code>, <code>skills/hr/</code> or <code>skills/content/</code>. Use a unique lowercase name with hyphens.</li><li>Add a <code>SKILL.md</code> instruction file and <code>metadata.json</code>. You can include supporting references and assets.</li><li>Run <code>npm run validate</code> and <code>npm run build</code>.</li><li>Open a pull request explaining the problem, expected output and a realistic usage example. A maintainer reviews the change; merging it triggers the catalogue build.</li></ol><h2>SKILL.md</h2><pre>---
+name: your-skill-name
+description: What this skill does and when an assistant should use it.
+---
+
+# Your skill
+
+Describe useful inputs, the workflow, output and important boundaries.</pre><h2>metadata.json</h2><pre>{
+  "title": "Your skill name",
+  "description": "A short, concrete description of the outcome.",
+  "version": "1.0.0",
+  "tags": ["workflow", "topic"],
+  "author": "Your public name or GitHub handle",
+  "status": "community",
+  "license": "MIT"
+}</pre><h2>What gets reviewed</h2><ul><li>The instructions do useful work and preserve the user's intent.</li><li>Examples are reproducible, and claims match what the skill can actually do.</li><li>The package has no secrets, private data, hidden files or symlinks. Each file is at most 1 MB.</li><li>Required tools and external dependencies are disclosed. Downloaded instructions and scripts should be inspected before use.</li><li>You have the right to contribute the material under the project's MIT licence.</li></ul><h2>Using a skill</h2><p>Download and extract the ZIP. The folder contains the instructions, metadata and licence. Add it to your assistant's supported skill directory, or use the SKILL.md text as context. Platform support varies; this project does not promise automatic installation across every assistant.</p><p>To propose another business area, open an issue describing the use case and example skills. Publishing remains a maintainer-controlled step.</p><p><a href="index.html#contribute">Return to SkillsGuild →</a></p></main></body></html>
