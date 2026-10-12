@@ -1,6 +1,7 @@
 import {readFile,readdir,mkdir,writeFile,copyFile,lstat} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
 const root=fileURLToPath(new URL('..',import.meta.url));
 const validCategories=['algotrading','hr','content'];
 const dist=path.join(root,'dist');
@@ -50,6 +51,20 @@ if(!process.argv.includes('--check')){
   for(const name of await readdir(path.join(root,'src')))await copyFile(path.join(root,'src',name),path.join(dist,name));
   await writeFile(path.join(dist,'catalogue.json'),JSON.stringify(catalogue,null,2)+'\n');
   await writeFile(path.join(dist,'config.json'),JSON.stringify(config,null,2)+'\n');
+  const versioned=async(base,extension,content)=>{
+    const digest=createHash('sha256').update(content).digest('hex').slice(0,12);
+    const name=`${base}.${digest}.${extension}`;
+    await writeFile(path.join(dist,name),content);return name;
+  };
+  const catalogueFile=await versioned('catalogue','json',JSON.stringify(catalogue,null,2)+'\n');
+  const configFile=await versioned('config','json',JSON.stringify(config,null,2)+'\n');
+  const styleFile=await versioned('styles','css',await readFile(path.join(root,'src/styles.css'),'utf8'));
+  const appSource=(await readFile(path.join(root,'src/app.js'),'utf8')).replace("fetch('catalogue.json')",`fetch('${catalogueFile}')`).replace("fetch('config.json')",`fetch('${configFile}')`);
+  const appFile=await versioned('app','js',appSource);
+  for(const name of ['index.html','contributing.html']){
+    const html=(await readFile(path.join(root,'src',name),'utf8')).replace('href="styles.css"',`href="${styleFile}"`).replace('src="app.js"',`src="${appFile}"`);
+    await writeFile(path.join(dist,name),html);
+  }
   await copyFile(path.join(root,'LICENSE'),path.join(dist,'LICENSE'));
   await writeFile(path.join(dist,'.nojekyll'),'');
 }
