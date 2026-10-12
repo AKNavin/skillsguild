@@ -2,48 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Discover open-source AI skills for real work. Browse Algo Trading, HR and Content workflows, download a skill, and contribute your own.">
+  <meta name="description" content="Browse and download open-source AI skills for Algo Trading, HR and Content. Preview the workflow, read its instructions and put it to work.">
   <meta name="theme-color" content="#174b3e">
-  <title>SkillsGuild — Open skills. Shared progress.</title>
+  <title>SkillsGuild — Find a skill. Put it to work.</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script type="module" src="app.js"></script>
 </head>
 <body>
   <a class="skip" href="#catalogue">Skip to skills</a>
-  <header class="header wrap">
-    <a class="brand" href="#" aria-label="SkillsGuild home"><span class="mark" aria-hidden="true">sg<span>↗</span></span><span>SkillsGuild<span class="domain">.in</span></span></a>
-    <nav aria-label="Main navigation"><a href="#catalogue">Browse skills</a><a href="#how-it-works">How it works</a><a class="nav-contribute" href="#contribute">Contribute <span aria-hidden="true">↗</span></a></nav>
+  <header class="site-header">
+    <div class="header wrap">
+      <a class="brand" href="index.html" aria-label="SkillsGuild home">SkillsGuild<span>.in</span></a>
+      <nav id="categories" class="category-list" aria-label="Businesses"></nav>
+      <a id="github-link" class="contribute-link" href="contributing.html">Contribute <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
-  <main>
-    <section class="hero wrap">
-      <div class="hero-copy"><p class="eyebrow"><span class="dot"></span> THE OPEN SKILL COMMONS</p>
-      <h1>Better at work.<br><em>Better together.</em></h1>
-      <p class="intro">Practical AI skills, organised by what you do.<br class="desktop-break"> Find a workflow. Make it yours. Share what works.</p>
-      <div class="hero-actions"><a class="button dark" href="#catalogue">Find your next skill <span aria-hidden="true">↓</span></a><a class="text-link" href="#contribute">Build with the guild <span aria-hidden="true">↗</span></a></div>
-      <div class="hero-facts"><span><strong id="hero-count">6</strong> open skills</span><span>3 business areas</span><span>MIT licensed</span></div></div>
-      <div class="hero-art" aria-label="A skill turns your intent into a reusable workflow">
-        <div class="note note-one"><span class="note-tag">01 / YOUR INTENT</span><strong>“Help me do<br>this better.”</strong><span class="note-arrow">↘</span></div>
-        <div class="code-sheet"><div class="sheet-header"><span class="file-icon">≡</span> SKILL.md <span class="sheet-dot"></span></div><div class="sheet-body"><span class="code-muted">---</span><br><span class="code-key">name:</span> your-next-skill<br><span class="code-key">description:</span> A better way<br><span class="code-muted">---</span><br><br><span class="code-key"># Make good work repeatable</span><br><span class="code-muted">1. Bring your context<br>2. Follow the workflow<br>3. Make something useful</span><span class="cursor">_</span></div><div class="sheet-footer"><span>Plain text. Real possibilities.</span><span>↗</span></div></div>
-        <div class="note note-two"><span class="note-tag">02 / SHARED KNOW-HOW</span><strong>One good workflow.<br>More people moving forward.</strong><span class="spark">✳</span></div>
-      </div>
-    </section>
-    <div class="principles"><div class="wrap"><span>OPEN BY DEFAULT</span><span>↓ Free to download</span><span>⌘ Yours to adapt</span><span>↗ Built to be shared</span></div></div>
-    <section class="catalogue wrap" id="catalogue" aria-labelledby="catalogue-title">
-      <div class="section-heading"><div><p class="eyebrow">THE LIBRARY</p><h2 id="catalogue-title">A little expertise.<br>A lot of possibility.</h2></div><p>Start with the work in front of you.<br>There’s a skill for that.</p></div>
-      <div class="library-layout">
-        <aside class="sidebar"><span class="small-label">BROWSE BY BUSINESS</span><div id="categories" class="category-list" role="group" aria-label="Filter by business"></div><div class="sidebar-note"><span aria-hidden="true">✳</span><strong>Small library.<br>Open invitation.</strong><p>Bring a useful workflow and help shape what comes next.</p><a href="#contribute">Add your know-how ↗</a></div></aside>
-        <div class="library-main"><div class="search-row"><label class="search-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.7"/></svg><span class="sr-only">Search skills</span><input id="search" type="search" placeholder="Search skills, tasks, or tags…" autocomplete="off"><kbd>/</kbd></label><label class="sort-label"><span class="sr-only">Sort skills</span><select id="sort"><option value="curated">Default order</option><option value="az">Name: A–Z</option></select></label></div>
-        <div class="results-line"><p id="result-count" aria-live="polite"></p><button id="clear" class="clear-button" hidden>Clear filters</button><span class="starter-label">OPEN-SOURCE COLLECTION</span></div>
-        <div class="skill-grid" id="skills"></div><div class="empty" id="empty" hidden><h3>No skills found.</h3><p>Try a different keyword or browse all business areas.</p><button class="button dark" id="reset">Show all skills</button></div>
-        <p class="library-footnote">Each download includes a SKILL.md instruction file, metadata, and its MIT licence. Starter skills are ready to adapt; validate their outputs for your own workflow.</p></div>
-      </div>
-    </section>
-    <section class="how-section" id="how-it-works"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">FROM DISCOVERY TO DOING</p><h2>Good work starts<br>with a good starting point.</h2></div><p>A skill is a reusable set of instructions<br>for your AI assistant. Nothing mysterious.</p></div><div class="steps"><article><span class="step-number">01</span><h3>Find your fit</h3><p>Explore by business area. Open a skill to see its inputs, workflow and expected output.</p></article><article><span class="step-number">02</span><h3>Make it yours</h3><p>Download the ZIP and unzip the skill folder. Use its SKILL.md with an assistant that supports skills, or supply the instructions as context.</p></article><article><span class="step-number">03</span><h3>Pass it forward</h3><p>Improve an existing skill or contribute a new one. Reviewed contributions grow the shared library.</p></article></div></div></section>
-    <section class="contribute wrap" id="contribute"><div class="contribute-symbol" aria-hidden="true">✳</div><div><p class="eyebrow">A GUILD IS ONLY AS GOOD AS ITS PEOPLE</p><h2>Your way of working<br>could help someone else.</h2><p>We’re building an open-source library of practical AI skills. Bring a useful workflow, a clear example, and a willingness to make it better together.</p><div class="contribute-actions"><a id="github-link" class="button dark" href="contributing.html">Read the contribution guide <span aria-hidden="true">↗</span></a><a class="text-link" href="contributing.html">How contributions work ↗</a></div><div class="contribution-flow"><span>Fork</span><span aria-hidden="true">→</span><span>Add a skill</span><span aria-hidden="true">→</span><span>Pull request</span><span aria-hidden="true">→</span><span>Review & publish</span></div></div></section>
+  <main class="wrap" id="catalogue">
+    <h1 class="sr-only">AI skills for business</h1>
+    <div class="toolbar">
+      <label class="search-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.7"/></svg><span class="sr-only">Search skills</span><input id="search" type="search" placeholder="Search skills, tasks or tags" autocomplete="off"><kbd>/</kbd></label>
+      <label class="sort-label"><span class="sr-only">Sort skills</span><select id="sort"><option value="curated">By business</option><option value="az">Name: A–Z</option></select></label>
+      <p id="result-count" class="result-count" aria-live="polite">Loading skills…</p>
+      <button id="clear" class="clear-button" hidden>Clear filters</button>
+    </div>
+    <div class="skill-grid" id="skills"></div>
+    <div class="empty" id="empty" hidden><h2>No matching skills</h2><p>Try another keyword or browse all businesses.</p><button class="button dark" id="reset">Show all skills</button></div>
+    <p class="usage-note"><strong>To use a skill:</strong> Download the ZIP, unzip it and use SKILL.md with your AI assistant. <a href="contributing.html#using-a-skill">Installation guide ↗</a></p>
   </main>
-  <footer class="wrap"><a class="brand footer-brand" href="#">SkillsGuild<span class="domain">.in</span></a><p>Open skills. Shared progress.</p><div><a href="contributing.html">Contribute</a><a href="LICENSE" download>MIT licence</a><span>© 2026 SkillsGuild</span></div></footer>
+  <footer class="wrap"><span>Open-source AI skills · MIT licensed</span><div><a href="contributing.html">Add a skill</a><a href="LICENSE" download>Licence</a><a href="catalogue.json">Catalogue JSON</a></div></footer>
   <dialog id="skill-dialog" aria-labelledby="detail-title"><button class="close-dialog" aria-label="Close skill details">×</button><div id="detail"></div></dialog>
-  <noscript><div class="wrap">Enable JavaScript to search the skill catalogue. You can also read the <a href="catalogue.json">catalogue JSON</a> or the <a href="contributing.html">contribution guide</a>.</div></noscript>
+  <noscript><div class="wrap">Enable JavaScript to browse the library, or read the <a href="catalogue.json">catalogue JSON</a>.</div></noscript>
 </body>
 </html>

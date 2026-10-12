@@ -14,7 +14,7 @@ npm run build
 npm run dev
 ```
 
-Open the printed local URL. The website supports category filtering, search, sorting, instruction previews, copying and ZIP downloads.
+Open the printed local URL. The catalogue starts directly beneath the Algo Trading, HR and Content business tabs and search. Cards allocate 8% to the title, 67% to a workflow image and 25% to the description and actions. Visitors can view instructions or download the ZIP from each card.
 
 ## Contributions
 

@@ -1,1 +1,15 @@
-{"title":"Editorial brief builder","description":"Give a writer a clear angle, outline and source plan for a piece worth publishing.","version":"1.0.0","tags":["editorial","briefs","strategy"],"author":"SkillsGuild","status":"starter","license":"MIT"}
+{
+  "title": "Editorial brief builder",
+  "description": "Give a writer a clear angle, outline and source plan for a piece worth publishing.",
+  "version": "1.0.0",
+  "tags": [
+    "editorial",
+    "briefs",
+    "strategy"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "image": "preview.svg",
+  "image_alt": "An editorial brief outline with reader, angle, structure and evidence sections"
+}

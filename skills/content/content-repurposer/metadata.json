@@ -1,1 +1,15 @@
-{"title":"Content repurposer","description":"Turn one source piece into channel-ready drafts without losing its meaning or inventing claims.","version":"1.0.0","tags":["social","repurposing","writing"],"author":"SkillsGuild","status":"starter","license":"MIT"}
+{
+  "title": "Content repurposer",
+  "description": "Turn one source piece into channel-ready drafts without losing its meaning or inventing claims.",
+  "version": "1.0.0",
+  "tags": [
+    "social",
+    "repurposing",
+    "writing"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "image": "preview.svg",
+  "image_alt": "A source document branching into a social post, email draft and short thread"
+}

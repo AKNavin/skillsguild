@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
+<rect width="640" height="480" fill="#f3f6f0"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#24352a">
+<text x="28" y="35" font-size="15" letter-spacing="1.1" fill="#74816b">ALGO TRADING / WORKFLOW PREVIEW</text>
+<text x="28" y="72" font-size="27" font-weight="bold">Assumptions, then outcomes</text>
+<rect x="28" y="101" width="584" height="216" rx="4" fill="#fff" stroke="#dce4d6"/>
+<text x="48" y="132" font-size="17" fill="#75826e">Illustrative equity curve</text>
+<path d="M50 167H355M50 213H355M50 258H355" stroke="#e7ece3"/>
+<path d="M50 147V282H355" fill="none" stroke="#d7dfd1"/>
+<rect x="247" y="149" width="110" height="133" fill="#eaf2e4"/>
+<path d="M247 150V282" stroke="#a5b897" stroke-dasharray="5 5"/>
+<path d="m54 247 22-15 20 4 24-30 18 9 22-32 24 6 20-27 24 10 21-25 22 8 22-21 20 14 23-30 25 8" fill="none" stroke="#4d7752" stroke-width="3" stroke-linejoin="round"/>
+<text x="82" y="302" font-size="15" fill="#8b9584">Development</text><text x="258" y="302" font-size="15" fill="#69865a">Evaluation</text>
+<path d="M382 117V299" stroke="#e1e7da"/>
+<circle cx="411" cy="157" r="5" fill="#b28e45"/><text x="429" y="163" font-size="19">Signal timing</text>
+<text x="429" y="187" font-size="16" fill="#8a9482">What was known?</text>
+<circle cx="411" cy="223" r="5" fill="#b28e45"/><text x="429" y="229" font-size="19">Realistic costs</text>
+<text x="429" y="253" font-size="16" fill="#8a9482">Fees + slippage</text>
+<text x="28" y="357" font-size="19" font-weight="bold">The review you take away</text>
+<rect x="28" y="375" width="584" height="62" rx="4" fill="#e5edde"/>
+<text x="46" y="411" font-size="20">Finding</text><text x="206" y="411" font-size="20">Evidence</text><text x="391" y="411" font-size="20">Next check</text>
+<path d="M154 395h26m-6-5 6 5-6 5M329 395h26m-6-5 6 5-6 5" fill="none" stroke="#a4b493" stroke-width="2"/>
+<text x="28" y="465" font-size="14" fill="#8b9583">Illustration of the workflow, not a trading result</text>
+</g></svg>

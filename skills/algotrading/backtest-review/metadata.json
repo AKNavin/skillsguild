@@ -1,1 +1,15 @@
-{"title":"Backtest review","description":"Turn a backtest into a clear review of assumptions, data leakage, costs and robustness.","version":"1.0.0","tags":["backtesting","research","risk"],"author":"SkillsGuild","status":"starter","license":"MIT"}
+{
+  "title": "Backtest review",
+  "description": "Turn a backtest into a clear review of assumptions, data leakage, costs and robustness.",
+  "version": "1.0.0",
+  "tags": [
+    "backtesting",
+    "research",
+    "risk"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "image": "preview.svg",
+  "image_alt": "A workflow preview showing an illustrative curve, signal timing, costs and a findings table"
+}

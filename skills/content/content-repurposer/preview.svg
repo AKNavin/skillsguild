@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
+<rect width="640" height="480" fill="#f3f1f7"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#393047">
+<text x="28" y="35" font-size="15" letter-spacing="1.1" fill="#8c7e9a">CONTENT / WORKFLOW PREVIEW</text>
+<text x="28" y="72" font-size="27" font-weight="bold">One source. Useful new formats.</text>
+<rect x="28" y="113" width="203" height="292" rx="4" fill="#fff" stroke="#dfd8e8"/>
+<text x="46" y="151" font-size="24" font-weight="bold">Source piece</text>
+<path d="M46 175h166" stroke="#eee9f2"/>
+<text x="46" y="208" font-size="19">One clear idea</text><text x="46" y="247" font-size="19">Supporting facts</text><text x="46" y="286" font-size="19">Useful examples</text><text x="46" y="325" font-size="19">Original caveats</text>
+<rect x="46" y="355" width="99" height="7" rx="3" fill="#ddd6e7"/><rect x="46" y="371" width="157" height="7" rx="3" fill="#e9e4ef"/>
+<path d="M231 259h48M279 155v208M279 155h54m-8-5 8 5-8 5M279 259h54m-8-5 8 5-8 5M279 363h54m-8-5 8 5-8 5" fill="none" stroke="#b6a4cb" stroke-width="2"/>
+<rect x="343" y="113" width="269" height="84" rx="4" fill="#fff" stroke="#dfd8e8"/>
+<rect x="343" y="217" width="269" height="84" rx="4" fill="#fff" stroke="#dfd8e8"/>
+<rect x="343" y="321" width="269" height="84" rx="4" fill="#fff" stroke="#dfd8e8"/>
+<text x="362" y="149" font-size="23" font-weight="bold">Social post</text><text x="362" y="176" font-size="17" fill="#9b8caa">Hook → substance → next step</text>
+<text x="362" y="253" font-size="23" font-weight="bold">Email draft</text><text x="362" y="280" font-size="17" fill="#9b8caa">Context → insight → action</text>
+<text x="362" y="357" font-size="23" font-weight="bold">Short thread</text><text x="362" y="384" font-size="17" fill="#9b8caa">One idea → a clear sequence</text>
+<text x="28" y="452" font-size="19" fill="#8c7e9a">Source-backed drafts. No invented claims.</text>
+</g></svg>

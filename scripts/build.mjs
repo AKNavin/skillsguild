@@ -42,7 +42,16 @@ for(const category of (await readdir(path.join(root,'skills'))).sort()){
     if(!front||!new RegExp(`^name: ${name}$`,'m').test(front[1])||!/^description: .+/m.test(front[1]))throw new Error(`Invalid SKILL.md frontmatter: ${name}`);
     if(catalogue.some(s=>s.id===name))throw new Error(`Duplicate skill name: ${name}`);
     const download=`downloads/${name}.zip`;
-    catalogue.push({...metadata,id:name,category,download,instructions});
+    let image='preview-default.svg';
+    if(metadata.image){
+      if(typeof metadata.image!=='string'||!/^preview\.(svg|png|jpg|webp)$/.test(metadata.image))throw new Error(`Image must be preview.svg, preview.png, preview.jpg or preview.webp: ${name}`);
+      const preview=files.find(f=>f.name===metadata.image);if(!preview)throw new Error(`Preview image missing: ${name}`);
+      const digest=createHash('sha256').update(preview.data).digest('hex').slice(0,12);
+      image=`previews/${name}.${digest}${path.extname(metadata.image)}`;
+      if(!process.argv.includes('--check')){await mkdir(path.join(dist,'previews'),{recursive:true});await writeFile(path.join(dist,image),preview.data);}
+    }
+    if(metadata.image_alt!=null&&typeof metadata.image_alt!=='string')throw new Error(`Image alt must be text: ${name}`);
+    catalogue.push({...metadata,id:name,category,download,instructions,image});
     if(!process.argv.includes('--check')){await mkdir(path.join(dist,'downloads'),{recursive:true});await writeFile(path.join(dist,download),zip([...files,{name:'LICENSE',data:licence}].map(f=>({...f,name:`${name}/${f.name}`}))));}
   }
 }

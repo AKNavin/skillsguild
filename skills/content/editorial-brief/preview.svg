@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
+<rect width="640" height="480" fill="#f4f1f8"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#393047">
+<text x="28" y="35" font-size="15" letter-spacing="1.1" fill="#8c7e9a">CONTENT / WORKFLOW PREVIEW</text>
+<text x="28" y="72" font-size="27" font-weight="bold">Before the first draft</text>
+<rect x="28" y="105" width="584" height="70" rx="4" fill="#fff" stroke="#dfd8e8"/><rect x="28" y="188" width="584" height="70" rx="4" fill="#fff" stroke="#dfd8e8"/><rect x="28" y="271" width="584" height="70" rx="4" fill="#fff" stroke="#dfd8e8"/><rect x="28" y="354" width="584" height="70" rx="4" fill="#fff" stroke="#dfd8e8"/>
+<circle cx="64" cy="140" r="19" fill="#e8e1f1"/><text x="58" y="147" font-size="21" fill="#8a70a2">1</text><text x="103" y="133" font-size="22" font-weight="bold">Reader &amp; objective</text><text x="103" y="159" font-size="18" fill="#9b8caa">Who is this for? What should they take away?</text>
+<circle cx="64" cy="223" r="19" fill="#e8e1f1"/><text x="58" y="230" font-size="21" fill="#8a70a2">2</text><text x="103" y="216" font-size="22" font-weight="bold">Angle &amp; scope</text><text x="103" y="242" font-size="18" fill="#9b8caa">One central argument with clear boundaries</text>
+<circle cx="64" cy="306" r="19" fill="#e8e1f1"/><text x="58" y="313" font-size="21" fill="#8a70a2">3</text><text x="103" y="299" font-size="22" font-weight="bold">Outline</text><text x="103" y="325" font-size="18" fill="#9b8caa">Give every section a distinct job</text>
+<circle cx="64" cy="389" r="19" fill="#e8e1f1"/><text x="58" y="396" font-size="21" fill="#8a70a2">4</text><text x="103" y="382" font-size="22" font-weight="bold">Evidence &amp; acceptance criteria</text><text x="103" y="408" font-size="18" fill="#9b8caa">Match each claim to a source and a standard</text>
+<text x="28" y="459" font-size="19" fill="#8c7e9a">A writer-ready brief, before writing begins</text>
+</g></svg>

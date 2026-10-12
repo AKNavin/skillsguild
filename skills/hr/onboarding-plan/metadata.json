@@ -1,1 +1,15 @@
-{"title":"30–60–90 day onboarding","description":"Give new teammates a practical plan with milestones, owners and feedback checkpoints.","version":"1.0.0","tags":["onboarding","people ops","planning"],"author":"SkillsGuild","status":"starter","license":"MIT"}
+{
+  "title": "30–60–90 day onboarding",
+  "description": "Give new teammates a practical plan with milestones, owners and feedback checkpoints.",
+  "version": "1.0.0",
+  "tags": [
+    "onboarding",
+    "people ops",
+    "planning"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "image": "preview.svg",
+  "image_alt": "A 30–60–90 day plan showing learning, delivery and ownership milestones"
+}

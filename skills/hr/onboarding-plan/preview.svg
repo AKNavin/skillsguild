@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
+<rect width="640" height="480" fill="#f8f4ed"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#3c3225">
+<text x="28" y="35" font-size="15" letter-spacing="1.1" fill="#97866e">HR / WORKFLOW PREVIEW</text>
+<text x="28" y="72" font-size="27" font-weight="bold">A clear first 90 days</text>
+<rect x="28" y="108" width="184" height="243" rx="4" fill="#f0e4d0"/><rect x="228" y="108" width="184" height="243" rx="4" fill="#fff" stroke="#e4d9c8"/><rect x="428" y="108" width="184" height="243" rx="4" fill="#e5ecd9"/>
+<text x="47" y="138" font-size="15" fill="#9b8867">DAYS 1–30</text><text x="47" y="197" font-size="43" font-weight="bold">Learn</text>
+<text x="47" y="242" font-size="19">Learn the role</text><text x="47" y="276" font-size="19">Meet the team</text><text x="47" y="310" font-size="19">Ship a first task</text>
+<text x="247" y="138" font-size="15" fill="#9b8867">DAYS 31–60</text><text x="247" y="197" font-size="43" font-weight="bold">Deliver</text>
+<text x="247" y="242" font-size="19">A bounded project</text><text x="247" y="276" font-size="19">Useful feedback</text><text x="247" y="310" font-size="19">Visible progress</text>
+<text x="447" y="138" font-size="15" fill="#71845c">DAYS 61–90</text><text x="447" y="197" font-size="43" font-weight="bold">Own</text>
+<text x="447" y="242" font-size="19">Own a workflow</text><text x="447" y="276" font-size="19">Measure outcomes</text><text x="447" y="310" font-size="19">Agree next steps</text>
+<text x="28" y="390" font-size="19" font-weight="bold">Every milestone has a clear finish line</text>
+<path d="M28 406h584" stroke="#e4d9c8"/>
+<text x="28" y="437" font-size="21">Owner</text><text x="229" y="437" font-size="21">Outcome</text><text x="429" y="437" font-size="21">Evidence</text>
+<text x="28" y="469" font-size="14" fill="#a1957e">An adaptable plan, shaped around the actual role</text>
+</g></svg>

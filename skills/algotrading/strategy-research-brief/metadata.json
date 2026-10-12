@@ -1,1 +1,15 @@
-{"title":"Strategy research brief","description":"Translate a trading idea into a testable hypothesis and a reproducible research plan.","version":"1.0.0","tags":["hypothesis","research","experiments"],"author":"SkillsGuild","status":"starter","license":"MIT"}
+{
+  "title": "Strategy research brief",
+  "description": "Translate a trading idea into a testable hypothesis and a reproducible research plan.",
+  "version": "1.0.0",
+  "tags": [
+    "hypothesis",
+    "research",
+    "experiments"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "image": "preview.svg",
+  "image_alt": "A workflow diagram connecting a hypothesis to rules, data and evaluation"
+}
