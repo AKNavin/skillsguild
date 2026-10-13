@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="426" viewBox="0 0 640 426" role="img" aria-label="A simple historical price ledger beside an empty fee tray and plain measuring pencil">
+<defs>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".42" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".065"/></feComponentTransfer></filter>
+ <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5 0 10Z" fill="#6e98c2"/></marker>
+</defs>
+<rect width="640" height="426" fill="#e5eee5"/>
+<ellipse cx="320" cy="352" rx="226" ry="18" fill="#737c69" opacity=".11"/>
+<g stroke-linejoin="round" stroke-linecap="round"><rect x="165" y="103" width="261" height="239" rx="6" fill="#6e98c2" stroke="#55564e" stroke-width="2.8"/><rect x="159" y="96" width="261" height="239" rx="6" fill="#fff6df" stroke="#55564e" stroke-width="2.8"/><path d="M186 103L186 328" fill="none" stroke="#55564e" stroke-width="3" /><path d="M152 120L172 120" fill="none" stroke="#55564e" stroke-width="3" /><path d="M152 148L172 148" fill="none" stroke="#55564e" stroke-width="3" /><path d="M152 176L172 176" fill="none" stroke="#55564e" stroke-width="3" /><path d="M152 204L172 204" fill="none" stroke="#55564e" stroke-width="3" /><path d="M152 232L172 232" fill="none" stroke="#55564e" stroke-width="3" /><path d="M152 260L172 260" fill="none" stroke="#55564e" stroke-width="3" /><path d="M152 288L172 288" fill="none" stroke="#55564e" stroke-width="3" /><path d="M207 276L247 228 283 250 323 190 378 160" fill="none" stroke="#6e98c2" stroke-width="7" /><path d="M441 314L558 315 540 348 457 348Z" fill="#fff6df" stroke="#55564e" stroke-width="3" /><path d="M453 104L472 108 436 289 420 306 416 284Z" fill="#d68170" stroke="#55564e" stroke-width="3" /><path d="M420 306L416 284 432 288Z" fill="#55564e" stroke="#55564e" stroke-width="3" /></g>
+<rect width="640" height="426" filter="url(#grain)" opacity=".6"/>
+</svg>

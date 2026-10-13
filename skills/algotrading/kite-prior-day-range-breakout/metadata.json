@@ -1,0 +1,32 @@
+{
+  "title": "Prior-day high and low breakout",
+  "description": "Detect intraday crossings of the previous completed trading session's high and low.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "intraday",
+    "price-levels"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "A previous calendar sheet projecting its high and low bounds onto a new price chart",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

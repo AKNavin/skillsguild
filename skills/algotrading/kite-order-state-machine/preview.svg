@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="Three connected mechanical state wheels with one completed check">
+<rect width="720" height="480" fill="#e7ecf3"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="239" cy="210" r="57" fill="#759fca"/><circle cx="476" cy="209" r="57" fill="#cf7867"/><circle cx="357" cy="330" r="57" fill="#8bac94"/><circle cx="239" cy="210" r="19" fill="#fffaf0"/><circle cx="476" cy="209" r="19" fill="#fffaf0"/><path d="M337 333l12 13l27 -34" fill="none" stroke="#8bac94" stroke-width="8"/><path d="M296 210h121M447 258l-48 42M313 295l-44 -42" fill="none" stroke-width="14" stroke="#d6ae60"/>
+</g>
+</svg>
+

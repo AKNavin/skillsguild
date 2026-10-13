@@ -1,0 +1,36 @@
+{
+  "title": "Bollinger squeeze breakout",
+  "description": "Identify a defined volatility squeeze followed by a close beyond a frozen prior Bollinger band.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "volatility",
+    "bollinger"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "A narrowing band around a price path that releases into a sharp upward breakout",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "Zerodha Varsity: indicators part 2",
+      "url": "https://zerodha.com/varsity/chapter/indicators-part-2/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

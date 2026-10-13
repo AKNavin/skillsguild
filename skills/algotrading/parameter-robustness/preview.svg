@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="426" viewBox="0 0 640 426" role="img" aria-label="A stable bridge supported by neighbouring parameter blocks under a magnifying glass">
+<defs>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".42" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".065"/></feComponentTransfer></filter>
+ <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5 0 10Z" fill="#6e98c2"/></marker>
+</defs>
+<rect width="640" height="426" fill="#e9eee2"/>
+<ellipse cx="320" cy="352" rx="226" ry="18" fill="#737c69" opacity=".11"/>
+<g stroke-linejoin="round" stroke-linecap="round"><path d="M109 165Q319 107 523 167L511 202Q316 164 121 207Z" fill="#6e98c2" stroke="#55564e" stroke-width="3" /><path d="M148 199L200 190 197 337 147 344Z" fill="#8ca88a" stroke="#55564e" stroke-width="3" /><path d="M244 186L296 177 293 337 243 344Z" fill="#ddba67" stroke="#55564e" stroke-width="3" /><path d="M344 187L396 178 393 337 343 344Z" fill="#ddba67" stroke="#55564e" stroke-width="3" /><path d="M442 200L494 191 491 337 441 344Z" fill="#8ca88a" stroke="#55564e" stroke-width="3" /><path d="M374.2 237.2l63 66" fill="none" stroke="#55564e" stroke-width="22" /><path d="M374.2 237.2l63 66" fill="none" stroke="#d68170" stroke-width="15" /><circle cx="328" cy="191" r="66" fill="#d5edf0" fill-opacity=".25" stroke="#55564e" stroke-width="10"/><circle cx="328" cy="191" r="66" fill="none" stroke="#ddba67" stroke-width="6"/></g>
+<rect width="640" height="426" filter="url(#grain)" opacity=".6"/>
+</svg>

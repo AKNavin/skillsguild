@@ -1,0 +1,37 @@
+{
+  "title": "Monitor option hedges and rolls",
+  "description": "Detect hedge deterioration and prepare a costed roll plan from reconciled positions.",
+  "version": "1.0.0",
+  "tags": [
+    "kite",
+    "options",
+    "hedging",
+    "risk"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "options",
+  "requires": [
+    "broker positions and open orders",
+    "fresh option quotes and Greeks",
+    "risk thresholds"
+  ],
+  "sources": [
+    {
+      "title": "Kite margin and virtual contract-note APIs",
+      "url": "https://kite.trade/docs/connect/v3/margins/"
+    },
+    {
+      "title": "Kite instruments and quotes",
+      "url": "https://kite.trade/docs/connect/v3/market-quotes/"
+    },
+    {
+      "title": "NSE individual-security derivatives specifications",
+      "url": "https://www.nseindia.com/static/products-services/equity-derivatives-individual-securities"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A protective shield around paired option positions with a curved roll arrow"
+}

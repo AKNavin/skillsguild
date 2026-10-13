@@ -17,8 +17,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -B scripts/test_skills.py
       - run: npm run validate
       - run: npm run build
+      - run: python -B scripts/check_packages.py
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'
         with:

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A single envelope moving into a tray with a confirming magnifier">
+<rect width="720" height="480" fill="#e7ecf3"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="203" y="231" width="305" height="105" rx="16" fill="#759fca"/><path d="M205 250l54 -44h196l54 44" fill="#c8d9e3" /><rect x="245" y="127" width="205" height="130" rx="8" fill="#fffaf0"/><path d="M247 129l102 84 98 -84" fill="none" /><circle cx="470" cy="303" r="62" fill="#fffaf0"/><path d="M440 306l12 13l27 -34" fill="none" stroke="#8bac94" stroke-width="8"/><path d="M514 346l53 53" fill="none" stroke-width="18" stroke="#d6ae60"/>
+</g>
+</svg>
+

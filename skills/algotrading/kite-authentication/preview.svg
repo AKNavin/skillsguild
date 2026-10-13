@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A brass key beside a blue padlock with its shackle open">
+<rect width="720" height="480" fill="#f4edd9"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M278 218v-74q0 -62 62 -62t62 62" fill="#fffaf0" stroke-width="15"/><rect x="247" y="208" width="211" height="154" rx="26" fill="#759fca"/><circle cx="351" cy="270" r="17" fill="#36484d"/><path d="M341 280l-7 36h33l-7 -36" fill="#36484d" /><circle cx="506" cy="305" r="32" fill="#d6ae60"/><circle cx="506" cy="305" r="10" fill="#fffaf0"/><path d="M479 318l-81 62 -16 -20 80 -61m-55 48 12 17m-30 -5 13 17" fill="#d6ae60" />
+</g>
+</svg>
+

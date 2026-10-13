@@ -1,0 +1,37 @@
+{
+  "title": "Algo Health & Alert Monitor",
+  "description": "Detect stale feeds, ambiguous orders and risk failures with deduplicated incident reports.",
+  "version": "1.0.0",
+  "tags": [
+    "kite-connect",
+    "monitoring",
+    "alerts",
+    "operations"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "setup",
+  "requires": [
+    "Feed, order and risk health records",
+    "Thresholds and session calendar",
+    "Local notification sink or authorized channel"
+  ],
+  "sources": [
+    {
+      "title": "Kite WebSocket protocol",
+      "url": "https://kite.trade/docs/connect/v3/websocket/"
+    },
+    {
+      "title": "Kite errors and rate limits",
+      "url": "https://kite.trade/docs/connect/v3/exceptions/"
+    },
+    {
+      "title": "Kite orders",
+      "url": "https://kite.trade/docs/connect/v3/orders/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A desktop pulse monitor with a small warning bell and healthy signal"
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Instrument & Contract Resolver",
+  "description": "Resolve stock, future and option symbols using dated Kite instrument snapshots.",
+  "version": "1.0.0",
+  "tags": [
+    "kite-connect",
+    "instruments",
+    "options",
+    "expiry"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "data",
+  "requires": [
+    "Authorized Kite connection or instrument CSV",
+    "Underlying, exchange and contract filters",
+    "Snapshot date"
+  ],
+  "sources": [
+    {
+      "title": "Kite instruments and quotes",
+      "url": "https://kite.trade/docs/connect/v3/market-quotes/"
+    },
+    {
+      "title": "Kite historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A filing box of distinct contract cards being selected with a magnifier"
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Nearest call and put OI walls",
+  "description": "Rank F&O stocks by distance to same-expiry call and put open-interest concentrations.",
+  "version": "1.0.0",
+  "tags": [
+    "kite",
+    "options",
+    "open-interest",
+    "screener"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "options",
+  "requires": [
+    "point-in-time option chains",
+    "spot prices",
+    "expiry selection rule"
+  ],
+  "sources": [
+    {
+      "title": "Kite instruments and quotes",
+      "url": "https://kite.trade/docs/connect/v3/market-quotes/"
+    },
+    {
+      "title": "Kite staff clarification: OI is units",
+      "url": "https://kite.trade/forum/discussion/9684/open-interest-difference"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A price path and golden spot marker between tall blue and coral open-interest barriers"
+}

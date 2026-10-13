@@ -1,0 +1,37 @@
+{
+  "title": "Backtest with charges",
+  "description": "Calculate net backtest equity using effective-dated costs and explicit execution friction.",
+  "version": "1.0.0",
+  "tags": [
+    "backtesting",
+    "costs",
+    "net",
+    "fees"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "backtesting",
+  "requires": [
+    "fills or completed bars and targets",
+    "effective-dated fee configuration",
+    "execution assumptions"
+  ],
+  "sources": [
+    {
+      "title": "Current Zerodha charges",
+      "url": "https://zerodha.com/charges/"
+    },
+    {
+      "title": "Kite margin and virtual contract-note APIs",
+      "url": "https://kite.trade/docs/connect/v3/margins/"
+    },
+    {
+      "title": "Kite historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A price ledger with a small fee tray collecting coins deducted from a larger stack"
+}

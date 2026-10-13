@@ -1,0 +1,32 @@
+{
+  "title": "Compose a stock screener",
+  "description": "Combine transparent stock-signal predicates, filters and rankings into one reproducible screener.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "screener",
+    "composition"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "Three separate price, volume and trend cards feeding a brass sieve that keeps matching blue markers",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

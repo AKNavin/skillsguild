@@ -1,0 +1,36 @@
+{
+  "title": "EMA trend and crossover",
+  "description": "Separate moving-average trend state from fresh crossovers on completed stock candles.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "ema",
+    "trend"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "Two smooth moving-average ribbons crossing with a small brass magnifier at their intersection",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "Zerodha Varsity: moving averages",
+      "url": "https://zerodha.com/varsity/chapter/moving-averages/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

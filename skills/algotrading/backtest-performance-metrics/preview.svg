@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="426" viewBox="0 0 640 426" role="img" aria-label="Two equity paths on paper with a magnified drawdown valley and measuring ruler">
+<defs>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".42" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".065"/></feComponentTransfer></filter>
+ <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5 0 10Z" fill="#6e98c2"/></marker>
+</defs>
+<rect width="640" height="426" fill="#f2e7dd"/>
+<ellipse cx="320" cy="352" rx="226" ry="18" fill="#737c69" opacity=".11"/>
+<g stroke-linejoin="round" stroke-linecap="round"><path d="M141 99L489 91L501 339L125 345Z" fill="#fff6df" stroke="#55564e" stroke-width="3" /><path d="M168 120L168 310" fill="none" stroke="#55564e" stroke-width="3" /><path d="M168 310L474 310" fill="none" stroke="#55564e" stroke-width="3" /><path d="M180 273L231 214 276 253 319 281 362 205 402 213 471 148" fill="none" stroke="#6e98c2" stroke-width="7" /><path d="M180 274L231 252 276 258 319 235 362 223 402 210 471 194" fill="none" stroke="#8ca88a" stroke-width="4" /><path d="M294 207L340 207M317 207L317 281M294 281L340 281" fill="none" stroke="#d68170" stroke-width="3" /><rect x="512" y="139" width="21" height="178" rx="2" fill="#ddba67" stroke="#55564e" stroke-width="2.8"/><path d="M513 158L526 158" fill="none" stroke="#55564e" stroke-width="3" /><path d="M513 178L526 178" fill="none" stroke="#55564e" stroke-width="3" /><path d="M513 198L526 198" fill="none" stroke="#55564e" stroke-width="3" /><path d="M513 218L526 218" fill="none" stroke="#55564e" stroke-width="3" /><path d="M513 238L526 238" fill="none" stroke="#55564e" stroke-width="3" /><path d="M513 258L526 258" fill="none" stroke="#55564e" stroke-width="3" /><path d="M513 278L526 278" fill="none" stroke="#55564e" stroke-width="3" /></g>
+<rect width="640" height="426" filter="url(#grain)" opacity=".6"/>
+</svg>

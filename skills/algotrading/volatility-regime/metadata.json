@@ -1,0 +1,32 @@
+{
+  "title": "Classify volatility regimes",
+  "description": "Compare realized volatility and India VIX with trailing history using only completed observations.",
+  "version": "1.0.0",
+  "tags": [
+    "regime",
+    "volatility",
+    "india-vix"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "regimes",
+  "requires": [
+    "completed daily closes",
+    "optional timestamped India VIX",
+    "lookback configuration"
+  ],
+  "sources": [
+    {
+      "title": "NSE India VIX methodology overview",
+      "url": "https://www.nseindia.com/static/products-services/indices-indiavix-index"
+    },
+    {
+      "title": "Kite historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A calm sun beside a storm cloud above small and large market waves"
+}

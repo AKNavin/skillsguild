@@ -1,0 +1,37 @@
+{
+  "title": "GTT Trigger Lifecycle",
+  "description": "Create and reconcile single or OCO GTT plans without confusing triggers with fills.",
+  "version": "1.0.0",
+  "tags": [
+    "kite-connect",
+    "gtt",
+    "oco",
+    "orders"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "execution",
+  "requires": [
+    "Resolved eligible instrument",
+    "Trigger and limit prices with quantity",
+    "Authorized GTT scope or dry-run mode"
+  ],
+  "sources": [
+    {
+      "title": "Kite GTT API",
+      "url": "https://kite.trade/docs/connect/v3/gtt/"
+    },
+    {
+      "title": "Kite orders",
+      "url": "https://kite.trade/docs/connect/v3/orders/"
+    },
+    {
+      "title": "Kite portfolio APIs",
+      "url": "https://kite.trade/docs/connect/v3/portfolio/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A dormant trigger mechanism linking a bell to two alternative flags"
+}

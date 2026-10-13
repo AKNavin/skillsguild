@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A camera framing small market chart and depth objects">
+<rect width="720" height="480" fill="#e4eee5"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="196" y="178" width="332" height="172" rx="25" fill="#759fca"/><rect x="242" y="155" width="85" height="30" rx="7" fill="#d6ae60"/><circle cx="365" cy="262" r="76" fill="#36484d"/><circle cx="365" cy="262" r="62" fill="#c8d9e3"/><path d="M303 296l25 -20 25 9 30 -42 28 15 30 -45" fill="none" stroke="#759fca" stroke-width="7"/><circle cx="490" cy="213" r="11" fill="#cf7867"/><path d="M197 210l-23 -17v-35h75" fill="#fffaf0" /><path d="M432 140h96v50M432 366h96v-47" fill="none" stroke="#8bac94" stroke-width="7"/>
+</g>
+</svg>
+

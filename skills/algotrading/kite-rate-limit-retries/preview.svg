@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="An hourglass beside a gated queue of small parcels">
+<rect width="720" height="480" fill="#f4edd9"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M256 106h179v26q-15 75 -63 92 48 25 63 99v26H256v-26q16 -76 62 -99 -47 -25 -62 -92z" fill="#fffaf0" /><rect x="241" y="92" width="209" height="22" rx="7" fill="#759fca"/><rect x="241" y="344" width="209" height="23" rx="7" fill="#759fca"/><path d="M281 145h129q-16 47 -65 71 -50 -23 -64 -71z" fill="#d6ae60" /><path d="M278 328l67 -70 66 70z" fill="#d6ae60" /><rect x="496" y="260" width="43" height="45" rx="6" fill="#cf7867"/><rect x="551" y="260" width="43" height="45" rx="6" fill="#cf7867"/><path d="M483 225v107M483 236h80" fill="none" stroke="#8bac94" stroke-width="11"/>
+</g>
+</svg>
+

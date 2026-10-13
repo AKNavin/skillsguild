@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="426" viewBox="0 0 640 426" role="img" aria-label="A protective shield around paired option positions with a curved roll arrow">
+<defs>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".42" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".065"/></feComponentTransfer></filter>
+ <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5 0 10Z" fill="#6e98c2"/></marker>
+</defs>
+<rect width="640" height="426" fill="#e8e8f0"/>
+<ellipse cx="320" cy="352" rx="226" ry="18" fill="#737c69" opacity=".11"/>
+<g stroke-linejoin="round" stroke-linecap="round"><path d="M215 130L322 88 430 130 418 247Q407 304 321 343Q234 302 222 247Z" fill="#6e98c2" stroke="#55564e" stroke-width="3" /><path d="M237 145L322 112 405 145 395 241Q385 282 322 316Q258 282 246 241Z" fill="#fff6df" stroke="#55564e" stroke-width="3" /><rect x="270" y="190" width="35" height="82" rx="6" fill="#8ca88a" stroke="#55564e" stroke-width="2.8"/><rect x="334" y="164" width="35" height="108" rx="6" fill="#d68170" stroke="#55564e" stroke-width="2.8"/><path d="M177 274C98 142 185 59 293 76" fill="none" stroke="#ddba67" stroke-width="8" marker-end="url(#arrow)"/><path d="M467 149C540 282 458 358 350 352" fill="none" stroke="#ddba67" stroke-width="8" marker-end="url(#arrow)"/></g>
+<rect width="640" height="426" filter="url(#grain)" opacity=".6"/>
+</svg>

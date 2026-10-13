@@ -1,0 +1,32 @@
+{
+  "title": "Inside-bar breakout",
+  "description": "Detect a closed inside bar and the following close breaking a clearly selected range.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "price-action",
+    "breakout"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "A small inside candle nested within a large mother candle's range, followed by a breakout candle",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

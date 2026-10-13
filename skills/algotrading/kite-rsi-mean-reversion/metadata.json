@@ -1,0 +1,36 @@
+{
+  "title": "RSI recovery and rejection",
+  "description": "Detect RSI exits from specified extremes with explicit Wilder smoothing and optional regime filters.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "rsi",
+    "mean-reversion"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "An oscillator rising out of a lower shaded zone beneath a simple gauge without numerals",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "Zerodha Varsity: indicators part 1",
+      "url": "https://zerodha.com/varsity/chapter/indicators-part-1/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

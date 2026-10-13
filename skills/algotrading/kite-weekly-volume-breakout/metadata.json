@@ -1,0 +1,36 @@
+{
+  "title": "Weekly volume breakout",
+  "description": "Find completed weeks with unusually large traded volume using comparable prior weeks.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "volume",
+    "weekly"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "A stack of calendar pages supporting grouped volume columns with one much taller completed group",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "Zerodha Varsity: volumes",
+      "url": "https://zerodha.com/varsity/chapter/volumes/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

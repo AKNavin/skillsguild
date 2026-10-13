@@ -1,0 +1,40 @@
+{
+  "title": "VWAP reclaim and rejection",
+  "description": "Detect close-confirmed crossings of session VWAP with an explicit exact-versus-proxy method.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "intraday",
+    "vwap"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "A blue price path crossing above and then below a gently rising amber VWAP path",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "Kite Connect quotes and instruments",
+      "url": "https://kite.trade/docs/connect/v3/market-quotes/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    },
+    {
+      "title": "Zerodha Varsity: ATR and VWAP",
+      "url": "https://zerodha.com/varsity/chapter/supplementary-notes-1/"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

@@ -11,5 +11,6 @@
   "status": "starter",
   "license": "MIT",
   "image": "preview.webp",
-  "image_alt": "A trading-strategy blueprint with candlestick symbols, gears, a drafting pencil and compass"
+  "image_alt": "A trading-strategy blueprint with candlestick symbols, gears, a drafting pencil and compass",
+  "topic": "signals"
 }

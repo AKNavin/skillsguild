@@ -1,0 +1,33 @@
+{
+  "title": "Partial Fills, Modify & Cancel",
+  "description": "Manage remaining order quantity through fill races and confirmed cancellation.",
+  "version": "1.0.0",
+  "tags": [
+    "kite-connect",
+    "orders",
+    "partial-fills",
+    "execution"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "execution",
+  "requires": [
+    "Current order history and trades",
+    "User-defined repricing/time-out policy",
+    "Authorized execution scope or replay fixtures"
+  ],
+  "sources": [
+    {
+      "title": "Kite orders",
+      "url": "https://kite.trade/docs/connect/v3/orders/"
+    },
+    {
+      "title": "Kite errors and rate limits",
+      "url": "https://kite.trade/docs/connect/v3/exceptions/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A partly filled jar beside remaining blocks and a stop lever"
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Opening gap scanner",
+  "description": "Measure session opening gaps versus prior close and prior range without using later-day information.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "gap",
+    "intraday"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "A visible upward gap between yesterday's candles and today's opening candle, joined by an amber arc",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

@@ -1,0 +1,33 @@
+{
+  "title": "Pre-trade Margin Check",
+  "description": "Compare current broker margin estimates with usable funds before accepting an order intent.",
+  "version": "1.0.0",
+  "tags": [
+    "kite-connect",
+    "margins",
+    "funds",
+    "pre-trade"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "risk",
+  "requires": [
+    "Authorized Kite connection or margin fixtures",
+    "Validated proposed order",
+    "Funds reserve and quote freshness limits"
+  ],
+  "sources": [
+    {
+      "title": "Kite margin calculations",
+      "url": "https://kite.trade/docs/connect/v3/margins/"
+    },
+    {
+      "title": "Kite login and user APIs",
+      "url": "https://kite.trade/docs/connect/v3/user/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A wallet and coin stacks measured against a checking clipboard"
+}

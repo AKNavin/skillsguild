@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "demo": true,
+  "notice": "Synthetic test rates, NOT a Zerodha tariff. Replace with dated verified rates for research.",
+  "rules": [
+    {
+      "id": "synthetic-before-change",
+      "effective_from": "2025-01-01",
+      "effective_to": "2025-01-06",
+      "exchange": "NSE",
+      "product": "CNC",
+      "components": [
+        {"name":"brokerage","basis":"turnover","rate":"0.001","cap":"2","sides":["BUY","SELL"]},
+        {"name":"sell_tax","basis":"turnover","rate":"0.002","sides":["SELL"]},
+        {"name":"buy_stamp","basis":"turnover","rate":"0.0001","sides":["BUY"]},
+        {"name":"fee_tax","basis":"components","components":["brokerage"],"rate":"0.10","sides":["BUY","SELL"]}
+      ]
+    },
+    {
+      "id": "synthetic-after-change",
+      "effective_from": "2025-01-06",
+      "effective_to": "2026-01-01",
+      "exchange": "NSE",
+      "product": "CNC",
+      "components": [
+        {"name":"brokerage","basis":"turnover","rate":"0.001","cap":"2","sides":["BUY","SELL"]},
+        {"name":"sell_tax","basis":"turnover","rate":"0.003","sides":["SELL"]},
+        {"name":"buy_stamp","basis":"turnover","rate":"0.0001","sides":["BUY"]},
+        {"name":"fee_tax","basis":"components","components":["brokerage"],"rate":"0.10","sides":["BUY","SELL"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A stack of dated-looking blank archive sheets beneath a downward arrow">
+<rect width="720" height="480" fill="#e4eee5"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="236" y="152" width="231" height="199" rx="8" fill="#fffaf0"/><path d="M432 152v35h35" fill="#c8d9e3" /><rect x="249" y="139" width="231" height="199" rx="8" fill="#fffaf0"/><path d="M445 139v35h35" fill="#c8d9e3" /><rect x="262" y="126" width="231" height="199" rx="8" fill="#fffaf0"/><path d="M458 126v35h35" fill="#c8d9e3" /><path d="M289 275l25 -20 25 9 30 -42 28 15 30 -45" fill="none" stroke="#759fca" stroke-width="7"/><path d="M366 65h42v71h29l-50 58 -49 -58h28z" fill="#759fca" /><rect x="205" y="347" width="319" height="28" rx="7" fill="#d6ae60"/>
+</g>
+</svg>
+

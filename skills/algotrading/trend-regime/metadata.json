@@ -1,0 +1,32 @@
+{
+  "title": "Classify the trend regime",
+  "description": "Label completed bars as uptrend, downtrend or range using a reproducible moving-average rule.",
+  "version": "1.0.0",
+  "tags": [
+    "regime",
+    "trend",
+    "moving-average"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "regimes",
+  "requires": [
+    "completed adjusted OHLC",
+    "bar frequency and market calendar",
+    "threshold configuration"
+  ],
+  "sources": [
+    {
+      "title": "Zerodha moving averages",
+      "url": "https://zerodha.com/varsity/chapter/moving-averages/"
+    },
+    {
+      "title": "Kite historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "Three rolling hills showing rising, sideways and falling market directions"
+}

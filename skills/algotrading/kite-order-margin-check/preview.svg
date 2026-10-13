@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A wallet and coin stacks measured against a checking clipboard">
+<rect width="720" height="480" fill="#f1e4df"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="204" y="246" width="208" height="108" rx="16" fill="#759fca"/><rect x="339" y="273" width="89" height="40" rx="9" fill="#d6ae60"/><circle cx="359" cy="292" r="6" fill="#36484d"/><rect x="418" y="123" width="133" height="214" rx="8" fill="#fffaf0"/><path d="M516 123v35h35" fill="#c8d9e3" /><path d="M450 194l12 13l27 -34" fill="none" stroke="#8bac94" stroke-width="8"/><ellipse cx="257" cy="204" rx="31" ry="12" fill="#d6ae60"/><path d="M226 204v12q31 22 62 0v-12" fill="#d6ae60" /><ellipse cx="257" cy="190" rx="31" ry="12" fill="#d6ae60"/><path d="M226 190v12q31 22 62 0v-12" fill="#d6ae60" /><ellipse cx="257" cy="176" rx="31" ry="12" fill="#d6ae60"/><path d="M226 176v12q31 22 62 0v-12" fill="#d6ae60" /><ellipse cx="330" cy="218" rx="31" ry="12" fill="#d6ae60"/><path d="M299 218v12q31 22 62 0v-12" fill="#d6ae60" /><ellipse cx="330" cy="204" rx="31" ry="12" fill="#d6ae60"/><path d="M299 204v12q31 22 62 0v-12" fill="#d6ae60" />
+</g>
+</svg>
+

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A desktop pulse monitor with a small warning bell and healthy signal">
+<rect width="720" height="480" fill="#f4edd9"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="197" y="128" width="322" height="207" rx="20" fill="#759fca"/><rect x="216" y="149" width="284" height="155" rx="10" fill="#fffaf0"/><path d="M235 233h38l19 -36 27 76 27 -101 29 61h102" fill="none" stroke="#8bac94" stroke-width="8"/><path d="M357 336v39M294 384h128" fill="none" stroke-width="15" stroke="#759fca"/><path d="M500 337h75l-12 -20v-30q0 -32 -26 -32t-25 32v30z" fill="#d6ae60" /><circle cx="538" cy="346" r="9" fill="#d6ae60"/>
+</g>
+</svg>
+

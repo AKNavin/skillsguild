@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A partly filled jar beside remaining blocks and a stop lever">
+<rect width="720" height="480" fill="#e7ecf3"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M225 153h169v190q-81 28 -169 0z" fill="#fffaf0" /><path d="M225 250h169v93q-81 28 -169 0z" fill="#759fca" /><rect x="215" y="130" width="189" height="30" rx="8" fill="#d6ae60"/><rect x="438" y="291" width="49" height="49" rx="7" fill="#cf7867"/><rect x="496" y="291" width="49" height="49" rx="7" fill="#cf7867"/><rect x="469" y="234" width="49" height="49" rx="7" fill="#cf7867"/><path d="M459 170h98M508 170v51" fill="none" stroke-width="12" stroke="#36484d"/>
+</g>
+</svg>
+

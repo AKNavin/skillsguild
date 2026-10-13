@@ -26,9 +26,15 @@
       <p id="result-count" class="result-count" aria-live="polite">Loading skills…</p>
       <button id="clear" class="clear-button" hidden>Clear filters</button>
     </div>
+    <div class="algo-tools" id="algo-tools">
+      <label class="topic-label">Topic <select id="topic" aria-label="Algo trading topic"><option value="all">All topics</option></select></label>
+      <a href="downloads/algotrading-bundle.zip" download>Download algo pack ↓</a>
+      <button id="copy-ai-link" class="text-button">Copy AI starting link ↗</button>
+      <span id="ai-copy-status" class="toast" role="status"></span>
+    </div>
     <div class="skill-grid" id="skills"></div>
     <div class="empty" id="empty" hidden><h2>No matching skills</h2><p>Try another keyword or browse all businesses.</p><button class="button dark" id="reset">Show all skills</button></div>
-    <p class="usage-note"><strong>To use a skill:</strong> Download the ZIP, unzip it and use SKILL.md with your AI assistant. <a href="contributing.html#using-a-skill">Installation guide ↗</a></p>
+    <p class="usage-note"><strong>To use a skill:</strong> Copy its AI link or download the ZIP and give SKILL.md to your AI assistant. <a href="algotrading.md">Algo Trading guide ↗</a> <a href="contributing.html#using-a-skill">Installation guide ↗</a></p>
   </main>
   <footer class="wrap"><span>Open-source AI skills · MIT licensed</span><div><a href="contributing.html">Add a skill</a><a href="LICENSE" download>Licence</a><a href="catalogue.json">Catalogue JSON</a></div></footer>
   <dialog id="skill-dialog" aria-labelledby="detail-title"><button class="close-dialog" aria-label="Close skill details">×</button><div id="detail"></div></dialog>

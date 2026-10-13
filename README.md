@@ -2,7 +2,9 @@
 
 An open-source library of downloadable AI skills for Algo Trading, Human Resources and Content.
 
-The first collection contains six original starter skills. Each download includes SKILL.md, metadata and the MIT licence. All website and skill sources are in this repository.
+The catalogue includes a focused Kite Connect collection for authentication, data, stock signals, options, backtesting, regimes, execution state and risk. Each download includes SKILL.md, metadata and the MIT licence. Selected skills also contain runnable offline reference helpers and synthetic fixtures. All website and skill sources are in this repository.
+
+Read [the website brief](BRIEF.md), [the Algo Trading guide](ALGO-GUIDE.md), and [validation coverage](VALIDATION.md). Published `llms.txt`, `algotrading.md` and individual `library/<category>/<skill>/SKILL.md` URLs let users direct their AI to the relevant instructions. The algo bundle contains all Algo Trading instructions and supporting code, without card artwork.
 
 ## Local development
 

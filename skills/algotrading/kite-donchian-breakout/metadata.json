@@ -1,0 +1,32 @@
+{
+  "title": "Donchian channel breakout",
+  "description": "Detect configurable rolling high or low breaks without including the signal bar in the channel.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "breakout",
+    "trend"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "A price path climbing out of a blue high-low channel formed by stepped rails",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

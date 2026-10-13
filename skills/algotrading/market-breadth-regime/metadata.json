@@ -1,0 +1,32 @@
+{
+  "title": "Measure market breadth",
+  "description": "Classify broad participation using point-in-time constituents, advances and moving-average breadth.",
+  "version": "1.0.0",
+  "tags": [
+    "regime",
+    "breadth",
+    "market-data"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "regimes",
+  "requires": [
+    "point-in-time stock universe",
+    "adjusted closing prices",
+    "coverage threshold"
+  ],
+  "sources": [
+    {
+      "title": "NSE advances and declines",
+      "url": "https://www.nseindia.com/market-data/advance"
+    },
+    {
+      "title": "Zerodha moving averages",
+      "url": "https://zerodha.com/varsity/chapter/moving-averages/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "A garden of many blue and coral market stalks showing broad participation"
+}

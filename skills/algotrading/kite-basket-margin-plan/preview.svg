@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A basket holding two interlocking protective pieces above a balance">
+<rect width="720" height="480" fill="#f1e4df"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M233 193h272l-39 151H273z" fill="#d6ae60" /><path d="M275 191q20 -117 93 -117t90 117" fill="none" stroke-width="14" stroke="#759fca"/><rect x="281" y="149" width="82" height="110" rx="17" fill="#8bac94"/><rect x="369" y="157" width="82" height="110" rx="17" fill="#cf7867"/><path d="M345 181h35v31h-35" fill="#fffaf0" /><path d="M248 372h243M369 348v24" fill="none" stroke-width="10" stroke="#36484d"/>
+</g>
+</svg>
+

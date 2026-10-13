@@ -1,0 +1,37 @@
+{
+  "title": "Liquidity and spread filter",
+  "description": "Reject stale or thin stock candidates using prior traded value and current bid–ask depth.",
+  "version": "1.0.0",
+  "tags": [
+    "stocks",
+    "liquidity",
+    "spread"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "signals",
+  "image": "preview.svg",
+  "image_alt": "Blue bid blocks and coral ask blocks facing across a narrow measurable gap under a magnifying glass",
+  "requires": [
+    "Python 3",
+    "Kite data access or equivalent timestamped CSV",
+    "Current full market quotes"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect quotes and instruments",
+      "url": "https://kite.trade/docs/connect/v3/market-quotes/"
+    },
+    {
+      "title": "Kite Connect historical candles",
+      "url": "https://kite.trade/docs/connect/v3/historical/"
+    },
+    {
+      "title": "NSE market timings and holidays",
+      "url": "https://www.nseindia.com/resources/exchange-communication-holidays"
+    }
+  ],
+  "verified_at": "2026-10-13"
+}
+

@@ -1,0 +1,40 @@
+{
+  "title": "Kite Project Bootstrap",
+  "description": "Build a minimal Kite project and check its data, session and execution capabilities.",
+  "version": "1.0.0",
+  "tags": [
+    "kite-connect",
+    "python",
+    "setup"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "setup",
+  "requires": [
+    "Python environment",
+    "Kite app configuration names",
+    "Requested market and operating mode"
+  ],
+  "sources": [
+    {
+      "title": "Kite Connect introduction",
+      "url": "https://kite.trade/docs/connect/v3/"
+    },
+    {
+      "title": "Official Python SDK",
+      "url": "https://github.com/zerodha/pykiteconnect"
+    },
+    {
+      "title": "Kite Connect capabilities",
+      "url": "https://www.zerodha.com/products/api/"
+    },
+    {
+      "title": "Zerodha static IP requirements",
+      "url": "https://support.zerodha.com/category/trading-and-markets/general-kite/kite-api/articles/static-ip"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "An open toolkit with a gear, pencil and connected building blocks"
+}

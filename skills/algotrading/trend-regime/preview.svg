@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="426" viewBox="0 0 640 426" role="img" aria-label="Three rolling hills showing rising, sideways and falling market directions">
+<defs>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".42" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".065"/></feComponentTransfer></filter>
+ <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5 0 10Z" fill="#6e98c2"/></marker>
+</defs>
+<rect width="640" height="426" fill="#e8eee4"/>
+<ellipse cx="320" cy="352" rx="226" ry="18" fill="#737c69" opacity=".11"/>
+<g stroke-linejoin="round" stroke-linecap="round"><path d="M91 331L91 268Q160 210 208 163Q244 117 288 96L290 331Z" fill="#6e98c2" stroke="#55564e" stroke-width="3" /><path d="M256 331L256 203Q309 178 356 201T445 203L445 331Z" fill="#8ca88a" stroke="#55564e" stroke-width="3" /><path d="M388 331L388 124Q441 171 469 218T548 288L548 331Z" fill="#d68170" stroke="#55564e" stroke-width="3" /><path d="M100 260Q185 180 271 102" fill="none" stroke="#55564e" stroke-width="4" /><path d="M265 205Q313 180 354 205T433 207" fill="none" stroke="#55564e" stroke-width="4" /><path d="M401 135Q445 181 470 225T537 285" fill="none" stroke="#55564e" stroke-width="4" /></g>
+<rect width="640" height="426" filter="url(#grain)" opacity=".6"/>
+</svg>

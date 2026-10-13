@@ -1,0 +1,37 @@
+{
+  "title": "Portfolio & P&L Reconciliation",
+  "description": "Reconcile holdings, positions, trades and strategy exposure without double-counting.",
+  "version": "1.0.0",
+  "tags": [
+    "kite-connect",
+    "positions",
+    "holdings",
+    "pnl"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "execution",
+  "requires": [
+    "Authorized portfolio connection or snapshots",
+    "Opening strategy ledger",
+    "Unique trade IDs and mark timestamps"
+  ],
+  "sources": [
+    {
+      "title": "Kite portfolio APIs",
+      "url": "https://kite.trade/docs/connect/v3/portfolio/"
+    },
+    {
+      "title": "Kite orders",
+      "url": "https://kite.trade/docs/connect/v3/orders/"
+    },
+    {
+      "title": "Kite login and user APIs",
+      "url": "https://kite.trade/docs/connect/v3/user/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "Two ledgers aligned on a balance with matching colored pieces"
+}

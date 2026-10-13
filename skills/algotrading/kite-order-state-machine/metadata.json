@@ -1,0 +1,37 @@
+{
+  "title": "Order Event State Machine",
+  "description": "Reduce order updates into durable state without losing fills or trusting event order.",
+  "version": "1.0.0",
+  "tags": [
+    "kite-connect",
+    "orders",
+    "state-machine",
+    "websocket"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "execution",
+  "requires": [
+    "Kite order-update fixtures or authorized event stream",
+    "Durable event store",
+    "Orderbook reconciliation adapter"
+  ],
+  "sources": [
+    {
+      "title": "Kite order postbacks",
+      "url": "https://kite.trade/docs/connect/v3/postbacks/"
+    },
+    {
+      "title": "Kite orders",
+      "url": "https://kite.trade/docs/connect/v3/orders/"
+    },
+    {
+      "title": "Kite WebSocket protocol",
+      "url": "https://kite.trade/docs/connect/v3/websocket/"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "Three connected mechanical state wheels with one completed check"
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A protective shield standing in front of a red emergency stop button">
+<rect width="720" height="480" fill="#f1e4df"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M266 125l95 -31 99 31v107q-3 98 -99 148 -96 -47 -95 -148z" fill="#759fca" /><path d="M289 145l72 -24 75 24v87q-5 80 -75 121 -70 -41 -72 -121z" fill="#fffaf0" /><path d="M326 238l18 19.5l40.5 -51" fill="none" stroke="#8bac94" stroke-width="8"/><rect x="441" y="292" width="120" height="47" rx="10" fill="#36484d"/><circle cx="500" cy="281" r="50" fill="#cf7867"/><circle cx="500" cy="280" r="33" fill="#cf7867"/>
+</g>
+</svg>
+

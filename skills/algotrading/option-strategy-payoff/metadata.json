@@ -1,0 +1,34 @@
+{
+  "title": "Calculate multi-leg option payoff",
+  "description": "Calculate expiry payoff, breakevens and tail risk for a specified option spread.",
+  "version": "1.0.0",
+  "tags": [
+    "options",
+    "payoff",
+    "spreads",
+    "risk"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "options",
+  "requires": [
+    "signed option legs",
+    "actual premiums",
+    "lot sizes",
+    "cost assumptions"
+  ],
+  "sources": [
+    {
+      "title": "NSE individual-security derivatives specifications",
+      "url": "https://www.nseindia.com/static/products-services/equity-derivatives-individual-securities"
+    },
+    {
+      "title": "Zerodha option calculator and model inputs",
+      "url": "https://zerodha.com/z-connect/general/how-to-use-the-option-calculator"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "An unlettered sheet with a bounded spread payoff bending from loss through breakeven to profit"
+}

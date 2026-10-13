@@ -1,0 +1,36 @@
+{
+  "title": "Kite Rate Limits & Retries",
+  "description": "Coordinate API requests and retries without duplicating ambiguous trading actions.",
+  "version": "1.0.0",
+  "tags": [
+    "kite-connect",
+    "rate-limits",
+    "retries"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "setup",
+  "requires": [
+    "Kite client adapter",
+    "Shared request queue or process lock",
+    "Retry deadline and request classifications"
+  ],
+  "sources": [
+    {
+      "title": "Kite errors and rate limits",
+      "url": "https://kite.trade/docs/connect/v3/exceptions/"
+    },
+    {
+      "title": "Kite orders",
+      "url": "https://kite.trade/docs/connect/v3/orders/"
+    },
+    {
+      "title": "Zerodha API execution rules, effective April 2026",
+      "url": "https://kite.trade/forum/discussion/15912/preparing-to-comply-with-sebis-retail-algo-rules-static-ip-ratelimits-order-types"
+    }
+  ],
+  "verified_at": "2026-10-13",
+  "image": "preview.svg",
+  "image_alt": "An hourglass beside a gated queue of small parcels"
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A blank calendar checked by a magnifying glass and an unnumbered clock">
+<rect width="720" height="480" fill="#e4eee5"/>
+<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
+<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="217" y="135" width="267" height="221" rx="16" fill="#fffaf0"/><rect x="217" y="135" width="267" height="48" rx="12" fill="#759fca"/><path d="M269 120v39M428 120v39" fill="none" stroke-width="12" stroke="#d6ae60"/><rect x="245" y="209" width="47" height="39" rx="5" fill="#c8d9e3"/><rect x="312" y="209" width="47" height="39" rx="5" fill="#c8d9e3"/><rect x="379" y="209" width="47" height="39" rx="5" fill="#c8d9e3"/><rect x="245" y="269" width="47" height="39" rx="5" fill="#c8d9e3"/><path d="M313 291l12 13l27 -34" fill="none" stroke="#8bac94" stroke-width="8"/><circle cx="481" cy="323" r="63" fill="#fffaf0"/><circle cx="481" cy="323" r="4" fill="#36484d"/><path d="M481 274v-8M530 323h8M481 372v8M432 323h-8M481 323v-34.650000000000006m0 34.650000000000006l25.200000000000003 12.600000000000001" fill="none" />
+</g>
+</svg>
+
