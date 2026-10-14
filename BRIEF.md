@@ -6,4 +6,4 @@ The initial focus is practical Zerodha Kite workflows across research, data, sto
 
 GitHub is the contribution source of truth. Reviewed, merged skill folders automatically generate cards, direct Markdown links, catalogue JSON and ZIP downloads. The public site remains a static catalogue; private broker credentials and account data never belong in it.
 
-The interface puts business navigation, search and actions at the top. Cards allocate 8% of their height to the title, 67% to an accurate text-free conceptual illustration and 25% to the description and actions. Prefer a useful library over a marketing landing page. Preserve the supplied blue SG tab logo.
+The interface puts business navigation, search and actions at the top, with a concise explanation of specialised skills and the open-source mission. Desktop screens show eight compact cards per row; smaller screens use fewer columns. Each card has a readable title, an accurate text-free conceptual illustration, a short description and direct Copy link and Download actions. Preserve the supplied blue SG tab logo.

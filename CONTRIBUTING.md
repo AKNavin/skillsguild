@@ -12,7 +12,7 @@ Contribute focused, reusable AI workflows, not a generic collection of prompts. 
 
 Include `preview.svg`, `preview.png`, `preview.jpg` or `preview.webp` in the skill folder, then set `image` to that filename and `image_alt` to a plain description in `metadata.json`. Use a landscape image around 3:2 with a simple object illustration that closely represents what the skill does. Prefer pencil-and-watercolour artwork on a soft pastel background. Keep all lettering, numbers, captions and branding out of the image; the card title and description explain the skill. Illustrations must not imply live trading results. Images are optional; the website uses a text-free folder illustration when none is supplied. The image is included in the download and served with a content hash so updates reach visitors.
 
-Cards allocate 8% of their height to the title, 67% to the image, and 25% to the description and actions. Keep descriptions concise; readers can open the full skill for detail.
+The desktop catalogue shows eight compact cards per row. Each card has a two-line title, a landscape illustration, a short description, and direct Copy link and Download actions. Keep titles and descriptions concise; readers can open the title or image for full instructions. Smaller screens use fewer columns for readability.
 
 Keep skills under the MIT licence. Do not submit secrets, personal information, copied proprietary material, hidden files or symlinks. Files are limited to 1 MB each. Declare any tools, scripts, network access or paid dependencies. The build packages files but never executes contributor scripts.
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Browse and download open-source AI skills for Algo Trading, HR and Content. Preview the workflow, read its instructions and put it to work.">
-  <meta name="theme-color" content="#174b3e">
+  <meta name="theme-color" content="#ffffff">
   <title>SkillsGuild — Find a skill. Put it to work.</title>
   <link rel="icon" href="favicon-sg-rounded.ico" sizes="any"><link rel="icon" href="favicon-sg-rounded-32.png" type="image/png" sizes="32x32"><link rel="icon" href="favicon-sg-rounded-48.png" type="image/png" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon-sg-rounded.png" sizes="180x180">
   <link rel="stylesheet" href="styles.css">
@@ -15,26 +15,28 @@
     <div class="header wrap">
       <a class="brand" href="index.html" aria-label="SkillsGuild home">SkillsGuild<span>.in</span></a>
       <nav id="categories" class="category-list" aria-label="Businesses"></nav>
-      <a id="github-link" class="contribute-link" href="contributing.html">Contribute <span aria-hidden="true">↗</span></a>
+      <a id="github-link" class="contribute-link" href="contributing.html">GitHub <span aria-hidden="true">↗</span></a>
     </div>
   </header>
   <main class="wrap" id="catalogue">
-    <h1 class="sr-only">AI skills for business</h1>
+    <section class="library-intro" aria-labelledby="library-title">
+      <div><h1 id="library-title">Skills for specific work.</h1><p>Skills give general-purpose AI step-by-step guidance for a specific task.<br class="desktop-break"> Download a skill or give your agent its link.</p></div>
+      <div class="mission"><p>Open-source skills. Automation in plain language.</p><a href="contributing.html">Contribute a skill ↗</a></div>
+    </section>
     <div class="toolbar">
       <label class="search-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.7"/></svg><span class="sr-only">Search skills</span><input id="search" type="search" placeholder="Search skills, tasks or tags" autocomplete="off"><kbd>/</kbd></label>
+      <div class="algo-tools" id="algo-tools">
+        <label class="topic-label"><span class="sr-only">Topic</span><select id="topic" aria-label="Algo trading topic"><option value="all">All topics</option></select></label>
+        <a class="pack-link" href="downloads/algotrading-bundle.zip" download>Algo pack ↓</a>
+        <button id="copy-ai-link" class="text-button">Copy AI guide link ↗</button>
+      </div>
       <label class="sort-label"><span class="sr-only">Sort skills</span><select id="sort"><option value="curated">By business</option><option value="az">Name: A–Z</option></select></label>
-      <p id="result-count" class="result-count" aria-live="polite">Loading skills…</p>
-      <button id="clear" class="clear-button" hidden>Clear filters</button>
     </div>
-    <div class="algo-tools" id="algo-tools">
-      <label class="topic-label">Topic <select id="topic" aria-label="Algo trading topic"><option value="all">All topics</option></select></label>
-      <a href="downloads/algotrading-bundle.zip" download>Download algo pack ↓</a>
-      <button id="copy-ai-link" class="text-button">Copy AI starting link ↗</button>
-      <span id="ai-copy-status" class="toast" role="status"></span>
-    </div>
+    <div class="catalogue-meta"><p id="result-count" class="result-count" aria-live="polite">Loading skills…</p><button id="clear" class="clear-button" hidden>Clear filters</button><p class="catalogue-hint">Select a skill to read its instructions.</p></div>
+    <p id="ai-copy-status" class="toast global-toast" role="status" aria-live="polite"></p>
     <div class="skill-grid" id="skills"></div>
     <div class="empty" id="empty" hidden><h2>No matching skills</h2><p>Try another keyword or browse all businesses.</p><button class="button dark" id="reset">Show all skills</button></div>
-    <p class="usage-note"><strong>To use a skill:</strong> Copy its AI link or download the ZIP and give SKILL.md to your AI assistant. <a href="algotrading.md">Algo Trading guide ↗</a> <a href="contributing.html#using-a-skill">Installation guide ↗</a></p>
+    <p class="usage-note">Copy a skill link into your AI with your task, or download and use its SKILL.md file. <a href="contributing.html#using-a-skill">How to use skills ↗</a></p>
   </main>
   <footer class="wrap"><span>Open-source AI skills · MIT licensed</span><div><a href="contributing.html">Add a skill</a><a href="LICENSE" download>Licence</a><a href="catalogue.json">Catalogue JSON</a></div></footer>
   <dialog id="skill-dialog" aria-labelledby="detail-title"><button class="close-dialog" aria-label="Close skill details">×</button><div id="detail"></div></dialog>
