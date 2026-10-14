@@ -1,0 +1,32 @@
+{
+  "title": "Calibration meeting pack",
+  "description": "Assemble consistent evidence packets and unresolved questions for human-led review calibration.",
+  "version": "1.0.0",
+  "tags": [
+    "calibration",
+    "performance",
+    "review-evidence"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-performance",
+  "image": "preview.svg",
+  "image_alt": "A balanced tabletop scale holding two equally sized folders beside a magnifying glass",
+  "requires": [
+    "Approved role criteria and rating anchors",
+    "Authorized review evidence and reviewer proposals"
+  ],
+  "sources": [
+    {
+      "title": "CIPD performance reviews",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/appraisals-factsheet/"
+    },
+    {
+      "title": "CIPD competence and competency frameworks",
+      "url": "https://www.cipd.org/en/knowledge/factsheets/competency-factsheet"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

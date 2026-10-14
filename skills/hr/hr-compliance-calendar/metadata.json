@@ -1,0 +1,32 @@
+{
+  "title": "HR obligations calendar",
+  "description": "Convert verified HR obligations into an owner-assigned calendar with applicability, sources and evidence requirements.",
+  "version": "1.0.0",
+  "tags": [
+    "compliance calendar",
+    "deadlines",
+    "jurisdiction"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-relations",
+  "requires": [
+    "Entities, locations and confirmed applicability facts",
+    "Current official obligations and company policy versions",
+    "Responsible reviewers, business calendar and prior filings"
+  ],
+  "sources": [
+    {
+      "title": "EPFO official employer portal (India)",
+      "url": "https://unifiedportal-emp.epfindia.gov.in/epfo/"
+    },
+    {
+      "title": "ESIC monthly contribution workflow (India)",
+      "url": "https://portal.esic.gov.in/InsuranceGlobalWebV4/ESICInsurancePortal/Documents/consolidated_mc_%26_edit_mc_helpfile.pdf"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "A desk calendar with small flags linked to a closed official folder and a timepiece"
+}

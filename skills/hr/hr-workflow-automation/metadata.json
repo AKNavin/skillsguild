@@ -1,0 +1,29 @@
+{
+  "title": "Build a repeatable HR workflow",
+  "description": "Specify triggers, permissions, state, retries and evidence for a reliable HR automation.",
+  "version": "1.0.0",
+  "tags": [
+    "automation",
+    "state",
+    "integrations",
+    "workflow",
+    "idempotency"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-operations",
+  "image": "preview.svg",
+  "image_alt": "A loop of interlocking gears passing a task card through a checkpoint into a completed tray",
+  "requires": [
+    "Proven process, sample event and source-of-truth system",
+    "Chosen tools, authorised actions and completion criteria"
+  ],
+  "sources": [
+    {
+      "title": "NIST AI Risk Management Framework FAQs",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework/ai-risk-management-framework-faqs"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}

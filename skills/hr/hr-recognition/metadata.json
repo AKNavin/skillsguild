@@ -1,0 +1,28 @@
+{
+  "title": "Specific recognition drafts",
+  "description": "Create evidence-based appreciation messages and track recognition without popularity rankings.",
+  "version": "1.0.0",
+  "tags": [
+    "recognition",
+    "appreciation",
+    "manager-communication"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-engagement",
+  "image": "preview.svg",
+  "image_alt": "A pair of hands presenting a small star-shaped token beside a completed workpiece",
+  "requires": [
+    "Verified contribution and observed impact",
+    "Recognition preference, audience and approved reward rules"
+  ],
+  "sources": [
+    {
+      "title": "CIPD reward introduction",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/reward-factsheet/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

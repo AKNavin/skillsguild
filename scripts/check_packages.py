@@ -30,16 +30,20 @@ for item in catalogue:
     # Markdown helper references must resolve in the same downloadable folder.
     for reference in re.findall(r'\]\(((?:scripts|tests|fixtures|references)/[A-Za-z0-9_./-]+)\)',instructions.decode('utf-8')):
         assert (source/reference).exists(), (name,reference)
-    if item['category']=='algotrading' and item.get('verified_at'):
+    if item['category'] in ['algotrading','hr'] and item.get('verified_at'):
         assert item.get('sources') and item.get('requires')
-with zipfile.ZipFile(DIST/'downloads/algotrading-bundle.zip') as bundle:
-    assert bundle.testzip() is None
-    for item in catalogue:
-        if item['category']=='algotrading':
-            assert bundle.read('algotrading/'+item['id']+'/SKILL.md')==(ROOT/'skills/algotrading'/item['id']/'SKILL.md').read_bytes()
-    assert all('/preview.' not in name for name in bundle.namelist())
-for name in ['llms.txt','algotrading.md']:
+for category in ['algotrading','hr']:
+    with zipfile.ZipFile(DIST/f'downloads/{category}-bundle.zip') as bundle:
+        assert bundle.testzip() is None
+        for item in catalogue:
+            if item['category']==category:
+                assert bundle.read(category+'/'+item['id']+'/SKILL.md')==(ROOT/'skills'/category/item['id']/'SKILL.md').read_bytes()
+        assert all('/preview.' not in name for name in bundle.namelist())
+        for link in re.findall(r'\]\(([^)]+)\)',bundle.read(category+'/START-HERE.md').decode('utf-8')):
+            if not link.startswith('https://'):
+                assert category+'/'+link in bundle.namelist(), (category,link)
+for name in ['llms.txt','algotrading.md','hr.md']:
     for link in re.findall(r'\]\(([^)]+)\)',(DIST/name).read_text(encoding='utf-8')):
         if not link.startswith('https://'):
             assert (DIST/link).is_file(), (name,link)
-print(f'Validated {len(catalogue)} ZIPs, direct resources, relative references, AI indexes and algo bundle.')
+print(f'Validated {len(catalogue)} ZIPs, direct resources, relative references, AI indexes and business bundles.')

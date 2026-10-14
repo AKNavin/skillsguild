@@ -1,0 +1,32 @@
+{
+  "title": "Policy change pack",
+  "description": "Turn an approved policy change into a precise draft, impact map and rollout checklist.",
+  "version": "1.0.0",
+  "tags": [
+    "policy",
+    "handbook",
+    "change-management"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-relations",
+  "image": "preview.svg",
+  "image_alt": "Two open policy folders side by side with a pencil marking a small changed section",
+  "requires": [
+    "Current policy, approved change request and jurisdiction",
+    "Policy owner, affected groups and review process"
+  ],
+  "sources": [
+    {
+      "title": "Acas creating or updating workplace policies",
+      "url": "https://www.acas.org.uk/policies-for-home-and-hybrid-working"
+    },
+    {
+      "title": "ICO keeping employment records",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/employment-practices-and-data-protection-keeping-employment-records/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

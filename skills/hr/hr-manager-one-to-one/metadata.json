@@ -1,0 +1,32 @@
+{
+  "title": "Manager one-to-one",
+  "description": "Prepare focused check-ins and turn meeting notes into owned, dated follow-up actions.",
+  "version": "1.0.0",
+  "tags": [
+    "managers",
+    "one-to-one",
+    "follow-up"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-performance",
+  "image": "preview.svg",
+  "image_alt": "Two simple chairs facing one another beside a small table holding a notebook and clock",
+  "requires": [
+    "Recent goals, open actions and employee agenda",
+    "Meeting length and date"
+  ],
+  "sources": [
+    {
+      "title": "CIPD performance management",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/performance-factsheet"
+    },
+    {
+      "title": "CIPD performance feedback evidence review",
+      "url": "https://www.cipd.org/uk/knowledge/evidence-reviews/performance-feedback"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

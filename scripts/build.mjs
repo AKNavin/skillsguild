@@ -14,8 +14,8 @@ if(!process.argv.includes('--check')){
   if(path.dirname(target)!==path.resolve(root)||path.basename(target)!=='dist')throw new Error('Build output must be the project dist folder');
   await rm(target,{recursive:true,force:true});
 }
-const topics=['setup','data','signals','options','backtesting','regimes','execution','risk'];
-const bundle=[];
+const topics={algotrading:['setup','data','signals','options','backtesting','regimes','execution','risk'],hr:['hr-context','hr-planning','hr-hiring','hr-onboarding','hr-operations','hr-payroll','hr-performance','hr-learning','hr-engagement','hr-relations','hr-exits','hr-analytics'],content:[]};
+const bundles={algotrading:[],hr:[]};
 async function filesIn(dir,prefix=''){
   const result=[];
   for(const entry of await readdir(dir,{withFileTypes:true})){
@@ -45,7 +45,7 @@ for(const category of (await readdir(path.join(root,'skills'))).sort()){
     if(metadata.license!=='MIT')throw new Error(`Only MIT skills accepted in this library: ${name}`);
     if(!['starter','community'].includes(metadata.status))throw new Error(`Invalid status: ${name}`);
     if(!Array.isArray(metadata.tags)||!metadata.tags.length||metadata.tags.some(t=>typeof t!=='string'||t.length>40))throw new Error(`Invalid tags: ${name}`);
-    if(metadata.topic&&!topics.includes(metadata.topic))throw new Error(`Invalid topic: ${name}`);
+    if(metadata.topic&&!topics[category].includes(metadata.topic))throw new Error(`Invalid topic for ${category}: ${name}`);
     if(metadata.requires&&(!Array.isArray(metadata.requires)||metadata.requires.some(r=>typeof r!=='string')))throw new Error(`Invalid requirements: ${name}`);
     if(metadata.sources&&(!Array.isArray(metadata.sources)||metadata.sources.some(s=>typeof s.title!=='string'||!/^https:\/\//.test(s.url))))throw new Error(`Invalid sources: ${name}`);
     const front=instructions.match(/^---\r?\n([\s\S]+?)\r?\n---\r?\n/);
@@ -63,7 +63,7 @@ for(const category of (await readdir(path.join(root,'skills'))).sort()){
     if(metadata.image_alt!=null&&typeof metadata.image_alt!=='string')throw new Error(`Image alt must be text: ${name}`);
     const instructionUrl=`library/${category}/${name}/SKILL.md`;
     catalogue.push({...metadata,id:name,category,download,instructions,image,instruction_url:instructionUrl,files:files.map(f=>f.name)});
-    if(category==='algotrading')bundle.push(...files.filter(f=>!f.name.startsWith('preview.')).map(f=>({...f,name:`algotrading/${name}/${f.name}`})));
+    if(bundles[category])bundles[category].push(...files.filter(f=>!f.name.startsWith('preview.')).map(f=>({...f,name:`${category}/${name}/${f.name}`})));
     if(!process.argv.includes('--check')){
       await mkdir(path.join(dist,'downloads'),{recursive:true});await writeFile(path.join(dist,download),zip([...files,{name:'LICENSE',data:licence}].map(f=>({...f,name:`${name}/${f.name}`}))));
       for(const file of files){const target=path.join(dist,'library',category,name,file.name);await mkdir(path.dirname(target),{recursive:true});await writeFile(target,file.data);}
@@ -75,11 +75,16 @@ if(!process.argv.includes('--check')){
   for(const name of await readdir(path.join(root,'src')))await copyFile(path.join(root,'src',name),path.join(dist,name));
   await writeFile(path.join(dist,'catalogue.json'),JSON.stringify(catalogue,null,2)+'\n');
   await writeFile(path.join(dist,'config.json'),JSON.stringify(config,null,2)+'\n');
-  const intro=await readFile(path.join(root,'ALGO-GUIDE.md'),'utf8');
-  const index=catalogue.filter(s=>s.category==='algotrading').map(s=>`- [${s.title}](${s.instruction_url}) — ${s.description} [ZIP](${s.download})`).join('\n');
-  await writeFile(path.join(dist,'algotrading.md'),intro+'\n\n## Skill index\n\n'+index+'\n');
-  await writeFile(path.join(dist,'llms.txt'),'# SkillsGuild\n\nOpen-source, MIT-licensed instructions for AI assistants. Skills are implementation recipes; selected skills include tested offline reference helpers. Read only skills relevant to the user’s task and preserve their execution permissions. Never put credentials into this public website.\n\n- [Algo Trading guide and complete skill index](algotrading.md)\n- [Machine-readable catalogue](catalogue.json)\n- [Algo pack](downloads/algotrading-bundle.zip)\n\n'+catalogue.map(s=>`- [${s.title}](${s.instruction_url}): ${s.description}`).join('\n')+'\n');
-  await writeFile(path.join(dist,'downloads/algotrading-bundle.zip'),zip([...bundle,{name:'algotrading/LICENSE',data:licence},{name:'algotrading/START-HERE.md',data:intro}]));
+  for(const [category,guide] of [['algotrading','ALGO-GUIDE.md'],['hr','HR-GUIDE.md']]){
+    const intro=await readFile(path.join(root,guide),'utf8');
+    const skills=catalogue.filter(s=>s.category===category);
+    const index=skills.map(s=>`- [${s.title}](${s.instruction_url}) — ${s.description} [ZIP](${s.download})`).join('\n');
+    await writeFile(path.join(dist,`${category}.md`),intro+'\n\n## Skill index\n\n'+index+'\n');
+    const localIntro=intro.replaceAll(`library/${category}/`,'');
+    const localIndex=skills.map(s=>`- [${s.title}](${s.id}/SKILL.md) — ${s.description}`).join('\n');
+    await writeFile(path.join(dist,`downloads/${category}-bundle.zip`),zip([...bundles[category],{name:`${category}/LICENSE`,data:licence},{name:`${category}/START-HERE.md`,data:localIntro+'\n\n## Skill index\n\n'+localIndex+'\n'}]));
+  }
+  await writeFile(path.join(dist,'llms.txt'),'# SkillsGuild\n\nOpen-source, MIT-licensed instructions for AI assistants. Skills are implementation recipes; selected skills include tested offline reference helpers. Read only skills relevant to the user’s task and preserve their execution permissions. Never put credentials or personnel data into this public website.\n\n- [Algo Trading guide and complete skill index](algotrading.md)\n- [HR guide and complete skill index](hr.md)\n- [Machine-readable catalogue](catalogue.json)\n- [Algo pack](downloads/algotrading-bundle.zip)\n- [HR pack](downloads/hr-bundle.zip)\n\n'+catalogue.map(s=>`- [${s.title}](${s.instruction_url}): ${s.description}`).join('\n')+'\n');
   const versioned=async(base,extension,content)=>{
     const digest=createHash('sha256').update(content).digest('hex').slice(0,12);
     const name=`${base}.${digest}.${extension}`;

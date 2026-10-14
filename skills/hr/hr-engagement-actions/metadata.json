@@ -1,0 +1,28 @@
+{
+  "title": "Survey-to-action plan",
+  "description": "Turn aggregate employee feedback into a few owned actions and a progress update people can use.",
+  "version": "1.0.0",
+  "tags": [
+    "engagement",
+    "action-plan",
+    "survey-results"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-engagement",
+  "image": "preview.svg",
+  "image_alt": "A tray of speech bubbles feeding into three small task cards and a growing plant",
+  "requires": [
+    "Aggregate survey results and approved reporting threshold",
+    "Business context, available owners and previous action log"
+  ],
+  "sources": [
+    {
+      "title": "OPM understanding employee survey results",
+      "url": "https://www.opm.gov/fevs/reports/understanding-results/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

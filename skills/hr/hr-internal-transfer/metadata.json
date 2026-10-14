@@ -1,0 +1,32 @@
+{
+  "title": "Internal transfer handoff",
+  "description": "Coordinate an approved role move across managers, HRIS, payroll and access with one effective-date plan.",
+  "version": "1.0.0",
+  "tags": [
+    "internal mobility",
+    "transfers",
+    "role transitions"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-onboarding",
+  "requires": [
+    "Approved transfer request and effective date",
+    "Current and destination role/location details",
+    "Manager handover, system owners and existing task status"
+  ],
+  "sources": [
+    {
+      "title": "BambooHR employee records API",
+      "url": "https://documentation.bamboohr.com/reference/get-employee"
+    },
+    {
+      "title": "CIPD employee induction",
+      "url": "https://prod.cipd.org/en/knowledge/guides/employee-induction/"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "A briefcase crossing a bridge between two workstations with a shared handover folder in the center"
+}

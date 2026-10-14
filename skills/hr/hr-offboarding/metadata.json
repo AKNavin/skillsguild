@@ -1,0 +1,32 @@
+{
+  "title": "Offboarding coordination",
+  "description": "Build a timed exit checklist covering handover, assets, access and payroll handoffs with evidence of completion.",
+  "version": "1.0.0",
+  "tags": [
+    "offboarding",
+    "employee exits",
+    "handover"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-exits",
+  "requires": [
+    "Authorized exit record and exact last-working/access dates",
+    "Applicable policy, jurisdiction and legal-hold instructions",
+    "System/asset owners and current handover status"
+  ],
+  "sources": [
+    {
+      "title": "ICO employment records guidance (UK)",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/employment-practices-and-data-protection-keeping-employment-records/"
+    },
+    {
+      "title": "BambooHR employee records API",
+      "url": "https://documentation.bamboohr.com/reference/get-employee"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "An open exit tray holding a returned key and laptop beside a neatly tied handover folder"
+}

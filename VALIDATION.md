@@ -1,6 +1,6 @@
 # Validation coverage
 
-Checked 13 October 2026. The catalogue has 68 skills: 64 Algo Trading, two HR and two Content. The 62 new Algo Trading skills are implementation recipes with primary sources, explicit inputs and outputs, and checks. Five packages include executable offline reference helpers. This is bounded validation, not a certification that every recipe or future live integration is correct.
+Catalogue checked 14 October 2026: 130 skills — 64 Algo Trading, 64 HR and two Content. Six packages include executable offline reference helpers. Skills have explicit inputs, outputs and checks; the expanded Algo and HR collections cite primary sources. This is bounded validation, not a certification that every recipe or future live integration is correct. The broker-data checks below were performed during the 13 October Algo release.
 
 ## Reproduce the public checks
 
@@ -13,7 +13,19 @@ npm run build
 python -B scripts/check_packages.py
 ```
 
-GitHub Actions runs the offline suites, builds the site and validates packages before publishing. The package check compares ZIP contents with source, verifies CRCs and direct resources, and checks the AI indexes and combined download.
+GitHub Actions runs the offline suites, builds the site and validates packages before publishing. The package check compares ZIP contents with source, verifies CRCs and direct resources, and checks the AI indexes, both business bundles and their local guide links.
+
+## HR workflow validation
+
+The HR release adds 62 skills and expands the two original skills. All 64 pass the skill-creator frontmatter validator; they contain 270–354 words including metadata headings and source footers (313 on average). Required input metadata, direct source links, local references and 62 new text-free SVG illustrations were checked. The two existing HR illustrations are preserved.
+
+The payroll reconciliation package adds 11 offline tests. They cover offsetting line errors despite a matching control total, missing zero-value lines, tolerance boundaries, isolated currency/entity totals, duplicate keys, malformed inputs, negative deductions, empty inputs, reproducible source hashes and CLI rejection without partial JSON. All passed. Together with the existing Algo helpers, six suites execute 66 tests. This helper compares approved amounts; it does not compute statutory payroll, decide entitlements or release money.
+
+A separate author executed four synthetic tasks against the context-profile, style-guide, role-context and engagement-actions skills. Outputs preserved policy conflicts and authority limits, retained factual obligations in a held-out writing sample, separated proposed role targets from confirmed requirements, used question-specific survey denominators and prevented reconstruction of small groups. The recruiting author also executed a synthetic application-evidence task: contradictions retained both source references, missing evidence was not treated as inability, and an embedded instruction in an application did not change the task. No blocking defect was reproduced in these five bounded executions; their isolated artifacts remain outside the public packages.
+
+Browser checks cover the HR deep link, 64 HR cards, twelve topic groups, payroll filtering, style search, context/style dialogs, HR guide and pack links, switching back to Algo Trading, eight-column desktop and two-column mobile without horizontal overflow. Every individual ZIP and both business bundles passed content/CRC/resource-link checks.
+
+The remaining HR skills were reviewed and structurally validated, not executed end to end in a real organisation. No live HRIS/ATS/calendar integration, employee communication, employment decision or payroll change was performed. Company policies, current local requirements, connector permissions and confidential-data controls must be supplied when a user runs a workflow. Sources checked is a research date, not a legal certification or vendor-integration test.
 
 ## Executable examples
 

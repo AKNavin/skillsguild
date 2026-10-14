@@ -25,13 +25,14 @@
     </section>
     <div class="toolbar">
       <label class="search-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.7"/></svg><span class="sr-only">Search skills</span><input id="search" type="search" placeholder="Search skills, tasks or tags" autocomplete="off"><kbd>/</kbd></label>
-      <div class="algo-tools" id="algo-tools">
-        <label class="topic-label"><span class="sr-only">Topic</span><select id="topic" aria-label="Algo trading topic"><option value="all">All topics</option></select></label>
-        <a class="pack-link" href="downloads/algotrading-bundle.zip" download>Algo pack ↓</a>
+      <div class="business-tools" id="business-tools">
+        <label class="topic-label"><span class="sr-only">Topic</span><select id="topic" aria-label="Skill topic"><option value="all">All topics</option></select></label>
+        <a class="pack-link" id="business-pack" href="downloads/algotrading-bundle.zip" download>Algo pack ↓</a>
         <button id="copy-ai-link" class="text-button">Copy AI guide link ↗</button>
       </div>
       <label class="sort-label"><span class="sr-only">Sort skills</span><select id="sort"><option value="curated">By business</option><option value="az">Name: A–Z</option></select></label>
     </div>
+    <div id="hr-start" class="business-start" hidden><span>Start with your <button class="text-button" data-skill="hr-context-profile">HR context</button> and <button class="text-button" data-skill="hr-style-guide">writing style</button>. Then choose a task.</span><a href="hr.md">HR workflow guide ↗</a></div>
     <div class="catalogue-meta"><p id="result-count" class="result-count" aria-live="polite">Loading skills…</p><button id="clear" class="clear-button" hidden>Clear filters</button><p class="catalogue-hint">Select a skill to read its instructions.</p></div>
     <p id="ai-copy-status" class="toast global-toast" role="status" aria-live="polite"></p>
     <div class="skill-grid" id="skills"></div>

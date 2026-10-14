@@ -1,0 +1,32 @@
+{
+  "title": "Pay review preparation",
+  "description": "Reconcile salary data, approved bands and budgets into a private decision pack for reviewers.",
+  "version": "1.0.0",
+  "tags": [
+    "compensation",
+    "salary-bands",
+    "pay-review"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-payroll",
+  "image": "preview.svg",
+  "image_alt": "A calculator beside three horizontal salary-band rulers and neatly stacked coins",
+  "requires": [
+    "Authorized pay roster and approved bands",
+    "Eligibility, budget, currency and proposed changes"
+  ],
+  "sources": [
+    {
+      "title": "CIPD pay structures and pay progression",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/pay-structures-factsheet/"
+    },
+    {
+      "title": "CIPD reward introduction",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/reward-factsheet/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

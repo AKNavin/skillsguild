@@ -1,0 +1,28 @@
+{
+  "title": "Performance review cycle",
+  "description": "Set up review calendars, evidence prompts, completion tracking and exception follow-ups.",
+  "version": "1.0.0",
+  "tags": [
+    "reviews",
+    "review-cycle",
+    "operations"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-performance",
+  "image": "preview.svg",
+  "image_alt": "A calendar wheel surrounding a clipboard with several completed check marks",
+  "requires": [
+    "Review policy, roster and reporting lines",
+    "Cycle dates and approved templates"
+  ],
+  "sources": [
+    {
+      "title": "CIPD performance reviews",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/appraisals-factsheet/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

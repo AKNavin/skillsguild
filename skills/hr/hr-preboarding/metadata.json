@@ -1,0 +1,28 @@
+{
+  "title": "New-starter preboarding",
+  "description": "Turn an accepted offer into an owner-assigned readiness checklist and a clear first-day brief.",
+  "version": "1.0.0",
+  "tags": [
+    "preboarding",
+    "new starters",
+    "people ops"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-onboarding",
+  "requires": [
+    "Accepted offer and confirmed start date",
+    "Manager, location, timezone and approved checklist",
+    "Existing task status and onboarding contacts"
+  ],
+  "sources": [
+    {
+      "title": "CIPD employee induction",
+      "url": "https://prod.cipd.org/en/knowledge/guides/employee-induction/"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "An open welcome box with a laptop, plain access card and a small calendar, each in its own compartment"
+}

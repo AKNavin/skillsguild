@@ -1,0 +1,32 @@
+{
+  "title": "Model workforce cost scenarios",
+  "description": "Compare approved hiring and workforce scenarios with dated assumptions and transparent cost components.",
+  "version": "1.0.0",
+  "tags": [
+    "workforce",
+    "budget",
+    "cost",
+    "headcount"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-planning",
+  "image": "preview.svg",
+  "image_alt": "A balance scale comparing two team plans with coin stacks and a calendar",
+  "requires": [
+    "Approved role counts, costs and scenario dates",
+    "Finance assumptions, proration and currency rules"
+  ],
+  "sources": [
+    {
+      "title": "CIPD People practice",
+      "url": "https://www.cipd.org/uk/the-people-profession/the-profession-map/explore-the-profession-map/core-knowledge/people-practice/"
+    },
+    {
+      "title": "CIPD People analytics",
+      "url": "https://www.cipd.org/en/topics/people-analytics/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}

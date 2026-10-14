@@ -1,0 +1,28 @@
+{
+  "title": "Role-based goals",
+  "description": "Turn role responsibilities into measurable goals with evidence, dependencies and check-in dates.",
+  "version": "1.0.0",
+  "tags": [
+    "goals",
+    "OKRs",
+    "role-context"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-performance",
+  "image": "preview.svg",
+  "image_alt": "Three stepping stones leading to a bullseye, with a measuring ruler beside the first stone",
+  "requires": [
+    "Role responsibilities and planning period",
+    "Business priorities and baseline evidence"
+  ],
+  "sources": [
+    {
+      "title": "CIPD performance management",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/performance-factsheet"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

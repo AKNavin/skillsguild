@@ -1,0 +1,27 @@
+{
+  "title": "Coordinate employee consultation",
+  "description": "Prepare a genuine consultation plan, feedback record and response log for proposed workplace changes.",
+  "version": "1.0.0",
+  "tags": [
+    "relations",
+    "employee",
+    "consultation"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-relations",
+  "image": "preview.svg",
+  "image_alt": "A round table with open speech bubbles and an unsealed proposal folder",
+  "requires": [
+    "Proposed change, affected groups and applicable locations",
+    "Verified consultation process and representative arrangements"
+  ],
+  "sources": [
+    {
+      "title": "Acas consulting employees (UK)",
+      "url": "https://www.acas.org.uk/consulting-employees"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}

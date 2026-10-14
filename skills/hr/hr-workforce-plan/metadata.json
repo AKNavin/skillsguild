@@ -1,0 +1,29 @@
+{
+  "title": "Workforce demand & capacity",
+  "description": "Turn business demand, capacity and budget into a quantified staffing plan with scenarios.",
+  "version": "1.0.0",
+  "tags": [
+    "workforce-planning",
+    "headcount",
+    "capacity"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-planning",
+  "requires": [
+    "Planning horizon and business demand forecast",
+    "Current team capacity, vacancies and known movements",
+    "Productivity assumptions and loaded staffing costs"
+  ],
+  "sources": [
+    {
+      "title": "CIPD workforce planning",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/workforce-planning-factsheet/"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "A balance scale with a stack of work trays on one side and small team pieces on the other, with one spare piece beside it"
+}
+

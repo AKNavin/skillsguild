@@ -4,7 +4,9 @@ An open-source library of downloadable AI skills for Algo Trading, Human Resourc
 
 The catalogue includes a focused Kite Connect collection for authentication, data, stock signals, options, backtesting, regimes, execution state and risk. Each download includes SKILL.md, metadata and the MIT licence. Selected skills also contain runnable offline reference helpers and synthetic fixtures. All website and skill sources are in this repository.
 
-Read [the website brief](BRIEF.md), [the Algo Trading guide](ALGO-GUIDE.md), and [validation coverage](VALIDATION.md). Published `llms.txt`, `algotrading.md` and individual `library/<category>/<skill>/SKILL.md` URLs let users direct their AI to the relevant instructions. The algo bundle contains all Algo Trading instructions and supporting code, without card artwork.
+The HR collection covers 64 workflows across context/style, workforce planning, hiring, onboarding, operations, pay, performance, learning, engagement, relations, exits and analytics. Private context and writing-style skills help an assistant reuse the HR professional's approved preferences without storing personnel data on the website. Payroll reconciliation includes an offline CSV helper; other workflows generate concrete artifacts or scoped implementations using the user's tools.
+
+Read [the website brief](BRIEF.md), [the Algo Trading guide](ALGO-GUIDE.md), [the HR guide](HR-GUIDE.md), and [validation coverage](VALIDATION.md). Published `llms.txt`, `algotrading.md`, `hr.md` and individual `library/<category>/<skill>/SKILL.md` URLs let users direct their AI to relevant instructions. Separate Algo and HR bundles contain the instructions and supporting resources without card artwork. Open `?business=hr` for the HR catalogue.
 
 ## Local development
 

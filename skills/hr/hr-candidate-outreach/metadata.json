@@ -1,0 +1,33 @@
+{
+  "title": "Personalised candidate outreach",
+  "description": "Draft concise, factual outreach in your HR voice with a clear role connection and next step.",
+  "version": "1.0.0",
+  "tags": [
+    "hiring",
+    "outreach",
+    "candidate-experience"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-hiring",
+  "requires": [
+    "Approved role facts and value proposition",
+    "Authorised professional profile or work evidence",
+    "Channel, contact permissions and preferred tone"
+  ],
+  "sources": [
+    {
+      "title": "CIPD recruitment process",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/recruitment-factsheet/"
+    },
+    {
+      "title": "CIPD selection methods",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/selection-factsheet"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "An open envelope with a work portfolio and a small connecting bridge"
+}
+

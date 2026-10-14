@@ -1,0 +1,33 @@
+{
+  "title": "Hiring manager intake",
+  "description": "Convert a vague vacancy request into a clear role brief, hiring plan and list of decisions.",
+  "version": "1.0.0",
+  "tags": [
+    "hiring",
+    "intake",
+    "role-brief"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-hiring",
+  "requires": [
+    "Hiring manager request or intake notes",
+    "Business outcome and target start date",
+    "Known budget, location and employment arrangement"
+  ],
+  "sources": [
+    {
+      "title": "CIPD recruitment process",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/recruitment-factsheet/"
+    },
+    {
+      "title": "CIPD job design",
+      "url": "https://prod.cipd.org/uk/knowledge/factsheets/job-design-factsheet/"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "An open briefcase containing a role card, compass and checklist"
+}
+

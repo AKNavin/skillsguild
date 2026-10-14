@@ -1,0 +1,33 @@
+{
+  "title": "Job description & advert",
+  "description": "Create a clear job description and concise advert from the agreed role, terms and outcomes.",
+  "version": "1.0.0",
+  "tags": [
+    "hiring",
+    "job-description",
+    "job-advert"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-hiring",
+  "requires": [
+    "Role brief or approved responsibilities",
+    "Employment terms, location and compensation disclosure",
+    "Application route and contact details"
+  ],
+  "sources": [
+    {
+      "title": "CIPD recruitment process",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/recruitment-factsheet/"
+    },
+    {
+      "title": "CIPD job design",
+      "url": "https://prod.cipd.org/uk/knowledge/factsheets/job-design-factsheet/"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "A notice pinned to a small board beside a work bag, drawn without text"
+}
+

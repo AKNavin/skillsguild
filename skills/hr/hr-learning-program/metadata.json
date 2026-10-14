@@ -1,0 +1,32 @@
+{
+  "title": "Learning program builder",
+  "description": "Create a short learning program with practice tasks, assessment and workplace follow-through.",
+  "version": "1.0.0",
+  "tags": [
+    "training",
+    "learning-design",
+    "evaluation"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-learning",
+  "image": "preview.svg",
+  "image_alt": "An open workbook leading through a small practice workbench to a checkered finish flag",
+  "requires": [
+    "Validated learning outcomes and audience",
+    "Delivery constraints, budget and baseline examples"
+  ],
+  "sources": [
+    {
+      "title": "CIPD learning evaluation, impact and transfer",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/evaluating-learning-factsheet/"
+    },
+    {
+      "title": "CIPD learning needs analysis",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/learning-needs-factsheet/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

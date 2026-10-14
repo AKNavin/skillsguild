@@ -1,0 +1,27 @@
+{
+  "title": "Plan workplace wellbeing actions",
+  "description": "Turn aggregate workplace concerns into practical workload, support and manager actions.",
+  "version": "1.0.0",
+  "tags": [
+    "engagement",
+    "wellbeing",
+    "program"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-engagement",
+  "image": "preview.svg",
+  "image_alt": "A small balanced garden under a shelter beside a workbench and a resting chair",
+  "requires": [
+    "Permitted aggregate feedback and workload evidence",
+    "Available support, action owners, budget and reporting privacy rules"
+  ],
+  "sources": [
+    {
+      "title": "CIPD health and wellbeing at work",
+      "url": "https://prod.cipd.org/uk/knowledge/factsheets/well-being-factsheet/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}

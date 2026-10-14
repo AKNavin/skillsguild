@@ -1,0 +1,28 @@
+{
+  "title": "Policy answer with evidence",
+  "description": "Answer an employee policy question with the applicable version, clear next steps and explicit gaps.",
+  "version": "1.0.0",
+  "tags": [
+    "policy Q&A",
+    "employee support",
+    "knowledge base"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-operations",
+  "requires": [
+    "Exact question and minimum relevant employee context",
+    "Approved policy corpus with effective dates and jurisdiction",
+    "Policy owner and escalation route"
+  ],
+  "sources": [
+    {
+      "title": "ICO employment records guidance (UK)",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/employment-practices-and-data-protection-keeping-employment-records/"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "An open handbook under a desk lamp with a bookmark and a small magnifying glass"
+}

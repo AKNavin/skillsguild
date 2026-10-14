@@ -1,15 +1,28 @@
 {
-  "title": "30\u201360\u201390 day onboarding",
-  "description": "Give new teammates a practical plan with milestones, owners and feedback checkpoints.",
-  "version": "1.0.0",
+  "title": "30–60–90 day onboarding",
+  "description": "Build a role-specific ramp plan with meaningful milestones, owners and a usable first-week agenda.",
+  "version": "1.1.0",
   "tags": [
     "onboarding",
-    "people ops",
+    "role context",
     "planning"
   ],
   "author": "SkillsGuild",
   "status": "starter",
   "license": "MIT",
+  "topic": "hr-onboarding",
+  "requires": [
+    "Role outcomes and manager expectations",
+    "Start date, timezone and working pattern",
+    "Available resources, current onboarding progress and support contacts"
+  ],
+  "sources": [
+    {
+      "title": "CIPD employee induction",
+      "url": "https://prod.cipd.org/en/knowledge/guides/employee-induction/"
+    }
+  ],
+  "verified_at": "2026-10-14",
   "image": "preview.webp",
-  "image_alt": "Three steps with a briefcase and open book leading to a welcoming workstation"
+  "image_alt": "Three rising steps with a briefcase and open book leading to a welcoming workstation"
 }

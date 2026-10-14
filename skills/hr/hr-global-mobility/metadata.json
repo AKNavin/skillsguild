@@ -1,0 +1,27 @@
+{
+  "title": "Coordinate a cross-border move",
+  "description": "Map relocation dependencies, country-specific checks and specialist owners without guessing immigration rules.",
+  "version": "1.0.0",
+  "tags": [
+    "operations",
+    "global",
+    "mobility"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-operations",
+  "image": "preview.svg",
+  "image_alt": "A suitcase and two office buildings linked across a small globe",
+  "requires": [
+    "Origin/destination, entities, work locations and proposed dates",
+    "Assignment terms and immigration/payroll specialist owners"
+  ],
+  "sources": [
+    {
+      "title": "GOV.UK new employee coming from abroad (UK example)",
+      "url": "https://www.gov.uk/guidance/new-employee-coming-to-work-from-abroad"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}

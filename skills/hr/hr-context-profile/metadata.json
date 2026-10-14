@@ -1,0 +1,33 @@
+{
+  "title": "Build your HR context",
+  "description": "Create a reusable private profile of your HR remit, company, policies, systems and decision owners.",
+  "version": "1.0.0",
+  "tags": [
+    "context",
+    "company",
+    "HRBP",
+    "generalist",
+    "preferences"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-context",
+  "image": "preview.svg",
+  "image_alt": "An open ring binder linking a company building, a person badge and a small key",
+  "requires": [
+    "HR remit, company facts and priorities",
+    "Current policy index and system/authority register"
+  ],
+  "sources": [
+    {
+      "title": "CIPD People practice",
+      "url": "https://www.cipd.org/uk/the-people-profession/the-profession-map/explore-the-profession-map/core-knowledge/people-practice/"
+    },
+    {
+      "title": "ICO collecting and keeping employment records (UK)",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/employment-practices-and-data-protection-keeping-employment-records/collecting-and-keeping-employment-records/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}

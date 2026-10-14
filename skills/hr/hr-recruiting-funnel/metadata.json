@@ -1,0 +1,29 @@
+{
+  "title": "Recruiting funnel & bottlenecks",
+  "description": "Reconcile recruiting stage data and identify delays with clear metrics, definitions and owner actions.",
+  "version": "1.0.0",
+  "tags": [
+    "hiring",
+    "analytics",
+    "funnel"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-hiring",
+  "requires": [
+    "ATS stage events with application, job and timestamp fields",
+    "Report window, timezone and stage definitions",
+    "Source attribution and opening/offer dates if available"
+  ],
+  "sources": [
+    {
+      "title": "Greenhouse pipeline history and pass-through rates",
+      "url": "https://support.greenhouse.io/hc/en-us/articles/204636795-Pipeline-history-and-pass-through-rates-report"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "A funnel with coloured beads pausing at one narrow section above several empty trays"
+}
+

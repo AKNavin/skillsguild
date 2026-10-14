@@ -1,0 +1,27 @@
+{
+  "title": "Coordinate workplace adjustments",
+  "description": "Track adjustment requests, practical barriers and owner follow-ups in a restricted case workspace.",
+  "version": "1.0.0",
+  "tags": [
+    "relations",
+    "accommodation",
+    "coordination"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-relations",
+  "image": "preview.svg",
+  "image_alt": "A small ramp bridging a step to an open doorway beside an adjustable desk",
+  "requires": [
+    "Employee-stated request and job-related work barriers",
+    "Restricted case location, procedure and authorised owner"
+  ],
+  "sources": [
+    {
+      "title": "EEOC reasonable accommodation guidance (US)",
+      "url": "https://www.eeoc.gov/laws/guidance/small-employers-and-reasonable-accommodation"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}

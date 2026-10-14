@@ -1,0 +1,32 @@
+{
+  "title": "Check HR data quality",
+  "description": "Find duplicate IDs, inconsistent dates and missing fields before importing or reporting on HR data.",
+  "version": "1.0.0",
+  "tags": [
+    "data quality",
+    "CSV",
+    "HRIS",
+    "validation"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-analytics",
+  "image": "preview.svg",
+  "image_alt": "A magnifying glass over an orderly employee ledger with one misaligned row and a repair pencil",
+  "requires": [
+    "Permitted export and field dictionary",
+    "Business-key definition and effective-dated validation rules"
+  ],
+  "sources": [
+    {
+      "title": "CIPD People analytics",
+      "url": "https://www.cipd.org/en/topics/people-analytics/"
+    },
+    {
+      "title": "ICO collecting and keeping employment records (UK)",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/employment-practices-and-data-protection-keeping-employment-records/collecting-and-keeping-employment-records/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}

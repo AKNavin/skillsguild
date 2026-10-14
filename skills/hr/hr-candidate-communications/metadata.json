@@ -1,0 +1,33 @@
+{
+  "title": "Candidate update desk",
+  "description": "Turn approved hiring statuses into timely, clear updates, delay notices and next steps in your voice.",
+  "version": "1.0.0",
+  "tags": [
+    "hiring",
+    "candidate-experience",
+    "communications"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-hiring",
+  "requires": [
+    "Verified candidate stage and event or human decision",
+    "Approved message facts and recipient list",
+    "Next step, owner and communication timing"
+  ],
+  "sources": [
+    {
+      "title": "CIPD recruitment process",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/recruitment-factsheet/"
+    },
+    {
+      "title": "CIPD selection methods",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/selection-factsheet"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "A row of envelopes moving between an inbox tray and an outbox tray"
+}
+

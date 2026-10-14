@@ -1,0 +1,27 @@
+{
+  "title": "Coordinate contingent workers",
+  "description": "Track approved contractor and agency engagements from scope and onboarding to renewal and exit.",
+  "version": "1.0.0",
+  "tags": [
+    "operations",
+    "contingent",
+    "workforce"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-operations",
+  "image": "preview.svg",
+  "image_alt": "Two differently shaped work badges entering separate trays beside a contract folder",
+  "requires": [
+    "Approved engagements, supplier and statement of work",
+    "Dates, rates, budget owner and renewal process"
+  ],
+  "sources": [
+    {
+      "title": "CIPD workforce planning",
+      "url": "https://www.cipd.org/uk/knowledge/factsheets/workforce-planning-factsheet"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}

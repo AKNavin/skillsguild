@@ -1,7 +1,7 @@
 {
   "title": "Structured interview kit",
-  "description": "Build job-relevant questions and a consistent evidence-based interview rubric.",
-  "version": "1.0.0",
+  "description": "Build role-specific questions, an agenda and an anchored rubric that interviewers can use consistently.",
+  "version": "1.1.0",
   "tags": [
     "interviews",
     "hiring",
@@ -10,6 +10,23 @@
   "author": "SkillsGuild",
   "status": "starter",
   "license": "MIT",
+  "topic": "hr-hiring",
+  "requires": [
+    "Role responsibilities and required capabilities",
+    "Interview stage, duration and panel roles",
+    "Existing rubric and accessibility arrangements if supplied"
+  ],
+  "sources": [
+    {
+      "title": "OPM structured interviews",
+      "url": "https://www.opm.gov/policy-data-oversight/assessment-and-selection/structured-interviews/"
+    },
+    {
+      "title": "OPM work samples and simulations",
+      "url": "https://www.opm.gov/policy-data-oversight/assessment-and-selection/other-assessment-methods/work-samples-and-simulations/"
+    }
+  ],
+  "verified_at": "2026-10-14",
   "image": "preview.webp",
   "image_alt": "Two interview chairs facing each other with a shared clipboard and pencil"
 }

@@ -1,0 +1,28 @@
+{
+  "title": "Exit feedback insights",
+  "description": "Turn exit feedback into de-identified themes, evidence limits and a small owner-assigned action plan.",
+  "version": "1.0.0",
+  "tags": [
+    "exit feedback",
+    "retention",
+    "people insights"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-exits",
+  "requires": [
+    "Authorized exit feedback and cohort definition",
+    "Headcount/exit counts with metric definitions",
+    "Privacy threshold, reporting audience and existing actions"
+  ],
+  "sources": [
+    {
+      "title": "CIPD employee turnover and retention",
+      "url": "https://prod.cipd.org/en/knowledge/factsheets/turnover-retention-factsheet/"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "Several anonymous feedback cards passing through a sieve into three small clear jars of themes"
+}

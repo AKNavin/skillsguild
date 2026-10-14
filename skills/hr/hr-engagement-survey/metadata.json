@@ -1,0 +1,32 @@
+{
+  "title": "Employee pulse survey",
+  "description": "Design a short survey with clear purpose, privacy rules and a usable analysis plan.",
+  "version": "1.0.0",
+  "tags": [
+    "survey",
+    "employee-voice",
+    "pulse"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-engagement",
+  "image": "preview.svg",
+  "image_alt": "A small ballot box receiving colored speech-bubble tokens beside a simple gauge",
+  "requires": [
+    "Survey objective, audience and decisions to inform",
+    "Collection platform and approved privacy/reporting rules"
+  ],
+  "sources": [
+    {
+      "title": "OPM FEVS organizational climate framework",
+      "url": "https://www.opm.gov/fevs/about/"
+    },
+    {
+      "title": "ICO keeping employment records",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/employment-practices-and-data-protection-keeping-employment-records/"
+    }
+  ],
+  "verified_at": "2026-10-14"
+}
+

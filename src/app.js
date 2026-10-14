@@ -1,7 +1,9 @@
 const categories = [{id:'all',name:'All skills'},{id:'algotrading',name:'Algo Trading'},{id:'hr',name:'HR'},{id:'content',name:'Content'}];
-const topics = {setup:'Setup & authentication',data:'Market data',signals:'Stock signals',options:'Options',backtesting:'Backtesting',regimes:'Market regimes',execution:'Execution & state',risk:'Risk & margins'};
-const topicOrder=['signals','options','backtesting','regimes','setup','data','execution','risk'];
-const state = {category:'all',topic:'all',query:'',sort:'curated',skills:[]};
+const topics = {setup:'Setup & authentication',data:'Market data',signals:'Stock signals',options:'Options',backtesting:'Backtesting',regimes:'Market regimes',execution:'Execution & state',risk:'Risk & margins','hr-context':'Context & style','hr-planning':'Workforce planning','hr-hiring':'Hiring','hr-onboarding':'Onboarding','hr-operations':'People operations','hr-payroll':'Pay & benefits','hr-performance':'Performance','hr-learning':'Learning & careers','hr-engagement':'Engagement & change','hr-relations':'Policies & relations','hr-exits':'Exits','hr-analytics':'People analytics'};
+const topicGroups={algotrading:['signals','options','backtesting','regimes','setup','data','execution','risk'],hr:['hr-context','hr-planning','hr-hiring','hr-onboarding','hr-operations','hr-payroll','hr-performance','hr-learning','hr-engagement','hr-relations','hr-exits','hr-analytics'],content:[]};
+const topicOrder=Object.values(topicGroups).flat();
+const requestedCategory=new URLSearchParams(location.search).get('business');
+const state = {category:categories.some(c=>c.id===requestedCategory)?requestedCategory:'all',topic:'all',query:'',sort:'curated',skills:[]};
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const businessName = id => categories.find(c=>c.id===id)?.name||id;
@@ -17,8 +19,15 @@ function render(){
   $('#skills').querySelectorAll('img').forEach((img,index)=>{img.loading=index<16?'eager':'lazy';});
   $('#result-count').textContent = `${skills.length} ${skills.length===1?'skill':'skills'} · ${state.category==='all'?'All businesses':businessName(state.category)}`;
   $('#empty').hidden = skills.length>0; $('#clear').hidden = !query && state.category==='all' && state.topic==='all';
-  $('#algo-tools').hidden=!['all','algotrading'].includes(state.category);
+  $('#business-tools').hidden=state.category==='content';
+  const availableTopics=state.category==='all'?topicOrder:topicGroups[state.category]||[];
+  $('#topic').innerHTML='<option value="all">All topics</option>'+availableTopics.map(t=>`<option value="${t}">${topics[t]}</option>`).join('');
   $('#topic').value=state.topic;
+  $('#topic').setAttribute('aria-label',state.category==='all'?'Skill topic':`${businessName(state.category)} topic`);
+  const guideCategory=state.category==='hr'?'hr':'algotrading';
+  $('#business-pack').href=`downloads/${guideCategory}-bundle.zip`;
+  $('#business-pack').textContent=guideCategory==='hr'?'HR pack ↓':'Algo pack ↓';
+  $('#hr-start').hidden=state.category!=='hr';
   $('#search').placeholder=state.category==='all'?'Search skills, tasks or tags':`Search ${businessName(state.category)} skills`;
 }
 function showSkill(id){
@@ -35,12 +44,12 @@ function showSkill(id){
   $('#copy-skill').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(s.instructions);$('#copy-status').textContent='Instructions copied.';}catch{$('#copy-status').textContent='Clipboard unavailable. Select the instructions below, or download the ZIP.';}});
   $('#skill-dialog').showModal();
 }
-async function copyText(text,status,success){try{await navigator.clipboard.writeText(text);status.textContent=success;}catch{status.textContent='Clipboard unavailable. Open algotrading.md or SKILL.md and copy its URL.';}if(status.id==='ai-copy-status'){clearTimeout(copyToastTimer);copyToastTimer=setTimeout(()=>{status.textContent='';},6000);}}
+async function copyText(text,status,success){try{await navigator.clipboard.writeText(text);status.textContent=success;}catch{status.textContent='Clipboard unavailable. Open the guide or SKILL.md and copy its URL.';}if(status.id==='ai-copy-status'){clearTimeout(copyToastTimer);copyToastTimer=setTimeout(()=>{status.textContent='';},6000);}}
 function reset(){state.category='all';state.topic='all';state.query='';$('#search').value='';render();}
 $('#categories').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(b){state.category=b.dataset.category;state.topic='all';render();}});
-$('#topic').innerHTML='<option value="all">All topics</option>'+topicOrder.map(t=>`<option value="${t}">${topics[t]}</option>`).join('');
-$('#topic').addEventListener('change',e=>{state.topic=e.target.value;if(state.topic!=='all')state.category='algotrading';render();});
-$('#copy-ai-link').addEventListener('click',()=>copyText(new URL('algotrading.md',location.href).href,$('#ai-copy-status'),'Link copied. Give it to your AI with your task.'));
+$('#topic').addEventListener('change',e=>{state.topic=e.target.value;if(state.topic!=='all')state.category=state.topic.startsWith('hr-')?'hr':'algotrading';render();});
+$('#copy-ai-link').addEventListener('click',()=>copyText(new URL(state.category==='hr'?'hr.md':state.category==='all'?'llms.txt':'algotrading.md',location.href).href,$('#ai-copy-status'),'Guide link copied. Give it to your AI with your task.'));
+$('#hr-start').addEventListener('click',e=>{const b=e.target.closest('[data-skill]');if(b)showSkill(b.dataset.skill);});
 $('#search').addEventListener('input',e=>{state.query=e.target.value;render();});
 $('#sort').addEventListener('change',e=>{state.sort=e.target.value;render();});
 $('#clear').addEventListener('click',reset);$('#reset').addEventListener('click',reset);

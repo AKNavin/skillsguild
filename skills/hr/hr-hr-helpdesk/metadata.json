@@ -1,0 +1,28 @@
+{
+  "title": "HR helpdesk triage",
+  "description": "Turn incoming HR requests into a prioritized case queue with sourced draft replies and clear owners.",
+  "version": "1.0.0",
+  "tags": [
+    "HR helpdesk",
+    "case routing",
+    "service requests"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-operations",
+  "requires": [
+    "Authorized requests and existing case IDs",
+    "Current policies, routing matrix and service standards",
+    "Requester permissions, calendar and timezone"
+  ],
+  "sources": [
+    {
+      "title": "ICO employment records guidance (UK)",
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/employment-practices-and-data-protection-keeping-employment-records/"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "A central service bell beside three neatly separated incoming document trays"
+}

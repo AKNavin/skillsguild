@@ -1,0 +1,28 @@
+{
+  "title": "Benefits enrollment coordination",
+  "description": "Prepare benefit change requests and reconcile their status across HRIS, provider and payroll records.",
+  "version": "1.0.0",
+  "tags": [
+    "benefits",
+    "enrollment",
+    "reconciliation"
+  ],
+  "author": "SkillsGuild",
+  "status": "starter",
+  "license": "MIT",
+  "topic": "hr-payroll",
+  "requires": [
+    "Approved benefit request and plan documentation",
+    "HRIS/provider status snapshots with effective dates",
+    "Authorized eligibility decision, submission window and owners"
+  ],
+  "sources": [
+    {
+      "title": "BambooHR employee benefits API",
+      "url": "https://documentation.bamboohr.com/reference/list-employee-benefits"
+    }
+  ],
+  "verified_at": "2026-10-14",
+  "image": "preview.svg",
+  "image_alt": "A small umbrella sheltering a benefits folder, a family of wooden pegs and a coin purse"
+}
