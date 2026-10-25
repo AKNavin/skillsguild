@@ -1,0 +1,13 @@
+{
+  "source": "User-supplied research handoff, 2026-10-23",
+  "data_cutoff": "2026-10-22",
+  "source_sha256": {
+    "papers-momentum-2026-10-22/research.py": "baa620bc5a93e591d3b81d70eedca00a9087de04c83a48c3426882c46fe8a7cb",
+    "papers-round2-2026-10-23/research2.py": "e5d4cb1e3815b258d844b7db957d4dc5cecb470b59f7070f6e72074c679fd6d0",
+    "papers-round3-2026-10-23/research3.py": "a0cddc013908fd149d60e3d59698450deb5b4cad0400968ee8b73228940949cc",
+    "papers-round4-2026-10-23/research4.py": "57f34ac19c45fe8650c9691edd50041b9cd792048074575c356c0f89c7991f99",
+    "papers-round5-2026-10-23/research5.py": "74f82a1c0b47dff3accbc14d9d14323c2b5a7c03354532182343681ef22991a4"
+  },
+  "manifest_sha256": "b829fc23f4e669d27a59a22da8973c2d967c07c0e69e0ef5d6ac73ca3e80ff52",
+  "extraction": "engine metrics/run/benchmark and all five score functions preserve original function bodies; filesystem and run entry points replaced."
+}

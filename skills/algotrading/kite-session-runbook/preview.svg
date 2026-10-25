@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="An open checklist notebook beside sunrise and an unnumbered clock">
-<rect width="720" height="480" fill="#f4edd9"/>
-<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
-<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-<path d="M204 166q81 -34 159 0 80 -33 159 0v198q-80 -30 -159 0 -79 -30 -159 0z" fill="#fffaf0" /><path d="M363 166L363 362" fill="none"/><path d="M235 224l12 13l27 -34" fill="none" stroke="#8bac94" stroke-width="8"/><path d="M235 279l12 13l27 -34" fill="none" stroke="#8bac94" stroke-width="8"/><circle cx="411" cy="115" r="44" fill="#d6ae60"/><path d="M352 116h120M412 58v-20M367 76l-16 -14M456 75l16 -15" fill="none" /><circle cx="477" cy="274" r="62" fill="#fffaf0"/><circle cx="477" cy="274" r="4" fill="#36484d"/><path d="M477 226v-8M525 274h8M477 322v8M429 274h-8M477 274v-34.1m0 34.1l24.8 12.4" fill="none" />
-</g>
-</svg>
-

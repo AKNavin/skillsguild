@@ -20,7 +20,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - run: python -B scripts/test_skills.py
+      - run: python -m pip install -r packages/research/requirements.txt
+      - run: python -B -m unittest discover -s packages/research/tests -v
+      - run: python -B packages/broker/test_broker.py
       - run: npm run validate
       - run: npm run build
       - run: python -B scripts/check_packages.py

@@ -1,0 +1,155 @@
+{
+  "high52": {
+    "name": "52-week-high proximity",
+    "round": 1,
+    "configuration": {
+      "id": "high52-L252-N10-M6",
+      "family": "high52",
+      "lookback": 252,
+      "n": 10,
+      "months": 6
+    },
+    "source": "https://www.bauer.uh.edu/tgeorge/papers/gh4-paper.pdf"
+  },
+  "residual": {
+    "name": "Market-adjusted residual momentum",
+    "round": 1,
+    "configuration": {
+      "id": "residual-L126-N30-M3",
+      "family": "residual",
+      "lookback": 126,
+      "n": 30,
+      "months": 3
+    },
+    "source": "https://repub.eur.nl/pub/22252/ResidualMomentum-2011.pdf"
+  },
+  "absolute": {
+    "name": "Absolute + relative momentum",
+    "round": 1,
+    "configuration": {
+      "id": "absolute-L126-N30-M3",
+      "family": "absolute",
+      "lookback": 126,
+      "n": 30,
+      "months": 3
+    },
+    "source": "https://naaim.org/wp-content/uploads/2013/10/00D_Absolute-Momentum_gary_antonacci.pdf"
+  },
+  "lowvol": {
+    "name": "Low-volatility selection",
+    "round": 2,
+    "configuration": {
+      "id": "lowvol-L126-N20-M3",
+      "group": "lowvol",
+      "family": "lowvol",
+      "lookback": 126,
+      "n": 20,
+      "months": 3
+    },
+    "source": "https://papers.ssrn.com/abstract=2128634"
+  },
+  "riskmom": {
+    "name": "Volatility-adjusted momentum ranking",
+    "round": 2,
+    "configuration": {
+      "id": "riskmom_126-L126-N10-M3",
+      "group": "riskmom",
+      "family": "riskmom_126",
+      "lookback": 126,
+      "n": 10,
+      "months": 3
+    },
+    "source": "https://papers.ssrn.com/abstract=2880097"
+  },
+  "industry": {
+    "name": "Industry-led momentum",
+    "round": 2,
+    "configuration": {
+      "id": "industry_3-L126-N20-M3",
+      "group": "industry",
+      "family": "industry_3",
+      "lookback": 126,
+      "n": 20,
+      "months": 3
+    },
+    "source": "https://papers.ssrn.com/abstract=1756164"
+  },
+  "fip": {
+    "name": "Continuous-information momentum",
+    "round": 3,
+    "configuration": {
+      "id": "fip-L126-N10-M1",
+      "group": "fip",
+      "family": "fip",
+      "lookback": 126,
+      "n": 10,
+      "months": 1
+    },
+    "source": "https://www3.nd.edu/~zda/Frog.pdf"
+  },
+  "reversal": {
+    "name": "Industry-relative reversal",
+    "round": 3,
+    "configuration": {
+      "id": "reversal-L42-N10-M1",
+      "group": "reversal",
+      "family": "reversal",
+      "lookback": 42,
+      "n": 10,
+      "months": 1
+    },
+    "source": "https://papers.ssrn.com/abstract=4575689"
+  },
+  "lowbeta": {
+    "name": "Low market beta",
+    "round": 4,
+    "configuration": {
+      "id": "lowbeta-L252-N20-M3",
+      "group": "lowbeta",
+      "family": "lowbeta",
+      "lookback": 252,
+      "n": 20,
+      "months": 3
+    },
+    "source": "https://www.aqr.com/insights/research/journal-article/betting-against-beta"
+  },
+  "lowmax": {
+    "name": "Low MAX / smaller recent price jumps",
+    "round": 4,
+    "configuration": {
+      "id": "lowmax_5-L21-N30-M1",
+      "group": "lowmax",
+      "family": "lowmax_5",
+      "lookback": 21,
+      "n": 30,
+      "months": 1
+    },
+    "source": "https://pages.stern.nyu.edu/~rwhitela/papers/max%20jfe11.pdf"
+  },
+  "mad": {
+    "name": "Moving-average distance trend",
+    "round": 5,
+    "configuration": {
+      "id": "mad-L50-N30-M3",
+      "group": "mad",
+      "family": "mad",
+      "lookback": 50,
+      "n": 30,
+      "months": 3
+    },
+    "source": "https://onlinelibrary.wiley.com/doi/10.1002/rfe.1118"
+  },
+  "smad": {
+    "name": "Short-term moving-average reversal",
+    "round": 5,
+    "configuration": {
+      "id": "smad-L10-N10-M1",
+      "group": "smad",
+      "family": "smad",
+      "lookback": 10,
+      "n": 10,
+      "months": 1
+    },
+    "source": "https://rpc.cfainstitute.org/research/financial-analysts-journal/2025/short-term-moving-average-distance"
+  }
+}

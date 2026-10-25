@@ -1,46 +1,16 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Browse and download open-source AI skills for Algo Trading, HR and Content. Preview the workflow, read its instructions and put it to work.">
-  <meta name="theme-color" content="#ffffff">
-  <title>SkillsGuild — Find a skill. Put it to work.</title>
-  <link rel="icon" href="favicon-sg-rounded.ico" sizes="any"><link rel="icon" href="favicon-sg-rounded-32.png" type="image/png" sizes="32x32"><link rel="icon" href="favicon-sg-rounded-48.png" type="image/png" sizes="48x48"><link rel="apple-touch-icon" href="apple-touch-icon-sg-rounded.png" sizes="180x180">
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="app.js"></script>
-</head>
-<body>
-  <a class="skip" href="#catalogue">Skip to skills</a>
-  <header class="site-header">
-    <div class="header wrap">
-      <a class="brand" href="index.html" aria-label="SkillsGuild home">SkillsGuild<span>.in</span></a>
-      <nav id="categories" class="category-list" aria-label="Businesses"></nav>
-      <a id="github-link" class="contribute-link" href="contributing.html">GitHub <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-  <main class="wrap" id="catalogue">
-    <section class="library-intro" aria-labelledby="library-title">
-      <div><h1 id="library-title">Skills for specific work.</h1><p>Skills give general-purpose AI step-by-step guidance for a specific task.<br class="desktop-break"> Download a skill or give your agent its link.</p></div>
-      <div class="mission"><p>Open-source skills. Automation in plain language.</p><a href="contributing.html">Contribute a skill ↗</a></div>
-    </section>
-    <div class="toolbar">
-      <label class="search-box"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.7"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.7"/></svg><span class="sr-only">Search skills</span><input id="search" type="search" placeholder="Search skills, tasks or tags" autocomplete="off"><kbd>/</kbd></label>
-      <div class="business-tools" id="business-tools">
-        <label class="topic-label"><span class="sr-only">Topic</span><select id="topic" aria-label="Skill topic"><option value="all">All topics</option></select></label>
-        <a class="pack-link" id="business-pack" href="downloads/algotrading-bundle.zip" download>Algo pack ↓</a>
-        <button id="copy-ai-link" class="text-button">Copy AI guide link ↗</button>
-      </div>
-      <label class="sort-label"><span class="sr-only">Sort skills</span><select id="sort"><option value="curated">By business</option><option value="az">Name: A–Z</option></select></label>
-    </div>
-    <div id="hr-start" class="business-start" hidden><span>Start with your <button class="text-button" data-skill="hr-context-profile">HR context</button> and <button class="text-button" data-skill="hr-style-guide">writing style</button>. Then choose a task.</span><a href="hr.md">HR workflow guide ↗</a></div>
-    <div class="catalogue-meta"><p id="result-count" class="result-count" aria-live="polite">Loading skills…</p><button id="clear" class="clear-button" hidden>Clear filters</button><p class="catalogue-hint">Select a skill to read its instructions.</p></div>
-    <p id="ai-copy-status" class="toast global-toast" role="status" aria-live="polite"></p>
-    <div class="skill-grid" id="skills"></div>
-    <div class="empty" id="empty" hidden><h2>No matching skills</h2><p>Try another keyword or browse all businesses.</p><button class="button dark" id="reset">Show all skills</button></div>
-    <p class="usage-note">Copy a skill link into your AI with your task, or download and use its SKILL.md file. <a href="contributing.html#using-a-skill">How to use skills ↗</a></p>
-  </main>
-  <footer class="wrap"><span>Open-source AI skills · MIT licensed</span><div><a href="contributing.html">Add a skill</a><a href="LICENSE" download>Licence</a><a href="catalogue.json">Catalogue JSON</a></div></footer>
-  <dialog id="skill-dialog" aria-labelledby="detail-title"><button class="close-dialog" aria-label="Close skill details">×</button><div id="detail"></div></dialog>
-  <noscript><div class="wrap">Enable JavaScript to browse the library, or read the <a href="catalogue.json">catalogue JSON</a>.</div></noscript>
-</body>
-</html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Explore Indian stock strategies, inspect recorded backtests, and reproduce the research with your AI and broker data."><meta name="theme-color" content="#f6f7f9"><title>SkillsGuild — Indian strategy research</title>
+<link rel="icon" href="favicon-sg-rounded.ico" sizes="any"><link rel="icon" href="favicon-sg-rounded-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="apple-touch-icon-sg-rounded.png"><link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script>
+</head><body>
+<a class="skip" href="#catalogue">Skip to strategies</a>
+<header class="site-header"><div class="header wrap"><a class="brand" href="./"><img src="favicon-sg-rounded-48.png" width="32" height="32" alt=""><span>SkillsGuild</span><span class="brand-tag">RESEARCH</span></a><nav aria-label="Main navigation"><a href="#catalogue" aria-current="page">Strategies</a><a href="methodology.html">Methodology</a><a href="https://github.com/AKNavin/skillsguild" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div></header>
+<main class="wrap"><section class="intro" aria-labelledby="page-title"><div><p class="eyebrow">INDIAN EQUITIES · OPEN-SOURCE RESEARCH</p><h1 id="page-title">Trading ideas. Reproducible backtests.</h1><p>Inspect the evidence. Download the strategy. Let your AI reproduce it.</p></div><a class="intro-link" href="ai.md">How to use this with AI ↗</a></section>
+<div class="evidence-note"><span class="status-dot" aria-hidden="true"></span><strong>Exploratory research</strong><span>Current-universe bias · 2018–25 selection period · 2026 comparison already inspected</span><a href="methodology.html">Read the assumptions ↗</a></div>
+<div class="workspace"><section class="catalogue panel" id="catalogue" aria-labelledby="catalogue-title"><div class="panel-heading"><h2 id="catalogue-title">Strategy library <span id="total-count" class="count">—</span></h2><span class="subtle">Cash equities</span></div><div class="filters"><label class="search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span class="sr-only">Search strategies</span><input id="search" type="search" placeholder="Search strategies" autocomplete="off"><kbd>/</kbd></label><label><span class="sr-only">Strategy family</span><select id="family"><option value="all">All families</option></select></label></div><div class="list-meta"><span id="result-count" aria-live="polite">Loading research…</span><button id="clear-filters" class="text-button" hidden>Reset filters</button><label><span class="sr-only">Sort strategies</span><select id="sort"><option value="original">Research order</option><option value="cagr">CAGR: high to low</option><option value="drawdown">Drawdown: low to high</option><option value="ytd">2026 return: high to low</option><option value="name">Name: A–Z</option></select></label></div><div class="table-scroll"><table class="strategy-table"><caption class="sr-only">Select a strategy to inspect its recorded backtest. All figures are exploratory.</caption><thead><tr><th scope="col">Strategy</th><th scope="col">CAGR<span>2018–25</span></th><th scope="col">Max DD<span>2018–25</span></th><th scope="col">Return<span>2026*</span></th></tr></thead><tbody id="strategy-rows"></tbody></table></div><div class="empty-state" id="empty-state" hidden><h3>No matching strategies</h3><p>Try another term or browse every family.</p><button id="reset" class="button secondary">Reset filters</button></div><div class="catalogue-footnote"><p>*2026 comparison through 22 October. This period has already been inspected.</p><p>CAGR is annualised return; Max DD is maximum drawdown. Figures reflect the saved research assumptions.</p></div></section>
+<section class="detail panel" id="strategy-detail" aria-label="Selected strategy" aria-busy="true"><div class="loading-state"><span class="loading-dot"></span><p>Loading strategy research…</p></div></section></div>
+<section class="reproduce-strip"><div><h2>From research to your own run.</h2><p>Every package includes the rules, Python runner and AI instructions.</p></div><ol><li><span>01</span>Choose a strategy</li><li><span>02</span>Connect data locally</li><li><span>03</span>Reproduce with AI</li></ol><a href="contributing.html">Contribute research ↗</a></section></main>
+<footer class="wrap"><span>SkillsGuild · Open-source strategy research</span><div><a href="methodology.html">Methodology</a><a href="catalogue.json">Catalogue JSON</a><a href="llms.txt">For AI agents</a><a href="https://github.com/AKNavin/skillsguild">Source code ↗</a></div></footer>
+<dialog id="reproduce-dialog" aria-labelledby="reproduce-dialog-title"><button class="close-dialog" aria-label="Close reproduction guide">×</button><p class="eyebrow">REPRODUCE LOCALLY</p><h2 id="reproduce-dialog-title">Give your AI the complete strategy.</h2><p id="reproduce-strategy-name" class="dialog-strategy"></p><label class="field-label" for="broker">Your market data broker</label><select id="broker"><option value="ask">Let my AI ask me</option><option value="zerodha">Zerodha Kite</option><option value="dhan">Dhan</option><option value="fyers">FYERS</option></select><ol class="setup-steps"><li><strong>Download the strategy package.</strong><span>Give the ZIP to your AI agent, or copy the instructions below.</span></li><li><strong>Let your AI start the local helper.</strong><span id="broker-instructions">Choose your broker with the agent. Complete the broker’s login flow on your own computer.</span></li><li><strong>Run and compare.</strong><span>Ask it to fetch permitted historical data, run the strategy and explain differences from the recorded results.</span></li></ol><p class="local-note">Credentials stay on your computer. This website displays recorded research; it does not connect to your broker or place orders.</p><label class="field-label" for="ai-prompt">Instructions for your AI</label><textarea id="ai-prompt" rows="7" readonly></textarea><div class="dialog-actions"><button id="copy-prompt" class="button primary">Copy AI instructions ↗</button><a id="dialog-download" class="button secondary" download>Download ZIP ↓</a></div><p id="dialog-status" role="status" class="copy-status"></p></dialog>
+<p id="toast" role="status" aria-live="polite"></p><noscript><div class="wrap">Enable JavaScript to explore the results, or read the <a href="catalogue.json">strategy catalogue</a> and <a href="ai.md">AI guide</a>.</div></noscript>
+</body></html>

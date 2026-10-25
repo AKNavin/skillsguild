@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="An open toolkit with a gear, pencil and connected building blocks">
-<rect width="720" height="480" fill="#f4edd9"/>
-<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
-<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-<rect x="208" y="216" width="290" height="130" rx="18" fill="#cf7867"/><path d="M208 222l20 -74h247l23 74" fill="#fffaf0" /><rect x="323" y="126" width="58" height="25" rx="6" fill="#d6ae60"/><rect x="220" y="254" width="265" height="15" rx="3" fill="#d6ae60"/><circle cx="280" cy="182" r="39" fill="#759fca"/><circle cx="280" cy="182" r="13" fill="#fffaf0"/><path d="M358 232l20 -122 19 3 -20 123" fill="#d6ae60" /><rect x="404" y="184" width="50" height="48" rx="10" fill="#8bac94"/><rect x="418" y="172" width="21" height="13" rx="10" fill="#8bac94"/>
-</g>
-</svg>
-

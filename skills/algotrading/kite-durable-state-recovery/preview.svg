@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A secure archive cabinet with a circular recovery arrow">
-<rect width="720" height="480" fill="#e7ecf3"/>
-<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
-<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-<rect x="252" y="137" width="220" height="235" rx="17" fill="#759fca"/><rect x="273" y="168" width="178" height="74" rx="9" fill="#fffaf0"/><rect x="273" y="263" width="178" height="83" rx="9" fill="#fffaf0"/><rect x="333" y="193" width="61" height="14" rx="4" fill="#d6ae60"/><rect x="333" y="290" width="61" height="14" rx="4" fill="#d6ae60"/><path d="M224 284q-49 -40 -33 -104 16 -63 80 -88M240 75l32 15 -15 32" fill="none" stroke="#8bac94" stroke-width="15"/><circle cx="508" cy="344" r="41" fill="#d6ae60"/><path d="M508 320v27l15 12" fill="none" />
-</g>
-</svg>
-

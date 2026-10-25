@@ -4,3 +4,8 @@ node_modules/
 *.zip
 .env*
 !.env.example
+__pycache__/
+*.pyc
+.venv/
+private-data/
+private-results/

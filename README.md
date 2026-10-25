@@ -1,39 +1,24 @@
-# SkillsGuild.in
+# SkillsGuild — Indian strategy research
 
-An open-source library of downloadable AI skills for Algo Trading, Human Resources and Content.
+Compare twelve paper-inspired portfolio backtests, inspect the rules, and reproduce them with AI in your own environment. The library is open source under MIT; broker data has separate access and usage terms.
 
-The catalogue includes a focused Kite Connect collection for authentication, data, stock signals, options, backtesting, regimes, execution state and risk. Each download includes SKILL.md, metadata and the MIT licence. Selected skills also contain runnable offline reference helpers and synthetic fixtures. All website and skill sources are in this repository.
+## Use
 
-The HR collection covers 64 workflows across context/style, workforce planning, hiring, onboarding, operations, pay, performance, learning, engagement, relations, exits and analytics. Private context and writing-style skills help an assistant reuse the HR professional's approved preferences without storing personnel data on the website. Payroll reconciliation includes an offline CSV helper; other workflows generate concrete artifacts or scoped implementations using the user's tools.
+Open a strategy, select a broker and copy its AI instructions or download its ZIP. The AI asks about broker and period, launches the local login form, downloads authorised daily data with rate limits, and runs the frozen Python implementation. Read [AI-GUIDE.md](AI-GUIDE.md), [METHODOLOGY.md](METHODOLOGY.md), and the package README files before running.
 
-Read [the website brief](BRIEF.md), [the Algo Trading guide](ALGO-GUIDE.md), [the HR guide](HR-GUIDE.md), and [validation coverage](VALIDATION.md). Published `llms.txt`, `algotrading.md`, `hr.md` and individual `library/<category>/<skill>/SKILL.md` URLs let users direct their AI to relevant instructions. Separate Algo and HR bundles contain the instructions and supporting resources without card artwork. Open `?business=hr` for the HR catalogue.
+The website is static and does not receive credentials. The twelve saved results are exploratory current-universe cash-equity simulations. They use fractional adjusted shares, simplified fees and terminal estimates. 2026 has already been inspected. No historical result is a promise of executable profit.
 
-## Local development
+## Develop
 
-Requires Node.js 22 or newer. No third-party packages are required.
+Node.js 22+ builds the static site; Python 3.11+ runs the research package and tests. Install `packages/research/requirements.txt` in a virtual environment.
 
 ```sh
 npm run validate
 npm run build
+python -B scripts/check_packages.py
 npm run dev
 ```
 
-Open the printed local URL. The catalogue has business tabs, a brief explanation of skills, search and topic filters. Desktop screens show eight compact cards per row, with fewer columns on smaller screens. Each card has a text-free illustration, a short description, and Copy link and Download actions; its title or image opens the full instructions.
+Research source is in `packages/research`; local broker tooling is in `packages/broker`. Each `strategies/<id>` contains a frozen manifest and concise AI instructions. Derived saved outputs live in `research/results`; the original broker cache is excluded. `scripts/import_research.py` explicitly imports the user's original research artifacts when provided their location; normal builds need no private files or credentials.
 
-## Contributions
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). Skills live under `skills/<category>/<name>/`. The build discovers folders, validates metadata and generates the catalogue and ZIP packages automatically.
-
-## Publishing
-
-The Sites deployment uses `dist/` and the private project identity in `.openai/hosting.json`.
-
-For the public community site, GitHub Pages can build and publish `dist/` with `.github/workflows/pages.yml`. Select GitHub Actions as the publishing source in repository Settings → Pages. Pull requests run structural validation; pushes to main build and deploy. The public repository does not need the private `.openai` directory.
-
-Set `repository` in `site.config.json` to the real `owner/repository` before publishing. Set up SkillsGuild.in only after registering it in your own registrar account. Domain registration and DNS setup are separate from this code.
-
-The catalogue is generated at deployment time. An approved contribution appears after its merge and successful deployment. The Sites copy requires a separate deployment when the community source changes.
-
-## Licence
-
-MIT. Inspect downloaded instructions and code before using them with private data or connected tools.
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [VALIDATION.md](VALIDATION.md). Retired generic skills remain recoverable through Git history.

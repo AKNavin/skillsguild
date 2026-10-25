@@ -1,0 +1,3 @@
+symbol,kind,industry,zerodha_token,dhan_security_id,dhan_exchange_segment,fyers_symbol
+NIFTY_500,index,,,,IDX_I,
+NIFTY_50,index,,,,IDX_I,

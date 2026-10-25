@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A folded paper trading booth with pretend coin tokens and a practice chart">
-<rect width="720" height="480" fill="#f4edd9"/>
-<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
-<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-<path d="M216 178h290v169H216z" fill="#fffaf0" /><path d="M199 179l34 -70h255l34 70z" fill="#759fca" /><path d="M216 178h290v34q-24 23 -48 0 -24 23 -48 0 -24 23 -48 0 -24 23 -48 0 -24 23 -48 0 -25 23 -50 0z" fill="#cf7867" /><path d="M259 293l25 -20 25 9 30 -42 28 15 30 -45" fill="none" stroke="#759fca" stroke-width="7"/><ellipse cx="466" cy="334" rx="31" ry="12" fill="#d6ae60"/><path d="M435 334v12q31 22 62 0v-12" fill="#d6ae60" /><ellipse cx="466" cy="320" rx="31" ry="12" fill="#d6ae60"/><path d="M435 320v12q31 22 62 0v-12" fill="#d6ae60" /><ellipse cx="532" cy="355" rx="31" ry="12" fill="#d6ae60"/><path d="M501 355v12q31 22 62 0v-12" fill="#d6ae60" />
-</g>
-</svg>
-

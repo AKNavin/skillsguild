@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A pair of scales weighing coins against stacked position blocks">
-<rect width="720" height="480" fill="#f1e4df"/>
-<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
-<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-<path d="M228 164h277M366 134v230M307 372h119" fill="none" stroke="#759fca" stroke-width="15"/><circle cx="367" cy="167" r="20" fill="#d6ae60"/><path d="M246 168l-57 122h114zM489 168l-56 122h113z" fill="#fffaf0" /><ellipse cx="246" cy="274" rx="31" ry="12" fill="#d6ae60"/><path d="M215 274v12q31 22 62 0v-12" fill="#d6ae60" /><ellipse cx="246" cy="260" rx="31" ry="12" fill="#d6ae60"/><path d="M215 260v12q31 22 62 0v-12" fill="#d6ae60" /><rect x="456" y="253" width="29" height="29" rx="4" fill="#cf7867"/><rect x="491" y="253" width="29" height="29" rx="4" fill="#8bac94"/><rect x="472" y="218" width="29" height="29" rx="4" fill="#d6ae60"/>
-</g>
-</svg>
-

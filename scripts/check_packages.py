@@ -1,49 +1,53 @@
-"""Validate built package integrity and direct AI resource links; stdlib only."""
+"""Validate delivered reproduction archives and static resource integrity."""
+import hashlib
 import json
 import re
-import zipfile
 from pathlib import Path
+from zipfile import ZipFile
 
 ROOT=Path(__file__).resolve().parents[1]
 DIST=ROOT/'dist'
 catalogue=json.loads((DIST/'catalogue.json').read_text(encoding='utf-8'))
-names=set()
-for item in catalogue:
-    name=item['id']
-    assert name not in names;names.add(name)
-    source=ROOT/'skills'/item['category']/name
-    instructions=(source/'SKILL.md').read_bytes()
-    assert (DIST/item['instruction_url']).read_bytes()==instructions
-    assert (DIST/item['image']).is_file()
-    with zipfile.ZipFile(DIST/item['download']) as archive:
-        assert archive.testzip() is None, name
-        files=archive.namelist()
-        assert len(files)==len(set(files)), name
-        assert f'{name}/SKILL.md' in files and f'{name}/LICENSE' in files
-        for path in files:
-            assert path.startswith(name+'/') and '..' not in Path(path).parts
-            assert not any(p.startswith('.') or p=='__pycache__' for p in Path(path).parts)
-            if path!=name+'/LICENSE':
-                relative=path[len(name)+1:]
-                assert archive.read(path)==(source/relative).read_bytes()
-                assert (DIST/Path(item['instruction_url']).parent/relative).read_bytes()==archive.read(path)
-    # Markdown helper references must resolve in the same downloadable folder.
-    for reference in re.findall(r'\]\(((?:scripts|tests|fixtures|references)/[A-Za-z0-9_./-]+)\)',instructions.decode('utf-8')):
-        assert (source/reference).exists(), (name,reference)
-    if item['category'] in ['algotrading','hr'] and item.get('verified_at'):
-        assert item.get('sources') and item.get('requires')
-for category in ['algotrading','hr']:
-    with zipfile.ZipFile(DIST/f'downloads/{category}-bundle.zip') as bundle:
-        assert bundle.testzip() is None
-        for item in catalogue:
-            if item['category']==category:
-                assert bundle.read(category+'/'+item['id']+'/SKILL.md')==(ROOT/'skills'/category/item['id']/'SKILL.md').read_bytes()
-        assert all('/preview.' not in name for name in bundle.namelist())
-        for link in re.findall(r'\]\(([^)]+)\)',bundle.read(category+'/START-HERE.md').decode('utf-8')):
-            if not link.startswith('https://'):
-                assert category+'/'+link in bundle.namelist(), (category,link)
-for name in ['llms.txt','algotrading.md','hr.md']:
-    for link in re.findall(r'\]\(([^)]+)\)',(DIST/name).read_text(encoding='utf-8')):
-        if not link.startswith('https://'):
-            assert (DIST/link).is_file(), (name,link)
-print(f'Validated {len(catalogue)} ZIPs, direct resources, relative references, AI indexes and business bundles.')
+assert len(catalogue)==12
+required={'README.md','SKILL.md','strategy.json','reference-result.json','LICENSE','package-manifest.json',
+          'research/runner.py','research/engine.py','research/signals.py','research/panel.py','research/README.md',
+          'research/requirements.txt','research/verification.json','broker/broker_login.py','broker/download.py','broker/README.md'}
+for strategy in catalogue:
+    sid=strategy['id']; prefix=f'skillsguild-{sid}/'
+    with ZipFile(DIST/strategy['download']) as archive:
+        assert archive.testzip() is None, sid
+        names=archive.namelist()
+        assert len(names)==len(set(names)),sid
+        assert all(n.startswith(prefix) and '..' not in Path(n).parts for n in names),sid
+        relative={n[len(prefix):] for n in names}
+        assert required<=relative,(sid,required-relative)
+        manifest=json.loads(archive.read(prefix+'package-manifest.json'))
+        for item in manifest['files']:
+            assert hashlib.sha256(archive.read(prefix+item['path'])).hexdigest()==item['sha256'],(sid,item['path'])
+        assert len(manifest['files'])==len(names)-1
+        assert json.loads(archive.read(prefix+'strategy.json'))==strategy
+        assert json.loads(archive.read(prefix+'reference-result.json'))==json.loads((DIST/strategy['result_url']).read_text(encoding='utf-8'))
+        for name in relative:
+            assert not name.endswith('.pyc') and '__pycache__' not in name and not name.startswith('.'),name
+        for relative_path in ['research/engine.py','research/runner.py','research/signals.py','research/panel.py','broker/broker_login.py','broker/download.py','broker/broker_core.py']:
+            assert archive.read(prefix+relative_path)==(ROOT/'packages'/relative_path).read_bytes(),relative_path
+    for field in ['instruction_url','download','result_url','manifest_url']:
+        assert (DIST/strategy[field]).is_file(),strategy[field]
+    diagram=DIST/f'visual-{sid}.svg'
+    assert diagram.is_file()
+    assert '<text' not in diagram.read_text(encoding='utf-8'),f'Visible image text: {sid}'
+with ZipFile(DIST/'downloads/all-strategies.zip') as archive:
+    assert archive.testzip() is None
+    assert 'research/runner.py' in archive.namelist() and 'broker/download.py' in archive.namelist()
+    for s in catalogue: assert f"strategies/{s['id']}/SKILL.md" in archive.namelist()
+for name in ['index.html','methodology.html','contributing.html']:
+    html=(DIST/name).read_text(encoding='utf-8')
+    for href in re.findall(r'(?:src|href)="([^"]+)"',html):
+        if href.startswith(('http:','https:','#','mailto:')):continue
+        resource=href.split('#')[0].split('?')[0]
+        assert resource in ['','./'] or (DIST/resource).exists(),(name,resource)
+assert not (DIST/'library').exists()
+assert not (DIST/'hr.md').exists()
+assert not (DIST/'algotrading.md').exists()
+assert not list(DIST.glob('previews/*'))
+print('Verified 12 self-contained archives, combined pack, hashes, CRCs, diagrams and static links. Retired catalogue absent.')

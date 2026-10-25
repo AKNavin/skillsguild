@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="A dormant trigger mechanism linking a bell to two alternative flags">
-<rect width="720" height="480" fill="#e7ecf3"/>
-<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
-<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-<rect x="233" y="242" width="256" height="105" rx="17" fill="#759fca"/><path d="M342 241v-89q0 -26 26 -26t26 26v89" fill="#d6ae60" /><path d="M321 243h92l-15 -27v-55q-2 -44 -32 -44 -31 0 -32 44v55z" fill="#d6ae60" /><circle cx="367" cy="250" r="11" fill="#36484d"/><path d="M366 286l-136 74M366 286l151 74" fill="none" stroke-width="6"/><path d="M225 327L225 395" fill="none"/><path d="M225 328h55l-13 21 13 21h-55" fill="#8bac94" /><path d="M518 327L518 395" fill="none"/><path d="M518 328h55l-13 21 13 21h-55" fill="#cf7867" />
-</g>
-</svg>
-

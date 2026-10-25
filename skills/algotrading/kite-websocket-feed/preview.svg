@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="Two connected radio receivers with curved signal waves between them">
-<rect width="720" height="480" fill="#e4eee5"/>
-<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
-<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-<rect x="190" y="203" width="133" height="139" rx="20" fill="#759fca"/><rect x="408" y="203" width="133" height="139" rx="20" fill="#cf7867"/><circle cx="256" cy="280" r="33" fill="#fffaf0"/><circle cx="474" cy="280" r="33" fill="#fffaf0"/><path d="M227 201L199 139" fill="none"/><path d="M504 201L532 139" fill="none"/><path d="M308 233q51 -69 111 0M299 201q65 -104 128 0M292 169q74 -130 143 0" fill="none" stroke="#d6ae60" stroke-width="8"/><path d="M308 302q50 44 101 0" fill="none" stroke="#8bac94" stroke-width="6"/>
-</g>
-</svg>
-

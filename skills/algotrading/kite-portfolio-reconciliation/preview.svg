@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="Two ledgers aligned on a balance with matching colored pieces">
-<rect width="720" height="480" fill="#e7ecf3"/>
-<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
-<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-<rect x="206" y="166" width="126" height="167" rx="8" fill="#fffaf0"/><path d="M297 166v35h35" fill="#c8d9e3" /><rect x="416" y="166" width="126" height="167" rx="8" fill="#fffaf0"/><path d="M507 166v35h35" fill="#c8d9e3" /><path d="M219 134h311M375 117v242M326 367h98" fill="none" stroke-width="13" stroke="#d6ae60"/><path d="M228 134v34M520 134v34" fill="none" /><rect x="237" y="216" width="60" height="20" rx="5" fill="#759fca"/><rect x="447" y="216" width="60" height="20" rx="5" fill="#759fca"/><rect x="237" y="255" width="60" height="20" rx="5" fill="#cf7867"/><rect x="447" y="255" width="60" height="20" rx="5" fill="#cf7867"/><circle cx="374" cy="134" r="17" fill="#fffaf0"/>
-</g>
-</svg>
-

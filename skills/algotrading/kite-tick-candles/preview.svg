@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="Scattered market ticks passing through a funnel into three candlesticks">
-<rect width="720" height="480" fill="#e4eee5"/>
-<ellipse cx="370" cy="394" rx="214" ry="17" fill="#36484d" opacity=".07"/>
-<g stroke="#36484d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-<path d="M218 125h291l-108 120v59h-73v-59z" fill="#759fca" /><circle cx="258" cy="89" r="8" fill="#cf7867"/><circle cx="307" cy="70" r="8" fill="#d6ae60"/><circle cx="351" cy="97" r="8" fill="#8bac94"/><circle cx="414" cy="82" r="8" fill="#cf7867"/><circle cx="464" cy="100" r="8" fill="#d6ae60"/><path d="M296 316L296 410" fill="none"/><rect x="282" y="332" width="28" height="49" rx="3" fill="#cf7867"/><path d="M364 307L364 411" fill="none"/><rect x="350" y="326" width="28" height="67" rx="3" fill="#8bac94"/><path d="M432 305L432 396" fill="none"/><rect x="418" y="320" width="28" height="46" rx="3" fill="#759fca"/>
-</g>
-</svg>
-
