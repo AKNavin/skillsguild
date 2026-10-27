@@ -6,23 +6,6 @@ const fixed = (value, digits = 2) => number(value) ? value.toFixed(digits) : '�
 const sign = value => number(value) ? value < 0 ? 'negative' : value > 0 ? 'positive' : '' : '';
 const state = {catalogue:[], selected:null, period:'training', chart:'equity', query:'', family:'all', sort:'original', result:null, ledgerPage:0};
 const resultsCache = new Map();
-const rulePictures = {
-  high52:'252-session highs → rank close / high → up to 10 stocks; review in January and July. Proximity, not a breakout trigger.',
-  residual:'504-return market regression → 126 residual returns ending 21 sessions ago → rank residual momentum; up to 30 stocks quarterly.',
-  absolute:'126-session return → keep positive returns, rank highest first → up to 30 stocks quarterly.',
-  lowvol:'126 daily returns → sample volatility, lowest first → up to 20 stocks quarterly.',
-  riskmom:'126-session momentum ending 21 sessions ago ÷ recent annualised volatility → positive scores, up to 10 stocks quarterly.',
-  industry:'Rank positive industry momentum → top three groups → alternate their leading stocks, up to 20 quarterly.',
-  fip:'Positive top-20% formation momentum → prefer more frequent up days → up to 10 stocks monthly.',
-  reversal:'42-session return minus industry mean → most negative relative returns → up to 10 stocks monthly.',
-  lowbeta:'252 stock and market returns → regression beta, lowest first → up to 20 stocks quarterly.',
-  lowmax:'Largest five daily returns in 21 sessions → average and rank lowest first → up to 30 stocks monthly.',
-  mad:'50-session mean ÷ 200-session mean → rank highest ratios → up to 30 stocks quarterly. A ranking, not a crossover.',
-  smad:'Current close ÷ 10-session mean → rank lowest ratios → up to 10 stocks monthly.',
-  intermediate:'Return from calendar month-end twelve months ago to six months ago → rank highest first → up to 10 stocks quarterly; exclude the recent six months.',
-  volume:'Month-end share volume above its prior 100-session 90th percentile → rank volume / prior mean → up to 30 stocks monthly.',
-  seasonal:'Average the next holding month’s returns in the prior five years → require at least two complete observations → up to 10 stocks monthly.'
-};
 let requestSequence = 0;
 
 // Public metadata is rendered as text; only HTTP(S) resource links are accepted.
@@ -65,14 +48,6 @@ function renderDetail() {
   <div class="detail-disclosures"><details><summary>Assumptions & limitations<span class="summary-count">Read before using</span></summary><div class="disclosure-body"><div class="assumption-pills"><span>Long only</span><span>No leverage</span><span>Fractional adjusted shares</span><span>Equity starts at 100</span></div><ul>${[...assumptions,...limitations].map(item => `<li>${escape(item)}</li>`).join('')}</ul></div></details><details id="trade-details"><summary>Trade ledger<span class="summary-count">${trades.length.toLocaleString('en-IN')} closed trades</span></summary><div class="disclosure-body"><div class="table-scroll" id="ledger-table"></div><div class="ledger-actions"><span id="ledger-range"></span><button class="text-button" id="ledger-previous">Previous</button><button class="text-button" id="ledger-next">Next</button><button class="text-button" id="download-trades">Download all CSV ↓</button></div><p style="margin-top:10px">P&amp;L is in normalised equity points. Terminal exits are modelled close-price estimates.</p></div></details><details><summary>Parameters & result files<span class="summary-count">Machine readable</span></summary><div class="disclosure-body"><pre class="json-preview">${escape(JSON.stringify(strategy.configuration || strategy.parameters || {},null,2))}</pre><div class="ledger-actions"><a href="${escape(resourceURL(strategy.result_url))}" download>Download recorded result JSON ↓</a><a href="${escape(resourceURL(strategy.instruction_url))}">Read AI instructions ↗</a></div></div></details><details><summary>Curve observations<span class="summary-count">Accessible data table</span></summary><div class="disclosure-body"><p>First and last five observations shown. Download the curve CSV for the full daily series.</p><div class="table-scroll">${curveTable(result.equity || [])}</div></div></details></div><p class="source-note">Research adaptation · <a href="${escape(resourceURL(strategy.source))}" target="_blank" rel="noopener noreferrer">Original research ↗</a> · <a href="methodology.html">Data, accounting & limitations</a><br>These saved results are exploratory. Reproduction with another broker or dataset can produce different results.</p>`;
   $('#strategy-detail').setAttribute('aria-busy','false');
   $('#strategy-detail').setAttribute('aria-labelledby','detail-title');
-  const rulesSection = document.querySelector('.rules-section');
-  if (rulesSection && rulePictures[strategy.id]) {
-    const figure = document.createElement('figure'); figure.className = 'strategy-visual';
-    const picture = document.createElement('img'); picture.src = `visual-${strategy.id}.svg`; picture.alt = rulePictures[strategy.id]; picture.width = 640; picture.height = 156;
-    const caption = document.createElement('figcaption'); caption.textContent = rulePictures[strategy.id];
-    const label = document.createElement('span'); label.className = 'visual-label'; label.textContent = 'RULE ILLUSTRATION · NOT PERFORMANCE';
-    figure.append(label,picture,caption); rulesSection.prepend(figure);
-  }
   renderChart();
   renderLedger();
 }
