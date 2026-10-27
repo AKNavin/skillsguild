@@ -21,6 +21,8 @@ python research/runner.py --strategy lowbeta --data-dir YOUR_DATA --start 2018-0
 
 The selected configuration is `lowbeta-L252-N20-M3`. Use the latest 252 simple daily returns for each stock and Nifty 500. Fit an intercept and market slope; beta = covariance(stock, market) / variance(market). Rank lowest beta first, including negative estimates. Choose up to 20 stocks and review quarterly; no momentum filter.
 
+Complete history, positive volume and nonconstant stock returns. Unlevered low-beta long leg only, not the original beta-normalized long/short Betting Against Beta factor.
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.

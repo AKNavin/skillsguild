@@ -21,6 +21,8 @@ python research/runner.py --strategy lowmax --data-dir YOUR_DATA --start 2018-01
 
 The selected configuration is `lowmax_5-L21-N30-M1`. Calculate the latest 21 simple daily returns for each eligible stock. Average the largest five returns. Rank stocks by the lowest such average. Choose up to 30 stocks and review monthly. No positive-momentum requirement.
 
+Complete history, positive volume and nonconstant daily returns. Rolling-session month and long-only selection adapt the MAX anomaly; high-MAX short leg omitted.
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.

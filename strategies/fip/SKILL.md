@@ -21,6 +21,8 @@ python research/runner.py --strategy fip --data-dir YOUR_DATA --start 2018-01-01
 
 The selected configuration is `fip-L126-N10-M1`. Calculate the 126-session return ending 21 sessions before the signal. Rank eligible stocks and retain the top 20%, rounded up; keep only positive returns. In that same formation window, count fractions of up and down days. ID = sign(formation return) × (fraction down − fraction up). Zero-return days remain in the denominator. Rank lowest ID first, then highest formation return, then symbol. Choose up to 10 stocks and review monthly.
 
+Complete close history across formation and skipped month, positive volume. Frequency-of-gains measure, not simply low volatility; simplified long-only Frog-in-the-Pan adaptation.
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.

@@ -1,4 +1,4 @@
-# Reproduce the twelve Indian equity studies
+# Reproduce the fifteen Indian equity studies
 
 This package contains the frozen signal formulas and accounting engine from the supplied five-round research handoff, dated 23 October 2026. It does not select new parameters. It runs locally against your own authorised Zerodha daily-history panel and cannot place orders.
 
@@ -37,7 +37,7 @@ Each instrument file is an ascending array of unique date-only daily candles:
 
 The example is synthetic. Prices must be finite and positive, volume finite and nonnegative, and OHLC internally consistent. All stock files are required, although their histories may start after listings. The Nifty 500 calendar defines shared sessions. The original filter removes sessions with fewer than 100 eligible-stock candles; Nifty 50 must cover every retained session. Missing stock observations remain missing for scoring and execution, while last known closes may be carried only for valuation.
 
-Download sufficient warm-up before the requested start: the residual signal needs at least 505 retained sessions before the run's first session. The other signals require their frozen lookback windows. The original panel starts before 2018. The runner rejects missing warm-up, invalid dates, future requested end dates, malformed candles and a data folder used as its output folder. The loader never writes to the input dataset. `--quarantine /path/to/Data-quality-quarantine.json` supports an explicitly separate original quarantine file.
+Download sufficient warm-up before the requested start: the residual signal needs at least 505 retained sessions before the run's first session. Intermediate momentum needs the calendar month-end twelve months before its signal. Seasonality needs at least two complete prior returns for the next holding month, and considers up to five calendar years; download five years of warm-up where available. Other signals require their frozen session windows. A lookback of 12 for intermediate means calendar months; 5 for seasonal means years. The original panel starts before 2018. The runner rejects missing warm-up, invalid dates, future requested end dates, malformed candles and a data folder used as its output folder. The loader never writes to the input dataset. `--quarantine /path/to/Data-quality-quarantine.json` supports an explicitly separate original quarantine file.
 
 ## Outputs and comparison
 
@@ -45,7 +45,7 @@ Download sufficient warm-up before the requested start: the residual signal need
 
 To reproduce the published periods, run `2018-01-01` through `2025-12-31` and, separately, `2026-01-01` through `2026-10-22`. Each run restarts at normalized equity 100. Reproducing the original results requires the original dataset bytes and frozen settings. Fresh downloads can revise history; matching provider names alone does not establish identical data.
 
-The default execution uses 5 basis points of one-way slippage and the source's percentage charges. A gross sensitivity run requires both `--no-costs --slippage-bps 0`. For round 1's source stress use `--slippage-bps 10`; for rounds 2–5's source stress use `--slippage-bps 10 --avoid-locked`. These variants are reruns with their own quantities, not a subtraction of fees from the original equity curve.
+The default execution uses 5 basis points of one-way slippage and the source's percentage charges. A gross sensitivity run requires both `--no-costs --slippage-bps 0`. For round 1's source stress use `--slippage-bps 10`; for rounds 2–6's source stress use `--slippage-bps 10 --avoid-locked`. These variants are reruns with their own quantities, not a subtraction of fees from the original equity curve.
 
 ## Exact accounting conventions and limits
 
@@ -58,4 +58,6 @@ The default execution uses 5 basis points of one-way slippage and the source's p
 - CAGR uses inclusive calendar days divided by 365.25. Daily Sharpe uses 252 sessions and zero cash return. The original zero-variance Sharpe convention is zero; it is not statistical evidence of a risk-free strategy. Comparators are price indices rather than investable total-return series, and do not model the strategy's entry delay or costs.
 - Current universe membership, current industry labels and a whole-history quarantine introduce survivorship and retrospective selection. Corporate actions, dividends, delistings and renamed instruments are not fully reconstructed. 2026 has already been viewed in previous research; it is not a pristine holdout.
 
-`engine.py` preserves the original `metrics`, `run` and `benchmark` function bodies; `signals.py` preserves the five rounds' scoring bodies. Only portable loading, dispatch, validation and reporting are new. `source-provenance.json` identifies original source hashes. The tests use synthetic data and verify causality of score functions, hand-computed fees, delayed fills, settlement, conservation of cash, invalid input rejection and CLI/API parity. These checks establish implementation behaviour, not future profitability.
+`engine.py` preserves the original `metrics`, `run` and `benchmark` function bodies; `signals.py` preserves the six rounds' scoring formulas, with a portable calendar-month endpoint lookup for round 6. Only portable loading, dispatch, validation and reporting are new. `source-provenance.json` identifies original source hashes. The tests use synthetic data and verify causality of score functions, hand-computed fees, delayed fills, settlement, conservation of cash, invalid input rejection and CLI/API parity. These checks establish implementation behaviour, not future profitability.
+
+The new selected configurations are `intermediate-L12-N10-M3`, `volume-L100-N30-M1` and `seasonal-L5-N10-M1`. Their definitions and risk notes are in each strategy manifest. Preserve the reference 22 October 2026 cutoff when comparing saved results.

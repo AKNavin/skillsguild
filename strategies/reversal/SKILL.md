@@ -21,6 +21,8 @@ python research/runner.py --strategy reversal --data-dir YOUR_DATA --start 2018-
 
 The selected configuration is `reversal-L42-N10-M1`. Calculate each eligible stock’s latest 42-session return, without skipping a month. Within each current Industry group with at least five eligible members, compute the equal-weight mean return. Subtract it from the stock return. Keep negative relative returns, rank most negative first, choose up to 10 stocks and review monthly.
 
+Complete history and positive volume. Simple long-leg heuristic; no short leg, factor neutralization or fundamental-news controls of the broader published research.
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.

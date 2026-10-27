@@ -18,7 +18,10 @@ const rulePictures = {
   lowbeta:'252 stock and market returns → regression beta, lowest first → up to 20 stocks quarterly.',
   lowmax:'Largest five daily returns in 21 sessions → average and rank lowest first → up to 30 stocks monthly.',
   mad:'50-session mean ÷ 200-session mean → rank highest ratios → up to 30 stocks quarterly. A ranking, not a crossover.',
-  smad:'Current close ÷ 10-session mean → rank lowest ratios → up to 10 stocks monthly.'
+  smad:'Current close ÷ 10-session mean → rank lowest ratios → up to 10 stocks monthly.',
+  intermediate:'Return from calendar month-end twelve months ago to six months ago → rank highest first → up to 10 stocks quarterly; exclude the recent six months.',
+  volume:'Month-end share volume above its prior 100-session 90th percentile → rank volume / prior mean → up to 30 stocks monthly.',
+  seasonal:'Average the next holding month’s returns in the prior five years → require at least two complete observations → up to 10 stocks monthly.'
 };
 let requestSequence = 0;
 

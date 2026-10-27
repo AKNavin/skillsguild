@@ -12,7 +12,37 @@ ROOT = Path(__file__).resolve().parents[1]
 FAMILIES = dict(high52='Momentum', residual='Momentum', absolute='Momentum',
                 lowvol='Defensive', riskmom='Momentum', industry='Momentum',
                 fip='Momentum', reversal='Mean reversion', lowbeta='Defensive',
-                lowmax='Defensive', mad='Trend', smad='Mean reversion')
+                lowmax='Defensive', mad='Trend', smad='Mean reversion',
+                intermediate='Momentum', volume='Volume', seasonal='Seasonality')
+ROUND6 = {
+    'intermediate': dict(
+        steps=[
+            'At the completed review close, measure the return between calendar month-ends twelve and six months earlier; January 2018 uses December 2016 to June 2017.',
+            'Rank that older six-month return highest first; no positive-return filter. Require complete formation prices, a finite current close and positive current volume.',
+            'Select up to 10 stocks and review quarterly in January, April, July and October.'
+        ],
+        adaptation='Long-only Indian adaptation of intermediate-horizon momentum. Calendar-month endpoints, not twelve trading sessions; the most recent six months do not enter the return score.',
+        caveats=[
+            'Execution stress: double slippage and reject one-price-bar fills. 2018–2025 return falls from 1209.07% to 904.25%; the baseline includes a questionable TTML entry on 5 October 2021.',
+            'CUPID contributes +20.557 normalized equity points in 2026 while the whole portfolio returns +8.34%; this is contributor accounting, not a portfolio rerun excluding CUPID.'
+        ]),
+    'volume': dict(
+        steps=[
+            'At each completed month-end compare current share volume with its preceding 100 sessions, excluding the signal day.',
+            'Qualify only when current volume is strictly above the prior 90th percentile; rank current volume / prior mean volume highest first. Require finite nonnegative past volume, positive mean/current volume and complete close history.',
+            'Select up to 30 stocks monthly; unfilled slots remain cash. No price-momentum or earnings filter.'
+        ],
+        adaptation='Long-only high-volume-premium adaptation. Uses historical raw share-volume percentiles and ratio ranking, not shares-outstanding turnover or the paper’s long/short portfolio.',
+        caveats=['Share-volume corporate-action changes are not independently reconstructed; splits and similar events can affect this signal.']),
+    'seasonal': dict(
+        steps=[
+            'Before the holding month, collect that same calendar month’s close-to-close returns from the preceding five calendar years, using complete past months only.',
+            'Average available valid years, requiring at least two; rank highest first without a positive-mean filter. Require a finite current close, positive current volume and uninterrupted finite prices within each sampled month.',
+            'Select up to 10 stocks and review monthly. Before January 2025, use available January returns from 2020–2024, never January 2025.'
+        ],
+        adaptation='Short-history, long-only stock seasonality adaptation. The lookback is five calendar years, not five sessions; at least two complete same-month returns are required.',
+        caveats=['The cache begins in 2015. January 2018 has at most two usable prior January returns; early reviews use fewer than five observations and the seasonal estimate is especially noisy.'])
+}
 LIMITS = [
     'Current Nifty 500-derived universe, not historical constituents: survivorship and selection bias.',
     '2018–2025 influenced parameter selection. The 2026 comparison has been inspected repeatedly; it is not an untouched holdout.',
@@ -70,12 +100,16 @@ def main():
     parser.add_argument('--source', type=Path, required=True)
     args = parser.parse_args()
     source = args.source.resolve()
-    manifest_path = source/'papers-round5-2026-10-23/All-12-strategies.json'
+    manifest_path = source/'papers-round6-2026-10-27/All-15-strategies.json'
     manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+    contributions = json.loads((manifest_path.parent/'Contributions.json').read_text(encoding='utf-8'))
     catalogue = []
     hashes = {}
     for s in manifest['strategies']:
         sid = s['id']
+        if sid in ROUND6:
+            s = dict(s, **ROUND6[sid], folder='papers-round6-2026-10-27',
+                     source=s['primary_source'], contributions_2026=contributions[sid]['ytd2026'])
         p = source/s['folder']/f'Result-{sid}.json'
         hashes[sid] = hashlib.sha256(p.read_bytes()).hexdigest()
         data = json.loads(p.read_text(encoding='utf-8'))
@@ -93,7 +127,7 @@ def main():
                     configuration=cfg, rules=dict(entry=' '.join(s['steps']),
                     exit='Sell when removed at a review. No stop-loss or take-profit. Estimate terminal liquidation at final close.',
                     sizing=f"Up to {cfg['n']} stocks. Signal equity / {cfg['n']} per new position; fractional shares; retained positions are not resized.",
-                    execution=ASSUMPTIONS[1]), limitations=[s['adaptation']]+LIMITS,
+                    execution=ASSUMPTIONS[1]), limitations=[s['adaptation']]+s.get('caveats', [])+LIMITS,
                     source=s['source'], download=f'downloads/{sid}.zip',
                     instruction_url=f'strategies/{sid}/SKILL.md', result_url=f'results/{sid}.json',
                     manifest_url=f'strategies/{sid}/strategy.json',
@@ -125,6 +159,8 @@ python research/runner.py --strategy {sid} --data-dir YOUR_DATA --start 2018-01-
 
 The selected configuration is `{cfg['id']}`. {' '.join(s['steps'])}
 
+{' '.join([s['adaptation']]+s.get('caveats', []))}
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.
@@ -134,8 +170,9 @@ The study uses today's universe, fractional shares and simplified charges. 2018�
         (ROOT/'strategies'/sid/'SKILL.md').write_text(instructions, encoding='utf-8')
     write(ROOT/'research/catalogue.json', catalogue)
     write(ROOT/'research/provenance.json', dict(dataCutoff=manifest['data_cutoff'],
-          importedFrom='User-supplied 12-strategy research handoff',
+          importedFrom='User-supplied 15-strategy research handoffs, 23 and 27 October 2026',
           source='https://app.notion.com/p/4025c39e2b32816b9004f4510464b0ee',
+          additionalSource='https://app.notion.com/p/4065c39e2b3281bab21ecdf5df401d96',
           manifestSha256=hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
           resultSha256=hashes, parameterCombinations=sum(manifest['grids'].values()),
           publishedFields='Derived normalized equity, aggregate metrics, date/symbol/return trade summaries; no raw market-data cache.'))

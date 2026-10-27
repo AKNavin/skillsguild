@@ -8,7 +8,7 @@ from zipfile import ZipFile
 ROOT=Path(__file__).resolve().parents[1]
 DIST=ROOT/'dist'
 catalogue=json.loads((DIST/'catalogue.json').read_text(encoding='utf-8'))
-assert len(catalogue)==12
+assert len(catalogue)==15
 required={'README.md','SKILL.md','strategy.json','reference-result.json','LICENSE','package-manifest.json',
           'research/runner.py','research/engine.py','research/signals.py','research/panel.py','research/README.md',
           'research/requirements.txt','research/verification.json','broker/broker_login.py','broker/download.py','broker/README.md'}
@@ -50,4 +50,4 @@ assert not (DIST/'library').exists()
 assert not (DIST/'hr.md').exists()
 assert not (DIST/'algotrading.md').exists()
 assert not list(DIST.glob('previews/*'))
-print('Verified 12 self-contained archives, combined pack, hashes, CRCs, diagrams and static links. Retired catalogue absent.')
+print(f'Verified {len(catalogue)} self-contained archives, combined pack, hashes, CRCs, diagrams and static links. Retired catalogue absent.')

@@ -21,6 +21,8 @@ python research/runner.py --strategy industry --data-dir YOUR_DATA --start 2018-
 
 The selected configuration is `industry_3-L126-N20-M3`. Calculate each eligible stock’s 126-session return ending 21 sessions ago. Group by the saved current Industry label; require at least five eligible members. Compute each group’s equal-weight mean return. Choose the three strongest groups with positive returns. Rank positive-return stocks within each group; alternate one stock from each group’s ranked list until up to 20 are selected. Review quarterly.
 
+Complete history and positive volume. Current group classifications are not historical sector memberships or broker index returns; no parametric optimization.
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.

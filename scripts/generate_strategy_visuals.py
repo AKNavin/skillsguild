@@ -64,12 +64,23 @@ def visuals():
     result['lowmax']=line([(35,53),(54,50),(61,30),(65,53),(90,53),(96,19),(101,52),(132,50),(137,28),(143,52),(175,49),(180,22),(186,51),(211,20),(220,49)],GRAY,2)+waves(35,104,184,4,7,0,TEAL)+bars([15,24,38,56,70])+basket(30)
     result['mad']=line([(35,111),(62,102),(90,92),(118,79),(146,64),(175,50),(221,38)],BLUE)+line([(35,113),(62,110),(90,105),(118,100),(146,92),(175,84),(221,73)],GRAY)+line([(221,38),(221,73)],TEAL,2,'3 4')+bars([68,55,43,30,15])+basket(30)
     result['smad']=line([(35,72),(66,70),(96,68),(126,70),(156,69),(186,73),(221,76)],GRAY,3)+line(list(zip(x,[65,74,62,77,71,84,91,117])),BLUE)+circle(222,117,5,BLUE)+line([(222,76),(222,117)],TEAL,2,'3 4')+bars([18,29,40,55,65])+basket(10)
+    result['intermediate']=rect(32,29,99,94,'#eaf3fc',4)+line([(35,109),(54,94),(75,99),(93,69),(112,74),(130,48)],BLUE)+circle(35,109,4,BLUE)+circle(130,48,4,BLUE)+line([(130,48),(150,66),(169,50),(190,79),(220,57)],GRAY,2,'4 5')+line([(130,29),(130,124)],GRAY,1.5,'3 4')+bars([69,52,37,24,9])+basket(10)
+    prior=[27,38,20,48,29,34,41,23,36,31,46,26,33,39,24,30]
+    activity=''.join(rect(34+i*10,121-h,6,h,GRAY,1) for i,h in enumerate(prior))
+    result['volume']=activity+line([(32,76),(224,76)],TEAL,1.5,'3 4')+rect(206,36,13,85,BLUE,2)+bars([69,51,33,22,12])+basket(30)
+    calendar=''
+    for year in range(5):
+        for m in range(12):
+            colour=TEAL if m==2 and year>=2 else '#d5e0eb' if m==2 else '#edf1f6'
+            calendar+=rect(36+m*16,35+year*18,10,11,colour,2)
+    result['seasonal']=calendar+bars([65,49,36,24,12])+basket(10)
     return result
 
 
 def main():
     titles={'high52':'Rank closeness to the 252-session high, select ten stocks', 'residual':'Remove the market component, rank residual momentum, select thirty stocks', 'absolute':'Filter positive formation returns, rank momentum, select thirty stocks', 'lowvol':'Measure return variability, prefer lower volatility, select twenty stocks', 'riskmom':'Divide formation momentum by volatility, rank scores, select ten stocks', 'industry':'Rank industry groups, alternate stock selections across three groups', 'fip':'Prefer frequent positive days within positive top momentum stocks', 'reversal':'Compare returns within each industry and select relative laggards', 'lowbeta':'Measure sensitivity to market returns, rank lowest beta first', 'lowmax':'Average the five largest recent daily returns, prefer smaller jumps', 'mad':'Rank the fifty-session mean divided by the two-hundred-session mean', 'smad':'Rank current close divided by ten-session mean, lowest first'}
     diagrams=visuals()
+    titles.update(intermediate='Rank the return from calendar month-end twelve months ago to six months ago; exclude the recent six months', volume='Filter month-end volume above the prior hundred-session ninetieth percentile, then rank volume divided by prior mean', seasonal='Average valid same-calendar-month returns from the prior five years, requiring at least two, then select ten stocks')
     for sid,content in diagrams.items():
         svg=frame(content,titles[sid]); ET.fromstring(svg)
         (ROOT/'src'/f'visual-{sid}.svg').write_text(svg,encoding='utf-8')

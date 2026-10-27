@@ -21,6 +21,8 @@ python research/runner.py --strategy residual --data-dir YOUR_DATA --start 2018-
 
 The selected configuration is `residual-L126-N30-M3`. Use 504 daily returns and fit stock return = intercept + beta × Nifty 500 return. Subtract fitted returns to obtain residuals. Select the 126 residual returns ending 21 sessions before the signal date. Score = sum of these residuals / their sample standard deviation; rank highest first. Choose up to 30 stocks and review quarterly.
 
+Require complete 505-close history, positive current volume and nonzero residual volatility. No positive-score requirement. Market-only proxy, not the paper’s three-factor residual model.
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.

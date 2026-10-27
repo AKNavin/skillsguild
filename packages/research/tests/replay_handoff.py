@@ -25,7 +25,7 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     study = args.study_dir.resolve()
-    folders = ['papers-momentum-2026-10-22', 'papers-round2-2026-10-23', 'papers-round3-2026-10-23', 'papers-round4-2026-10-23', 'papers-round5-2026-10-23']
+    folders = ['papers-momentum-2026-10-22', 'papers-round2-2026-10-23', 'papers-round3-2026-10-23', 'papers-round4-2026-10-23', 'papers-round5-2026-10-23', 'papers-round6-2026-10-27']
     p, audit, data = load_panel(study / folders[0], study / 'rl-breakout-2026-10-17' / 'Data-quality-quarantine.json')
     comparisons = []
     for key, definition in frozen_strategies().items():

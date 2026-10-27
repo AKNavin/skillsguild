@@ -21,6 +21,8 @@ python research/runner.py --strategy smad --data-dir YOUR_DATA --start 2018-01-0
 
 The selected configuration is `smad-L10-N10-M1`. At the monthly review close, calculate the average of the latest 10 closes, including the current close. Score = current close / 10-session average; rank lowest first. Choose up to 10 stocks and review monthly. No extra requirement that the ratio be below one; exits follow membership changes.
 
+Complete 10-close history and positive volume. Simplified long-only SMAD adaptation. Published in 2025: the 2018–2025 simulation is retrospective, not a claim that this published specification existed in 2018.
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.

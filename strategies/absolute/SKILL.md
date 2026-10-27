@@ -21,6 +21,8 @@ python research/runner.py --strategy absolute --data-dir YOUR_DATA --start 2018-
 
 The selected configuration is `absolute-L126-N30-M3`. Measure current close / close 126 sessions earlier − 1 using complete close history. Keep only stocks with positive returns, then rank those returns highest first. Choose up to 30 stocks and review quarterly. Unfilled slots remain in cash; no skipped month.
 
+Positive signal-day volume required. Zero-return hurdle and cross-sectional stocks replace the original Treasury-bill comparison; cash earns zero.
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.

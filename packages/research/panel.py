@@ -129,6 +129,20 @@ def validate_window(panel, config, start, end):
     if end > dates[-1]:
         raise ValueError(f'End date exceeds the available data cutoff ({dates[-1]})')
     family, look = config['family'], config['lookback']
+    if family in ('intermediate', 'seasonal'):
+        # Calendar-month signals need complete prior month endpoints, not a
+        # session count inferred from the configuration's months/years unit.
+        month = lambda d: int(d[:4])*12+int(d[5:7])-1
+        ends = {month(d):i for i,d in enumerate(dates)}
+        signal = indices[0]-1
+        m = month(dates[signal]) if signal >= 0 else None
+        enough = signal >= 0 and (m-12 in ends and m-6 in ends if family == 'intermediate'
+                 else sum(m+1-12*y in ends and m-12*y in ends for y in range(1, look+1)) >= 2)
+        if not enough:
+            raise ValueError(f'Insufficient warm-up: {family} requires prior calendar-month history; seasonality needs at least two complete same-month returns')
+        if len(indices) < 2:
+            raise ValueError('Select at least two retained sessions')
+        return indices
     minimum = (252 if family == 'high52' else 505 if family == 'residual' else
                200 if family == 'mad' else look if family == 'smad' else
                look + 22 if family == 'fip' or family.startswith(('riskmom_', 'industry_')) else look + 1)

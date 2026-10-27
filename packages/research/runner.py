@@ -1,4 +1,4 @@
-"""Reproduce the twelve frozen study configurations against a private daily panel."""
+"""Reproduce the fifteen frozen study configurations against a private daily panel."""
 import argparse
 import csv
 import hashlib

@@ -1,13 +1,13 @@
 {
-  "created_utc": "2026-10-24T12:28:11.558701+00:00",
-  "runs": 48,
-  "passed": 48,
+  "created_utc": "2026-10-27T17:49:38.959325+00:00",
+  "runs": 60,
+  "passed": 60,
   "dataset_sha256": "bfed74ed840c72055ac3800bc2ac19502aba7c5febce207471ad55c65dcc03b0",
   "stocks": 491,
   "calendar_first": "2015-01-01",
   "calendar_last": "2026-10-22",
   "note": "Exact parity against supplied historical reports verifies portability, not data quality, unbiased research or future performance.",
-  "synthetic_tests_passed": 13,
+  "synthetic_tests_passed": 17,
   "maximum_absolute_equity_difference": 0.0,
   "source_report_sha256": {
     "high52": "1d4b655d3606fd69c9fb7aebd39a117213d364361cbbd613717ebf002831c6f3",
@@ -21,13 +21,16 @@
     "lowbeta": "b93b3e6eb1e390d79942bebea1a2a12dc3cb78fde61529b6af6dba2a9e5ffd66",
     "lowmax": "0269037eb88496e01e98672850208903aa5b2f2871f22a3fd02a86ad1978f097",
     "mad": "445a81767a3b518ba0de528698061b8b24068ee4833df8d241a6baa8a1da634a",
-    "smad": "25dd0b668fc2a649ca7cf071de5f7827a69475e4ee67fb203805871a6a6a4c46"
+    "smad": "25dd0b668fc2a649ca7cf071de5f7827a69475e4ee67fb203805871a6a6a4c46",
+    "intermediate": "ed205d3f68031e1f7df6e3df835e758b928d4d0df37d4639b9b3aabca634fe19",
+    "volume": "04f1be9eb4315737cebd9b6938d52ebf4bd68fab32b0989e87eefc0af8220123",
+    "seasonal": "3def7fc745d7a0b2626349f2b9ecb45475ec14731af5ffbf7c27cb7293e02470"
   },
   "portable_code_sha256": {
     "engine.py": "7200d01fc891442d4f746d1bc2bd9497aba6058aa68160cd490f6a495bda6dd1",
-    "signals.py": "c2409ed99e449606bd372019c3526a84a8aec1a0969364bc3f7fb71933f31f7b",
-    "panel.py": "057afc6a292ce3cb1314ad4ad8d81fb737675a7209cb7041f4d40dc1d536c291",
-    "runner.py": "01f8ab6ae1a4d8161d23715e4c3113f5d87b39c78cc8bd94cdaa3f4e4217997f",
-    "strategies.json": "991087a1e8bf6ca79bcfaaa9b6147a946e6a71df9113081022e1be8f600abacc"
+    "signals.py": "062fb9b398b9c024afd90f96f38e8334f6c4013902467f292c32eadc398f0852",
+    "panel.py": "4296879cf90152f5af1ddfedfee3ea815201719fe16aa3ac92560d0c2581b93c",
+    "runner.py": "f0331fd12fa1b3ec1ae949274073d13555520053e6005892dd3053713ca404a4",
+    "strategies.json": "b7ed22c88467c30758c72821458019b09baa6606ea0c3c04340dac893928db78"
   }
 }

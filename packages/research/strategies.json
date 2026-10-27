@@ -151,5 +151,44 @@
       "months": 1
     },
     "source": "https://rpc.cfainstitute.org/research/financial-analysts-journal/2025/short-term-moving-average-distance"
+  },
+  "intermediate": {
+    "name": "Intermediate-horizon momentum",
+    "round": 6,
+    "configuration": {
+      "id": "intermediate-L12-N10-M3",
+      "group": "intermediate",
+      "family": "intermediate",
+      "lookback": 12,
+      "n": 10,
+      "months": 3
+    },
+    "source": "https://doi.org/10.1016/j.jfineco.2011.05.003"
+  },
+  "volume": {
+    "name": "High-volume premium",
+    "round": 6,
+    "configuration": {
+      "id": "volume-L100-N30-M1",
+      "group": "volume",
+      "family": "volume",
+      "lookback": 100,
+      "n": 30,
+      "months": 1
+    },
+    "source": "https://doi.org/10.1111/0022-1082.00349"
+  },
+  "seasonal": {
+    "name": "Calendar-month seasonality",
+    "round": 6,
+    "configuration": {
+      "id": "seasonal-L5-N10-M1",
+      "group": "seasonal",
+      "family": "seasonal",
+      "lookback": 5,
+      "n": 10,
+      "months": 1
+    },
+    "source": "https://doi.org/10.1111/jofi.12398"
   }
 }

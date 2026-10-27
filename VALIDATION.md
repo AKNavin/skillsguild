@@ -1,12 +1,12 @@
 # Validation coverage
 
-The backtest-only release replaces the former 130-skill catalogue with twelve frozen portfolio strategies from the supplied research handoff. Recorded prices end 22 October 2026. There is no generic HR, Content or Algo skills library in the new build.
+The backtest-only release replaces the former 130-skill catalogue with fifteen frozen portfolio strategies from the supplied research handoff. Recorded prices end 22 October 2026. There is no generic HR, Content or Algo skills library in the new build.
 
 ## Research reproduction
 
-The portable engine was compared against all 48 saved runs: twelve strategies, two periods, baseline and source stress. All available source report fields matched exactly, including detailed equity/trades/ledger where present. The maximum absolute equity difference was zero. `packages/research/verification.json` records dataset, code and source hashes without copying raw market data.
+The portable engine was compared against all 60 saved runs: fifteen strategies, two periods, baseline and source stress. All available source report fields matched exactly, including detailed equity/trades/ledger where present. The maximum absolute equity difference was zero. `packages/research/verification.json` records dataset, code and source hashes without copying raw market data.
 
-Thirteen synthetic tests cover hand-reconciled accounting, delayed buys, sale settlement, zero-cost conservation, skipped zero-volume buys, no future-price use in signals, CLI/API agreement, input immutability, invalid candles/dates, warm-up and shared-session filtering. These tests verify the documented model. They do not make its current-universe selection, daily-bar execution assumptions, fractional shares or terminal estimates executable reality.
+Seventeen synthetic tests cover hand-reconciled accounting, delayed buys, sale settlement, zero-cost conservation, skipped zero-volume buys, no future-price use in signals, CLI/API agreement, input immutability, invalid candles/dates, warm-up and shared-session filtering. These tests verify the documented model. They do not make its current-universe selection, daily-bar execution assumptions, fractional shares or terminal estimates executable reality.
 
 ## Broker tooling
 
@@ -24,6 +24,10 @@ npm run build
 python -B scripts/check_packages.py
 ```
 
-Build validation reconciles saved endpoint returns, drawdowns and trade counts against the catalogue. Package validation checks all twelve ZIPs and the combined pack, CRCs, file hashes, executable source parity, direct resources and absence of retired catalogue output. Rule diagrams are original SVGs with no visible text; their captions distinguish conceptual inputs/ranking from the actual saved equity curves.
+Build validation reconciles saved endpoint returns, drawdowns and trade counts against the catalogue. Package validation checks all fifteen ZIPs and the combined pack, CRCs, file hashes, executable source parity, direct resources and absence of retired catalogue output. Rule diagrams are original SVGs with no visible text; their captions distinguish conceptual inputs/ranking from the actual saved equity curves.
 
-Frontend syntax and a temporary DOM rendering harness exercised twelve strategies across both periods, chart modes, filters, ledger counts and broker prompts. Browser automation stopped because the computer-use runtime could not reliably identify the active browser URL. Browser layout and live clipboard behaviour therefore remain unverified; the static and rendering checks passed.
+Frontend syntax and a temporary DOM rendering harness exercised twelve strategies across both periods, chart modes, filters, ledger counts and broker prompts. The original release had no browser layout verification because browser automation stopped. On 27 October, browser checks confirmed the fifteen-entry catalogue, all three new strategy detail pages and rule images, the volume strategy’s 2026 result toggle, and the seasonality AI dialog with public instruction/download URLs. The narrow viewport layout was visually reviewed. Live clipboard behaviour and broker authentication remain unverified.
+
+## 27 October additions
+
+Added intermediate-horizon momentum, high-volume premium and calendar-month seasonality from the supplied round-6 handoff. Four additional independent tests verify calendar endpoints, signed intermediate returns, the strictly greater volume percentile with the signal day excluded, same-month seasonal averages with missing-year rejection, and calendar-based warm-up. The future-candle test now covers all fifteen families. All sixty baseline/stress source runs match exactly, including full equity, orders, selections and ledgers where present. This is 15 strategies × 2 periods × 2 execution settings; maximum absolute equity difference is zero. The preceding twelve recorded result series are preserved.

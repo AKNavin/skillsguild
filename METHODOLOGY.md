@@ -1,10 +1,10 @@
 # How to read these backtests
 
-The current release contains twelve paper-inspired Indian cash-equity portfolio studies supplied in the [research handoff](https://app.notion.com/p/4025c39e2b32816b9004f4510464b0ee). Price cutoff: 22 October 2026. Results are exploratory simulations, not live performance. The site preserves saved figures rather than generating a promotional equity curve.
+The current release contains fifteen paper-inspired Indian cash-equity portfolio studies supplied in the [research handoff](https://app.notion.com/p/4025c39e2b32816b9004f4510464b0ee). The [27 October supplement](https://app.notion.com/p/4065c39e2b3281bab21ecdf5df401d96) adds intermediate-horizon momentum, high-volume premium and calendar-month seasonality. Price cutoff: 22 October 2026. Results are exploratory simulations, not live performance. The site preserves saved figures rather than generating a promotional equity curve.
 
 ## Periods and selection
 
-151 predefined configurations across five rounds were evaluated. Each family was selected by the largest minimum Calmar score across independently restarted 2018–2022 development and 2023–2025 validation windows, with the documented tie-breaks. Consequently the full 2018–2025 headline period influenced selection. The separate 2026 comparison has been viewed repeatedly and is not an untouched holdout. Both displayed periods restart in cash; 2026 does not inherit the prior portfolio. Annual returns within 2018–2025 use continuous holdings.
+169 predefined configurations across six rounds were evaluated. Each family was selected by the largest minimum Calmar score across independently restarted 2018–2022 development and 2023–2025 validation windows, with the documented tie-breaks. Consequently the full 2018–2025 headline period influenced selection. The separate 2026 comparison has been viewed repeatedly and is not an untouched holdout. Both displayed periods restart in cash; 2026 does not inherit the prior portfolio. Annual returns within 2018–2025 use continuous holdings.
 
 ## Universe and prices
 
@@ -31,3 +31,9 @@ Round 1's source stress doubles slippage; later rounds also restrict one-price c
 The downloaded helper opens a local browser form. Keys and secrets stay out of the AI chat and normal command output; sessions live in the helper process. The helper exposes history access, not order placement. An unrestricted process on the same machine can still inspect other local processes/files, so this is a privacy-conscious workflow rather than a guarantee against a hostile local agent. Broker access tokens themselves are sensitive.
 
 Rate limits and coverage are broker- and plan-specific. See the bundled broker README for the checked limits and enforced pacing. Zerodha's [historical API](https://kite.trade/docs/connect/v3/historical/) and [rate limits](https://kite.trade/docs/connect/v3/exceptions/), [Dhan documentation](https://dhanhq.co/docs/v2/), and [FYERS plans](https://fyers.in/api-docs/v3/getting-started/plans-and-limits/) are the primary references. Personal data access is distinct from public distribution rights; see the [NSE data policy](https://www.nseindia.com/static/market-data/nse-data-policy).
+
+## Additional signal conventions
+
+Intermediate-horizon momentum uses calendar month-ends twelve and six months before the signal; the recent six months are excluded. High-volume premium uses the previous 100 sessions, excluding the signal day, and requires current share volume strictly above its historical 90th percentile before ranking the current/prior-mean ratio. Calendar-month seasonality averages the next holding month’s returns from up to five prior years, with at least two complete valid observations. These units are calendar months, sessions and calendar years respectively.
+
+The new batch preserves the 22 October 2026 cutoff and adds 18 configurations; the preceding twelve results are unchanged. Intermediate momentum’s 2018–2025 return falls from 1209.07% to 904.25% when slippage doubles and one-price-bar fills are rejected, including a questionable TTML entry. Share-volume corporate-action adjustments are not independently reconstructed. Early seasonality estimates use particularly few years: January 2018 has at most two usable prior January returns.

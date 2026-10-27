@@ -1,12 +1,12 @@
 # SkillsGuild — Indian strategy research
 
-Compare twelve paper-inspired portfolio backtests, inspect the rules, and reproduce them with AI in your own environment. The library is open source under MIT; broker data has separate access and usage terms.
+Compare fifteen paper-inspired portfolio backtests, inspect the rules, and reproduce them with AI in your own environment. The library is open source under MIT; broker data has separate access and usage terms.
 
 ## Use
 
 Open a strategy, select a broker and copy its AI instructions or download its ZIP. The AI asks about broker and period, launches the local login form, downloads authorised daily data with rate limits, and runs the frozen Python implementation. Read [AI-GUIDE.md](AI-GUIDE.md), [METHODOLOGY.md](METHODOLOGY.md), and the package README files before running.
 
-The website is static and does not receive credentials. The twelve saved results are exploratory current-universe cash-equity simulations. They use fractional adjusted shares, simplified fees and terminal estimates. 2026 has already been inspected. No historical result is a promise of executable profit.
+The website is static and does not receive credentials. The fifteen saved results are exploratory current-universe cash-equity simulations. They use fractional adjusted shares, simplified fees and terminal estimates. 2026 has already been inspected. No historical result is a promise of executable profit.
 
 ## Develop
 

@@ -21,6 +21,8 @@ python research/runner.py --strategy riskmom --data-dir YOUR_DATA --start 2018-0
 
 The selected configuration is `riskmom_126-L126-N10-M3`. Measure the 126-session price return ending 21 sessions before the signal: close at t−21 / close at t−147 − 1. Compute sample standard deviation of the latest 126 daily returns, including the recent month, and multiply by sqrt(252). Keep positive formation returns. Score = formation return / annualized volatility, highest first. Choose up to 10 stocks and review quarterly.
 
+Complete close history across the formation and skip period, positive volume and nonzero volatility. This is ranking, not volatility-targeted portfolio sizing or the exact paper portfolio.
+
 Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.

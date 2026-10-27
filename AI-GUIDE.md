@@ -6,7 +6,7 @@ Download and extract the complete strategy ZIP. Use a Python 3.11+ virtual envir
 
 Launch `python broker/broker_login.py` and ask the user to complete its local browser form. Never ask for keys, secrets, request tokens or access tokens in chat. Do not inspect credential fields, take login screenshots, read browser storage, or print authentication responses. The helper retains the session in memory and exposes a limited session reference; stopping it clears that session. Same-computer process access is not cryptographic isolation from an unrestricted coding agent.
 
-Use an approved instrument mapping and the broker downloader to produce `Universe.json`, `Data-quality-quarantine.json` and daily `data/SYMBOL.json` files. The twelve reference studies use a large Nifty500-derived stock universe and benchmark histories, not one symbol. Industry strategies need the saved industry mapping. The local broker README documents identifiers, limits, caching and resume behaviour. Download warm-up history before the requested test start. Missing entitlements or truncated history must be reported, not silently filled or replaced with synthetic data.
+Use an approved instrument mapping and the broker downloader to produce `Universe.json`, `Data-quality-quarantine.json` and daily `data/SYMBOL.json` files. The fifteen reference studies use a large Nifty500-derived stock universe and benchmark histories, not one symbol. Industry strategies need the saved industry mapping. The local broker README documents identifiers, limits, caching and resume behaviour. Download warm-up history before the requested test start. Missing entitlements or truncated history must be reported, not silently filled or replaced with synthetic data.
 
 Run the chosen frozen configuration:
 

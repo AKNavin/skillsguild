@@ -57,7 +57,7 @@ def write_dataset(root, n=65):
 
 
 class SignalTests(unittest.TestCase):
-    def test_all_twelve_signals_ignore_future_candles(self):
+    def test_all_fifteen_signals_ignore_future_candles(self):
         p = synthetic()
         changed = {k: v.copy() if hasattr(v, 'copy') else v for k, v in p.items()}
         t = 520
@@ -88,6 +88,53 @@ class SignalTests(unittest.TestCase):
     def test_unknown_family_is_rejected(self):
         with self.assertRaises(ValueError):
             signals.score_at(synthetic(), 520, 'invented', 1)
+
+    def test_intermediate_uses_calendar_endpoints_and_allows_negative_returns(self):
+        p = synthetic(n=820, stocks=3, start='2018-01-02')
+        p['close'][:] = 100
+        ends = {d[:7]:i for i,d in enumerate(p['dates'])}
+        t = ends['2020-12']
+        p['close'][ends['2020-06']] = [140, 80, 120]
+        p['close'][t] = [5, 5000, 70]  # Recent six months do not define the score.
+        p['close'][ends['2020-03'], 2] = np.nan
+        result = signals.score_at(p, t, 'intermediate', 12)
+        np.testing.assert_allclose(result[:2], [.4, -.2])
+        self.assertTrue(np.isnan(result[2]))
+
+    def test_volume_excludes_signal_day_and_uses_strict_percentile(self):
+        p = synthetic(n=110, stocks=4)
+        p['volume'] = p['volume'].astype(float)
+        p['volume'][:100] = np.arange(1,101)[:,None]
+        p['volume'][100] = [100, 90.1, 200, 0]
+        p['volume'][:100,2] = 0  # A zero history mean is ineligible.
+        result = signals.score_at(p, 100, 'volume', 100)
+        self.assertAlmostEqual(result[0], 100/50.5)
+        self.assertTrue(np.isnan(result[1:]).all())
+
+    def test_seasonal_same_month_mean_requires_two_unbroken_years(self):
+        p = synthetic(n=1350, stocks=2, start='2018-01-02')
+        p['close'][:] = 100
+        ends = {d[:7]:i for i,d in enumerate(p['dates'])}
+        t = ends['2022-12']
+        for year, value in [(2019,110),(2020,120),(2021,130),(2022,140)]:
+            p['close'][ends[f'{year}-01']] = [value, 100-(value-100)]
+        result = signals.score_at(p, t, 'seasonal', 5)
+        np.testing.assert_allclose(result, [.25, -.25])
+        # Remove a middle-of-month observation from three years for stock 0.
+        for year in [2019,2020,2021]:
+            i = next(i for i,d in enumerate(p['dates']) if d.startswith(f'{year}-01-1'))
+            p['close'][i,0] = np.nan
+        self.assertTrue(np.isnan(signals.score_at(p, t, 'seasonal', 5)[0]))
+
+    def test_calendar_signal_warmup_is_in_months_and_years(self):
+        p = synthetic(n=820, start='2018-01-02')
+        for sid, too_early, valid in [('intermediate','2018-12-03','2020-01-02'),
+                                       ('seasonal','2020-01-01','2021-01-01')]:
+            config = runner.frozen_strategies()[sid]['configuration']
+            with self.subTest(strategy=sid):
+                with self.assertRaisesRegex(ValueError, 'warm-up'):
+                    panel.validate_window(p, config, too_early, p['dates'][-1])
+                panel.validate_window(p, config, valid, p['dates'][-1])
 
 
 class AccountingTests(unittest.TestCase):

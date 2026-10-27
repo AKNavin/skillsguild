@@ -1,4 +1,4 @@
-"""Signal math extracted unchanged from the five supplied research rounds."""
+"""Frozen signal math from the six supplied research rounds."""
 import numpy as np
 
 def score_round1(p,t,family,look):
@@ -112,6 +112,40 @@ def score_round5(p,t,family,look):
     else:result[valid]=-p['close'][t,valid]/mean[valid]
     return result
 
+def month(d):
+    return int(d[:4])*12+int(d[5:7])-1
+
+
+def score_round6(p,t,family,look):
+    c=p['close'];v=p['volume'];result=np.full(c.shape[1],np.nan);m=month(p['dates'][t])
+    ends=p.get('month_ends') or {month(d):i for i,d in enumerate(p['dates'])}
+    if family=='intermediate':
+        if m-12 not in ends:return result
+        a,b=ends[m-12],ends[m-6]
+        hist=c[a:b+1];valid=np.isfinite(hist).all(axis=0)&np.isfinite(c[t])&(v[t]>0)
+        ret=c[b]/c[a]-1;result[valid]=ret[valid]
+    elif family=='volume':
+        if t<look:return result
+        h=v[t-look:t];valid=np.isfinite(h).all(axis=0)&(h>=0).all(axis=0)&np.isfinite(c[t-look:t+1]).all(axis=0)&(v[t]>0)
+        mean=np.mean(h,axis=0);threshold=np.quantile(h,.9,axis=0)
+        valid &= (mean>0)&(v[t]>threshold)
+        result[valid]=v[t,valid]/mean[valid]
+    else:
+        target=m+1;ret=[]
+        for year in range(1,look+1):
+            ref=target-12*year
+            if ref-1 not in ends or ref not in ends:continue
+            a,b=ends[ref-1],ends[ref]
+            assert b<=t
+            h=c[a:b+1];valid=np.isfinite(h).all(axis=0)
+            r=np.full(c.shape[1],np.nan);r[valid]=c[b,valid]/c[a,valid]-1;ret.append(r)
+        if not ret:return result
+        a=np.array(ret);counts=np.isfinite(a).sum(axis=0)
+        valid=(counts>=2)&np.isfinite(c[t])&(v[t]>0)
+        result[valid]=np.nansum(a[:,valid],axis=0)/counts[valid]
+    return result
+
+
 def score_at(panel, t, family, lookback):
     if family in ('high52', 'residual', 'absolute'):
         return score_round1(panel, t, family, lookback)
@@ -123,4 +157,6 @@ def score_at(panel, t, family, lookback):
         return score_round4(panel, t, family, lookback)
     if family in ('mad', 'smad'):
         return score_round5(panel, t, family, lookback)
+    if family in ('intermediate', 'volume', 'seasonal'):
+        return score_round6(panel, t, family, lookback)
     raise ValueError('Unknown frozen signal family: ' + family)
