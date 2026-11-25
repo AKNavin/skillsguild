@@ -1,11 +1,11 @@
 ---
 name: smad
-description: Reproduce the Indian Short-term moving-average reversal portfolio backtest with user-authorised broker history and the frozen research rules.
+description: Reproduce the Indian Short-term moving-average reversal portfolio backtest with user-authorised Zerodha history and the frozen research rules.
 ---
 
 # Short-term moving-average reversal
 
-Ask which broker the user uses: Zerodha, Dhan or FYERS, and which historical window to test. Ask FYERS users their plan. Explain missing history/entitlements before downloading. Do not request credentials in chat.
+Use Zerodha Kite Connect for daily history. Ask for the historical window and confirm the account has historical-data access. Enter credentials only in the local helper.
 
 Download the complete [package](../../downloads/smad.zip). A SKILL.md link alone does not contain the executable files. Use Python 3.11+ and install `research/requirements.txt` into a local virtual environment. Read `broker/README.md` for current login and download commands.
 
@@ -23,7 +23,7 @@ The selected configuration is `smad-L10-N10-M1`. At the monthly review close, ca
 
 Complete 10-close history and positive volume. Simplified long-only SMAD adaptation. Published in 2025: the 2018–2025 simulation is retrospective, not a claim that this published specification existed in 2018.
 
-Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
+Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A fresh Kite data snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.
 

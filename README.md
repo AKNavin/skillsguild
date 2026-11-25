@@ -4,7 +4,7 @@ Compare fifteen paper-inspired portfolio backtests, inspect the rules, and repro
 
 ## Use
 
-Open a strategy, select a broker and copy its AI instructions or download its ZIP. The AI asks about broker and period, launches the local login form, downloads authorised daily data with rate limits, and runs the frozen Python implementation. Read [AI-GUIDE.md](AI-GUIDE.md), [METHODOLOGY.md](METHODOLOGY.md), and the package README files before running.
+Open a strategy and copy its AI instructions or download its ZIP. The AI confirms the historical period, launches the local login form, downloads authorised Zerodha Kite daily data with rate limits, and runs the frozen Python implementation. Read [AI-GUIDE.md](AI-GUIDE.md), [METHODOLOGY.md](METHODOLOGY.md), and the package README files before running.
 
 The website is static and does not receive credentials. The fifteen saved results are exploratory current-universe cash-equity simulations. They use fractional adjusted shares, simplified fees and terminal estimates. 2026 has already been inspected. No historical result is a promise of executable profit.
 

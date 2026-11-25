@@ -29,15 +29,15 @@ class FakeClock:
         self.now += delay
 
 
-def fake_session(broker="zerodha", responses=None, plan="standard"):
+def fake_session(responses=None):
     recorded = []
     responses = iter(responses or [(200, {"data": {}}, None)])
     def request(method, url, headers, data):
         recorded.append((method, url, headers, data))
         return next(responses)
     clock = FakeClock()
-    limiter = Limiter(broker, plan, clock.clock, clock.sleep)
-    return BrokerSession(broker, "fake-app", "fake-token", plan, request, limiter), recorded, clock
+    limiter = Limiter(clock.clock, clock.sleep)
+    return BrokerSession("fake-app", "fake-token", request, limiter), recorded, clock
 
 
 class AdapterTests(unittest.TestCase):
@@ -55,17 +55,33 @@ class AdapterTests(unittest.TestCase):
         session.clear()
         self.assertEqual(session.token, "")
 
-    def test_fyers_code_exchange(self):
-        calls = []
-        def request(method, url, headers, data):
-            calls.append((method, url, data))
-            return (200, {"s": "ok", "access_token": "fake-token"}, None)
-        authenticate({"broker": "fyers", "mode": "code", "client_id": "APP-100", "secret": "fake-secret", "code": "fake-code"}, request)
-        self.assertEqual(json.loads(calls[0][2])["appIdHash"], hashlib.sha256(b"APP-100:fake-secret").hexdigest())
+    def test_kite_daily_history_uses_mapped_token(self):
+        candle = ["2020-01-02T00:00:00+05:30", 100, 105, 99, 102, 1000]
+        session, calls, _ = fake_session(responses=[(200, {"data": {"candles": [candle]}}, None)])
+        rows = session.history({"kind": "stock", "zerodha_token": "123"}, "2020-01-01", "2020-01-03")
+        self.assertEqual(rows[0]["date"], "2020-01-02")
+        self.assertEqual(rows[0]["close"], 102)
+        method, url, headers, body = calls[0]
+        self.assertEqual(method, "GET")
+        self.assertEqual(url.split("?")[0], "https://api.kite.trade/instruments/historical/123/day")
+        self.assertEqual(headers["Authorization"], "token fake-app:fake-token")
+        self.assertIsNone(body)
 
-    def test_dhan_checks_client_identity(self):
-        with self.assertRaisesRegex(BrokerError, "does not match"):
-            authenticate({"broker": "dhan", "client_id": "123", "access_token": "fake-token"}, lambda *args: (200, {"dhanClientId": "456"}, None))
+    def test_kite_pacing_and_rolling_daily_budget(self):
+        clock = FakeClock()
+        limiter = Limiter(clock.clock, clock.sleep)
+        limiter.per_day = 2
+        limiter.wait()
+        limiter.wait()
+        self.assertGreaterEqual(clock.now, 1 / 3)
+        with self.assertRaisesRegex(BrokerError, "daily request budget"):
+            limiter.wait()
+        clock.now += 86400
+        limiter.wait()
+
+    def test_other_provider_rejected_before_authentication(self):
+        with self.assertRaisesRegex(BrokerError, "Zerodha"):
+            authenticate({"broker": "other"}, lambda *args: self.fail("network attempted"))
 
     def test_auth_errors_redact_payload(self):
         with self.assertRaises(BrokerError) as caught:
@@ -114,28 +130,6 @@ class AdapterTests(unittest.TestCase):
             session.call("GET", "https://api.kite.trade/user/profile")
         self.assertEqual(len(calls), 4)
 
-    def test_standard_fyers_minute_and_daily_limits(self):
-        clock = FakeClock()
-        limiter = Limiter("fyers", clock=clock.clock, sleep=clock.sleep)
-        for _ in range(49):
-            limiter.wait()
-        self.assertGreaterEqual(clock.now, 60)
-        limiter.per_day = 49
-        with self.assertRaisesRegex(BrokerError, "daily"):
-            limiter.wait()
-
-    def test_dhan_noninclusive_to_date_and_array_conversion(self):
-        stamp = int(dt.datetime(2020, 1, 2, tzinfo=IST).timestamp())
-        session, calls, _ = fake_session("dhan", [(200, {"timestamp": [stamp], "open": [100], "high": [105], "low": [99], "close": [102], "volume": [1000]}, None)])
-        rows = session.history({"dhan_security_id": "123", "kind": "stock"}, "2020-01-01", "2020-01-03")
-        self.assertEqual(json.loads(calls[0][3])["toDate"], "2020-01-04")
-        self.assertEqual(rows[0]["date"], "2020-01-02")
-
-    def test_fyers_application_errors_use_retry(self):
-        session, calls, _ = fake_session("fyers", [(200, {"s": "error", "code": -429}, None), (200, {"s": "ok"}, None)])
-        session.call("GET", "https://api-t1.fyers.in/api/v3/profile")
-        self.assertEqual(len(calls), 2)
-
     def test_future_and_current_candles_rejected(self):
         with self.assertRaises(BrokerError):
             validate_range("2020-01-01", "2020-01-02", today=dt.date(2020, 1, 2))
@@ -159,7 +153,7 @@ class LocalBoundaryTests(unittest.TestCase):
         self.messages, self.received = [], []
         def auth(fields):
             self.received.append(dict(fields))
-            return BrokerSession("zerodha", "fake-key", "fake-token")
+            return BrokerSession("fake-key", "fake-token")
         self.server = LocalServer(authenticator=auth, notify=self.messages.append)
         self.worker = threading.Thread(target=self.server.serve_forever, daemon=True)
         self.worker.start()
@@ -247,12 +241,12 @@ class DatasetTests(unittest.TestCase):
     def test_benchmarks_required(self):
         self.mapping.write_text("symbol,kind,industry,zerodha_token\nTEST,stock,Technology,3\n", encoding="utf-8")
         with self.assertRaisesRegex(BrokerError, "Map both"):
-            read_instruments(self.mapping, "zerodha")
+            read_instruments(self.mapping)
 
     def test_credentials_column_rejected(self):
         self.mapping.write_text("symbol,kind,industry,access_token\nTEST,stock,Technology,fake-token\n", encoding="utf-8")
         with self.assertRaisesRegex(BrokerError, "Credentials"):
-            read_instruments(self.mapping, "zerodha")
+            read_instruments(self.mapping)
 
     def test_session_url_restricted_to_loopback(self):
         for url in ("https://example.com/session/" + "x" * 43, "http://localhost:1234/session/" + "x" * 43, "http://127.0.0.1:1234/orders"):
@@ -264,7 +258,7 @@ class DatasetTests(unittest.TestCase):
             calls = 0
             def call(inner, route, body=None):
                 if route == "/status":
-                    return {"broker": "zerodha", "connected": True, "plan": "standard"}
+                    return {"broker": "zerodha", "connected": True}
                 inner.calls += 1
                 dates = ["2020-01-01", "2020-01-02", "2020-01-03"]
                 if body["instrument"]["symbol"] == "TEST":
@@ -298,7 +292,7 @@ class DatasetTests(unittest.TestCase):
         class Client:
             def call(inner, route, body=None):
                 if route == "/status":
-                    return {"broker": "zerodha", "connected": True, "plan": "standard"}
+                    return {"broker": "zerodha", "connected": True}
                 symbol = body["instrument"]["symbol"]
                 available = sorted(dates + [special]) if symbol == "NIFTY_500" else dates
                 offset = int(symbol[1:]) if symbol.startswith("S") else 0

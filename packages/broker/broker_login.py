@@ -52,9 +52,9 @@ class LocalServer(http.server.ThreadingHTTPServer):
 
 def page(content):
     return ("<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width'>"
-            "<title>SkillsGuild local broker connection</title><style>" + STYLE + "</style><body><main>"
-            "<h1>Connect your broker locally</h1>"
-            "<p>This window runs on your computer. Credentials go from this helper to your chosen broker over HTTPS. "
+            "<title>SkillsGuild local Zerodha connection</title><style>" + STYLE + "</style><body><main>"
+            "<h1>Connect Zerodha Kite locally</h1>"
+            "<p>This window runs on your computer. Credentials go from this helper to Zerodha Kite over HTTPS. "
             "They are held in memory until you disconnect or stop the helper. No trading endpoints are available.</p>"
             "<p>Do not paste credentials into agent chat. An AI or another program with access to your operating-system account "
             "can still inspect process memory; this is not a security boundary against that access.</p>"
@@ -62,26 +62,18 @@ def page(content):
 
 
 def login_form(server):
-    def form(broker, mode, fields, button):
-        hidden = "".join("<input type='hidden' name='" + k + "' value='" + html.escape(v, quote=True) + "'>" for k, v in {"csrf": server.csrf, "broker": broker, "mode": mode}.items())
+    def form(mode, fields, button):
+        hidden = "".join("<input type='hidden' name='" + k + "' value='" + html.escape(v, quote=True) + "'>" for k, v in {"csrf": server.csrf, "mode": mode}.items())
         inputs = "".join("<p><label>" + label + "<br><input autocomplete='off' spellcheck='false' type='password' name='" + name + "' required maxlength='6000'></label></p>" for name, label in fields)
-        plan = "<p><label>Data plan <select name='plan'><option value='standard'>Standard</option><option value='prime'>Prime (only if subscribed)</option></select></label></p>" if broker == "fyers" else ""
-        return "<form method='post' action='/authenticate' autocomplete='off'>" + hidden + inputs + plan + "<button>" + button + "</button></form>"
+        return "<form method='post' action='/authenticate' autocomplete='off'>" + hidden + inputs + "<button>" + button + "</button></form>"
     return page(
-        "<p>Choose your broker below. Broker passwords, PINs and OTPs belong only on the broker's own login page.</p>"
-        "<details><summary>Zerodha Kite</summary><p>Complete Kite Connect login using your API app. Paste its fresh request_token here with the matching app key and secret.</p>"
+        "<p>Enter your password and OTP only on Zerodha’s login page.</p>"
+        "<details open><summary>Zerodha Kite</summary><p>Complete Kite Connect login using your API app. Paste its fresh request_token here with the matching app key and secret.</p>"
         "<p><a rel='noreferrer noopener' target='_blank' href='https://kite.trade/docs/connect/v3/user/'>Official Kite login instructions</a></p>"
-        + form("zerodha", "code", [("client_id", "API key"), ("secret", "API secret"), ("code", "Fresh request token")], "Exchange request token")
+        + form("code", [("client_id", "API key"), ("secret", "API secret"), ("code", "Fresh request token")], "Exchange request token")
         + "<details><summary>Use an existing Kite access token</summary>"
-        + form("zerodha", "token", [("client_id", "API key"), ("access_token", "Access token")], "Connect Kite") + "</details></details>"
-        + "<details><summary>Dhan</summary><p>In Dhan Web, open My Profile → Access DhanHQ APIs and generate an access token. Historical data needs the appropriate data subscription.</p>"
-        "<p><a rel='noreferrer noopener' target='_blank' href='https://web.dhan.co/'>Open Dhan Web</a></p>"
-        + form("dhan", "token", [("client_id", "Dhan client ID"), ("access_token", "Access token")], "Connect Dhan") + "</details>"
-        + "<details><summary>FYERS</summary><p>Complete your individual app's broker login using its registered redirect URL. Paste the fresh auth_code with your app ID and secret.</p>"
-        "<p><a rel='noreferrer noopener' target='_blank' href='https://fyers.in/api-docs/v3/api/authentication/individual-app/'>Official FYERS login instructions</a></p>"
-        + form("fyers", "code", [("client_id", "App ID (including suffix)"), ("secret", "App secret"), ("code", "Fresh auth code")], "Exchange auth code")
-        + "<details><summary>Use an existing FYERS access token</summary>"
-        + form("fyers", "token", [("client_id", "App ID (including suffix)"), ("access_token", "Access token")], "Connect FYERS") + "</details></details>")
+        + form("token", [("client_id", "API key"), ("access_token", "Access token")], "Connect Kite") + "</details></details>"
+    )
 
 
 class Handler(http.server.BaseHTTPRequestHandler):
@@ -180,7 +172,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         elif self.path.endswith("/status"):
             session = self.capability("/status")
             if session:
-                self.send(200, {"broker": session.broker, "plan": session.plan, "connected": session.active, "permissions": ["daily-history"]})
+                self.send(200, {"broker": "zerodha", "connected": session.active, "permissions": ["daily-history"]})
         else:
             self.send(404, {"error": "Unknown local route."})
 
@@ -197,8 +189,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
                     self.server.session = session
                     self.server.session_key = secrets.token_urlsafe(32)
                     url = self.server.origin + "/session/" + self.server.session_key
-                self.server.notify("Connected " + session.broker + ". Local read-only session: " + url)
-                content = "<h2>Connected to " + html.escape(session.broker) + "</h2><p>Give your agent this local session reference. It contains no broker credential and permits only historical-data requests while this process runs.</p><p><code>" + url + "</code></p><p>Keep this helper running while downloading. Stop it with Ctrl+C afterward.</p><form method='post' action='/disconnect'><input type='hidden' name='csrf' value='" + self.server.csrf + "'><button>Disconnect and discard session</button></form>"
+                self.server.notify("Connected to Zerodha Kite. Local read-only session: " + url)
+                content = "<h2>Connected to Zerodha Kite</h2><p>Give your agent this local session reference. It contains no broker credential and permits only historical-data requests while this process runs.</p><p><code>" + url + "</code></p><p>Keep this helper running while downloading. Stop it with Ctrl+C afterward.</p><form method='post' action='/disconnect'><input type='hidden' name='csrf' value='" + self.server.csrf + "'><button>Disconnect and discard session</button></form>"
                 self.send(200, page(content), "text/html; charset=utf-8")
             elif self.path == "/disconnect":
                 fields = self.browser_form()

@@ -1,6 +1,6 @@
 # Reproduce a SkillsGuild backtest
 
-Ask the user which broker they use (Zerodha, Dhan or FYERS), which strategy and dates they want, and whether they want the frozen research rules or a separately labelled experiment. FYERS users must identify their plan because historical coverage and rate limits differ.
+Use Zerodha Kite Connect for historical data. Confirm the strategy and dates and whether the user wants the frozen research rules or a separate experiment.
 
 Download and extract the complete strategy ZIP. Use a Python 3.11+ virtual environment and install `research/requirements.txt`. Read the bundled `broker/README.md` and `research/README.md` for commands, data schema and prerequisites. The combined ZIP has these same folders at its root.
 
@@ -14,7 +14,7 @@ Run the chosen frozen configuration:
 python research/runner.py --strategy high52 --data-dir YOUR_DATA --start 2018-01-01 --end 2025-12-31 --output results/high52
 ```
 
-Use `--help` for supported options. Do not run parameter selection or retune on 2026 to reproduce the saved study. Preserve source and data hashes. Return metrics, equity and trade files, cost/accounting checks and a comparison with the saved result. The same code against another broker or newer dataset may differ; explain the mismatch instead of forcing agreement.
+Use `--help` for supported options. Do not run parameter selection or retune on 2026 to reproduce the saved study. Preserve source and data hashes. Return metrics, equity and trade files, cost/accounting checks and a comparison with the saved result. The same code against a newer Kite dataset may differ; explain the mismatch instead of forcing agreement.
 
 The reference model starts at normalized equity 100 with fractional adjusted shares, delayed purchases, drifting retained holdings, simplified delivery charges and estimated terminal liquidation. A rupee-sized, whole-share account is a different experiment. Current constituents and retrospective exclusions introduce bias. 2018–2025 influenced selection and 2026 has already been inspected. Read the methodology before interpreting returns.
 

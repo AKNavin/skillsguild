@@ -10,7 +10,7 @@ The current release contains fifteen paper-inspired Indian cash-equity portfolio
 
 The study starts from a current Nifty500-derived snapshot, maps 500 stocks and excludes nine retrospectively flagged series, leaving 491. Historical constituent exits and failures are absent. Industry labels are current rather than point-in-time. Provider-adjusted prices are not an independently reconstructed corporate-action ledger. Sparse shared-calendar sessions were removed under the original panel rule. These choices can materially overstate investable outcomes.
 
-The website publishes normalized derived equity, aggregate metrics and trade-return summaries. It does not distribute the raw broker cache. Local reproductions require authorised data and a declared universe. Cross-broker history may differ in coverage, corrections and adjustment treatment; exact replication requires the same snapshot.
+The website publishes normalized derived equity, aggregate metrics and trade-return summaries. It does not distribute the raw broker cache. Local reproductions require authorised data and a declared universe. Refreshed Kite history may differ in coverage, corrections and adjustment treatment; exact replication requires the same snapshot.
 
 ## Portfolio accounting
 
@@ -18,7 +18,7 @@ Each test starts at equity 100, fractional adjusted shares, no leverage and zero
 
 ## Fees and execution assumptions
 
-The saved baseline applies 0.1187406% buy charges and 0.1037406% sell charges to slipped notional, plus 0.05% adverse slippage per side. This is a current proportional delivery-fee model applied uniformly across history. It omits fixed DP/account charges, historical tariff changes, personal income taxes, dividends and delisting proceeds. It does not reconstruct circuit availability, depth, impact or account-size constraints. The reference model is not an exact Zerodha historical contract note and should not be relabelled as a Dhan or FYERS tariff when using their data.
+The saved baseline applies 0.1187406% buy charges and 0.1037406% sell charges to slipped notional, plus 0.05% adverse slippage per side. This is a current proportional delivery-fee model applied uniformly across history. It omits fixed DP/account charges, historical tariff changes, personal income taxes, dividends and delisting proceeds. It does not reconstruct circuit availability, depth, impact or account-size constraints. The reference model is not an exact Zerodha historical contract note.
 
 ## Reading the statistics
 
@@ -30,7 +30,7 @@ Round 1's source stress doubles slippage; later rounds also restrict one-price c
 
 The downloaded helper opens a local browser form. Keys and secrets stay out of the AI chat and normal command output; sessions live in the helper process. The helper exposes history access, not order placement. An unrestricted process on the same machine can still inspect other local processes/files, so this is a privacy-conscious workflow rather than a guarantee against a hostile local agent. Broker access tokens themselves are sensitive.
 
-Rate limits and coverage are broker- and plan-specific. See the bundled broker README for the checked limits and enforced pacing. Zerodha's [historical API](https://kite.trade/docs/connect/v3/historical/) and [rate limits](https://kite.trade/docs/connect/v3/exceptions/), [Dhan documentation](https://dhanhq.co/docs/v2/), and [FYERS plans](https://fyers.in/api-docs/v3/getting-started/plans-and-limits/) are the primary references. Personal data access is distinct from public distribution rights; see the [NSE data policy](https://www.nseindia.com/static/market-data/nse-data-policy).
+Historical data requires Kite Connect access. See the bundled broker README for the checked limits and enforced pacing. Zerodha's [historical API](https://kite.trade/docs/connect/v3/historical/) and [rate limits](https://kite.trade/docs/connect/v3/exceptions/) are the primary references. Personal data access is distinct from public distribution rights; see the [NSE data policy](https://www.nseindia.com/static/market-data/nse-data-policy).
 
 ## Additional signal conventions
 

@@ -10,7 +10,7 @@ Seventeen synthetic tests cover hand-reconciled accounting, delayed buys, sale s
 
 ## Broker tooling
 
-Thirty-one mocked/local tests cover Zerodha and FYERS token exchanges, Dhan identity checks, credential/error redaction, Host/Origin/CSRF/cookie checks, request-size bounds, history-only routes, session disposal, pacing, retry limits, invalid candles, resume hashes and manifests. A synthetic 100-stock download-to-runner integration verifies that an index-only special session is removed from the shared calendar before per-stock quarantine and that the resulting accounting reconciles.
+Mocked/local tests cover Zerodha token exchange, rejection of unsupported providers, credential/error redaction, Host/Origin/CSRF/cookie checks, request-size bounds, history-only routes, session disposal, pacing, retry limits, invalid candles, resume hashes and manifests. A synthetic 100-stock download-to-runner integration verifies that an index-only special session is removed from the shared calendar before per-stock quarantine and that the resulting accounting reconciles.
 
 No fresh live broker login or data entitlement was tested for this release. Users authenticate locally in the packaged form. There is no guarantee against memory inspection by another process with the same operating-system permissions. Tokens remain sensitive and broker-side permissions may exceed the limited helper interface.
 
@@ -26,7 +26,7 @@ python -B scripts/check_packages.py
 
 Build validation reconciles saved endpoint returns, drawdowns and trade counts against the catalogue. Package validation checks all fifteen ZIPs and the combined pack, CRCs, file hashes, executable source parity, direct resources and absence of retired catalogue output. Rule diagrams are original SVGs with no visible text; their captions distinguish conceptual inputs/ranking from the actual saved equity curves.
 
-Frontend syntax and a temporary DOM rendering harness exercised twelve strategies across both periods, chart modes, filters, ledger counts and broker prompts. The original release had no browser layout verification because browser automation stopped. On 27 October, browser checks confirmed the fifteen-entry catalogue, all three new strategy detail pages and rule images, the volume strategy’s 2026 result toggle, and the seasonality AI dialog with public instruction/download URLs. The narrow viewport layout was visually reviewed. Live clipboard behaviour and broker authentication remain unverified.
+Frontend syntax and a temporary DOM rendering harness exercised twelve strategies across both periods, chart modes, filters, ledger counts and reproduction prompts. The original release had no browser layout verification because browser automation stopped. On 27 October, browser checks confirmed the fifteen-entry catalogue, all three new strategy detail pages and rule images, the volume strategy’s 2026 result toggle, and the seasonality AI dialog with public instruction/download URLs. The narrow viewport layout was visually reviewed. Live clipboard behaviour and broker authentication remain unverified.
 
 ## 27 October additions
 

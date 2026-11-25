@@ -84,13 +84,13 @@ class LocalClient:
         return payload
 
 
-def read_instruments(path, broker):
+def read_instruments(path):
     try:
         with open(path, newline="", encoding="utf-8-sig") as handle:
             reader = csv.DictReader(handle)
             if not reader.fieldnames or len(reader.fieldnames) != len(set(reader.fieldnames)):
                 raise BrokerError("Instrument CSV needs unique column names.")
-            allowed = {"symbol", "kind", "industry", "zerodha_token", "dhan_security_id", "dhan_exchange_segment", "fyers_symbol"}
+            allowed = {"symbol", "kind", "industry", "zerodha_token"}
             if not {"symbol", "kind", "industry"}.issubset(reader.fieldnames) or not set(reader.fieldnames).issubset(allowed):
                 raise BrokerError("Use the supplied instrument CSV columns. Credentials never belong in this file.")
             rows = list(reader)
@@ -99,7 +99,6 @@ def read_instruments(path, broker):
     if not 1 <= len(rows) <= 5000:
         raise BrokerError("Provide between 1 and 5000 mapped instruments.")
     items = {}
-    mapping_key = {"zerodha": "zerodha_token", "dhan": "dhan_security_id", "fyers": "fyers_symbol"}[broker]
     for raw in rows:
         if None in raw or any(value is None for value in raw.values()):
             raise BrokerError("Instrument CSV contains a malformed row.")
@@ -110,8 +109,8 @@ def read_instruments(path, broker):
             raise BrokerError("A symbol is not safe for a local data filename.")
         if symbol.upper() in {key.upper() for key in items}:
             raise BrokerError("Instrument CSV contains a duplicate symbol.")
-        if item.get("kind") not in {"stock", "etf", "index"} or not item.get(mapping_key):
-            raise BrokerError("Every instrument needs a cash/index kind and a broker-specific mapping.")
+        if item.get("kind") not in {"stock", "etf", "index"} or not item.get("zerodha_token"):
+            raise BrokerError("Every instrument needs a cash/index kind and a Zerodha instrument token.")
         if item["kind"] == "stock" and not item.get("industry"):
             raise BrokerError("Each stock requires an industry for industry-aware strategies.")
         if symbol in BENCHMARKS and item["kind"] != "index":
@@ -155,9 +154,9 @@ def download_dataset(client, instruments, start, end, output, progress=print):
     first, last = validate_range(start, end)
     status = client.call("/status")
     broker = status.get("broker")
-    if not status.get("connected") or broker not in {"zerodha", "dhan", "fyers"}:
-        raise BrokerError("The local broker session is not connected.")
-    items = read_instruments(instruments, broker)
+    if not status.get("connected") or broker != "zerodha":
+        raise BrokerError("Connect a local Zerodha Kite session first.")
+    items = read_instruments(instruments)
     output = Path(output).expanduser().resolve()
     # Public source checkout is not a market-data cache.
     source = Path(__file__).resolve()
@@ -175,7 +174,7 @@ def download_dataset(client, instruments, start, end, output, progress=print):
         if any(output.iterdir()):
             raise BrokerError("Output directory is nonempty and has no matching download request. Choose a new directory.")
         write_json(identity_file, identity)
-    manifest = {"version": VERSION, "request_sha256": identity_hash, "broker": broker, "plan": status.get("plan"), "interval": "day", "timezone": "Asia/Kolkata", "requested_from": start, "requested_to": end, "retrieved_at": dt.datetime.now(dt.timezone.utc).isoformat(), "state": "downloading", "corporate_action_adjustment": "provider supplied; not independently verified", "universe": "user-supplied mapping; not a point-in-time membership database", "redistribution": "private user data; broker/exchange terms apply", "files": {}, "coverage": {}, "warnings": ["A successful request does not certify complete trading-calendar coverage.", "Broker history, revisions and current instrument mappings can differ from the published research dataset."]}
+    manifest = {"version": VERSION, "request_sha256": identity_hash, "broker": broker, "interval": "day", "timezone": "Asia/Kolkata", "requested_from": start, "requested_to": end, "retrieved_at": dt.datetime.now(dt.timezone.utc).isoformat(), "state": "downloading", "corporate_action_adjustment": "provider supplied; not independently verified", "universe": "user-supplied mapping; not a point-in-time membership database", "redistribution": "private user data; broker/exchange terms apply", "files": {}, "coverage": {}, "warnings": ["A successful request does not certify complete trading-calendar coverage.", "Broker history, revisions and current instrument mappings can differ from the published research dataset."]}
     write_json(output / "data-manifest.json", manifest)
     all_rows = {}
     for number, (symbol, item) in enumerate(items.items(), 1):

@@ -1,11 +1,11 @@
 ---
 name: seasonal
-description: Reproduce the Indian Calendar-month seasonality portfolio backtest with user-authorised broker history and the frozen research rules.
+description: Reproduce the Indian Calendar-month seasonality portfolio backtest with user-authorised Zerodha history and the frozen research rules.
 ---
 
 # Calendar-month seasonality
 
-Ask which broker the user uses: Zerodha, Dhan or FYERS, and which historical window to test. Ask FYERS users their plan. Explain missing history/entitlements before downloading. Do not request credentials in chat.
+Use Zerodha Kite Connect for daily history. Ask for the historical window and confirm the account has historical-data access. Enter credentials only in the local helper.
 
 Download the complete [package](../../downloads/seasonal.zip). A SKILL.md link alone does not contain the executable files. Use Python 3.11+ and install `research/requirements.txt` into a local virtual environment. Read `broker/README.md` for current login and download commands.
 
@@ -23,7 +23,7 @@ The selected configuration is `seasonal-L5-N10-M1`. Before the holding month, co
 
 Short-history, long-only stock seasonality adaptation. The lookback is five calendar years, not five sessions; at least two complete same-month returns are required. The cache begins in 2015. January 2018 has at most two usable prior January returns; early reviews use fewer than five observations and the seasonal estimate is especially noisy.
 
-Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A different broker snapshot is a replication, not an exact rerun.
+Read `research/README.md` for the shared settlement, sizing and cost rules. Preserve the reference defaults before experimenting. Deliver the run manifest, equity, trades, fees and differences from the saved result. A fresh Kite data snapshot is a replication, not an exact rerun.
 
 The study uses today's universe, fractional shares and simplified charges. 2018–2025 influenced selection; 2026 has already been inspected. Do not call either an untouched holdout or imply live profits. This package downloads history and simulates trades; it does not place orders.
 
